@@ -6,18 +6,18 @@
 //Registration
 Route::post('register/admin', 'Auth\RegisterController@admin'); //has a role of 0
 
-Route::post('register/resident', 'Auth\RegisterController@resident'); //has a role of 1
+Route::post('register/rentee', 'Auth\RegisterController@rentee'); //has a role of 1
 
-Route::post('register/gateman', 'Auth\RegisterController@gateman'); //has a role 2
+Route::post('register/renter', 'Auth\RegisterController@renter'); //has a role 2
 
 //forgot Password
-Route::post('phone/verify', 'Auth\ForgotPhoneController@verifyPhone');
+Route::post('phone/verify', 'Auth\ForgotPasswordController@password');
 
 //Verify account
 Route::post('verify', 'Auth\VerificationController@verify');
 
 //Resend Token
-Route::get('resend/token', 'Auth\ForgotPhoneController@resedToken');
+Route::get('resend/token', 'Auth\ResetPasswordController@reset');
 
 //Login
 Route::post('login', 'Auth\LoginController@authenticate'); //Not Needed
@@ -34,6 +34,10 @@ Route::group(['middleware' => ['jwt.verify']], function () {
 
 // General Users Routes *******************************************************
 Route::group(['middleware' => ['jwt.verify']], function () {
+    //Refresh token
+    Route::post('/refresh', 'Auth\LoginController@refresh');
+
+    //(User Profile)
 
     //Show active user i.e. current logged in user
     Route::get('/user', 'UserProfileController@index');
@@ -43,9 +47,6 @@ Route::group(['middleware' => ['jwt.verify']], function () {
 
     //Edit user ac count
     Route::post('/user/edit', 'UserProfileController@update');
-
-    // Edit user settings
-    Route::post('/user/settings', 'UserProfileController@manageSettings');
 
     //Delete user account
     Route::delete('/user/delete', 'UserProfileController@destroy');

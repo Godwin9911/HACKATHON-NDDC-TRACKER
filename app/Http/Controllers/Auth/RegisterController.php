@@ -22,13 +22,13 @@ class RegisterController extends Controller
         return response()->json($msg, $msg['status']);
     }
 
-    public function resident(Request $request) {
+    public function rentee(Request $request) {
         $msg = $this->create($request, $role='1');
 
         return response()->json($msg, $msg['status']);
     }
 
-    public function gateman(Request $request) {
+    public function renter(Request $request) {
         $msg = $this->create($request, $role='2');
 
         return response()->json($msg, $msg['status']);
@@ -44,17 +44,17 @@ class RegisterController extends Controller
 
         try{
            $user = User::create([
-                'name'     => $request->input('name'),
-                'email'    => $request->input('email'),
-                'image'    => 'no_image.jpg',
-                'password' => Hash::make($request->input('password')),
-                'role'     => $role,
-                'verifycode' => $verifycode 
+                'name'       =>  $request->input('name'),
+                'email'      =>  $request->input('email'),
+                'image'      =>  'noimage.jpg',
+                'password'   =>  Hash::make($request->input('password')),
+                'role'       =>  $role,
+                'verifycode' =>  $verifycode 
             ]);
 
-            $msg['message'] = 'Account created successfully';
+            $msg['message']   = 'Account created successfully';
             $msg['message-2'] = 'A verification code has been sent to your email, please use to veriify your account, also check your spam folder for email';
-            $msg['user']    = $user;
+            $msg['user']      = $user;
 
             //Send a mail form account verification
             Mail::to($user->email)->send(new WelcomeMail($user));
@@ -67,10 +67,10 @@ class RegisterController extends Controller
             //if any operation fails, Thanos snaps finger - user was not created rollback what is saved
             DB::rollBack();
 
-            $msg['error'] = "Error: Account not created, please try again!";
-            $msg['hint'] = $e->getMessage();
-            $msg['status'] = 501;
-            return $msg;
+            $err['error']  = "Error: Account not created, please try again!";
+            $err['hint']   = $e->getMessage();
+            $err['status'] = 501;
+            return $err;
         }
     }
 

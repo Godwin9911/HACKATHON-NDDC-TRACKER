@@ -22,7 +22,7 @@ class ForgotPasswordController extends Controller
     }
 
 
-    public function verifyPassword(Request $request)
+    public function password(Request $request)
     {
 
     // Do a validation for the input

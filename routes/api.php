@@ -16,8 +16,9 @@ use Illuminate\Support\Facades\Route;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+
 Route::get('/', function (Request $request) {
-    return 'Gate app Api';
+    return view('welcome');
 });
 //Please write all api route in v1.php script file in the routes folder
 Route::prefix('v1')->group( function() {
