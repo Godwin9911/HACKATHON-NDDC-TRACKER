@@ -34,7 +34,7 @@ class RegisterController extends Controller
         return response()->json($msg, $msg['status']);
     }
 
-    public function create($request, $role)
+    public function create($request, $user_type, $role)
     {
         $this->validateRequest($request);
         $verifycode = mt_rand(1000,9999);
