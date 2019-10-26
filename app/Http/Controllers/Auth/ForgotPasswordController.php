@@ -45,19 +45,20 @@ class ForgotPasswordController extends Controller
             $user->verifycode = $this->generatedPassword();
             $user->save();
 
-            Mail::to($user->email)->send(new NewPassword($user));
+             Mail::to($user->email)->send(new NewPassword($user));
             //Commit changes 
             DB::commit();
 
             $res['success'] = true;
             $res['message'] = 'Email has been sent. Please check your email inbox or spam folder for verification token!';
-            return response()->json($res, 200);
+            return response()->json($res, 200); 
           } catch (\Exception $e) {
 
             //Rollback if there is an erro
              DB::rollBack();
              $res['success'] = false;
              $res['message'] = 'Email not sent. Please try again!';
+             $res['hint'] = $e->getMessage();
              return response()->json($res, 501);
           }
     }

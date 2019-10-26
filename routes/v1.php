@@ -10,8 +10,14 @@ Route::post('register/rentee', 'Auth\RegisterController@rentee'); //has a role o
 
 Route::post('register/renter', 'Auth\RegisterController@renter'); //has a role 2
 
+//Login
+Route::post('login', 'Auth\LoginController@authenticate'); //
+
 //forgot Password
-Route::post('phone/verify', 'Auth\ForgotPasswordController@password');
+Route::post('forgot/password', 'Auth\ForgotPasswordController@password');
+
+//Verify account
+Route::post('reset/password', 'Auth\ResetPasswordController@reset');
 
 //Verify account
 Route::post('verify', 'Auth\VerificationController@verify');
@@ -19,8 +25,6 @@ Route::post('verify', 'Auth\VerificationController@verify');
 //Resend Token
 Route::get('resend/token', 'Auth\VerificationController@reset');
 
-//Login
-Route::post('login', 'Auth\LoginController@authenticate'); //Not Needed
 
 
 //Admin Routes (Specific Route)*******************************************************

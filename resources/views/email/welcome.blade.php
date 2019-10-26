@@ -42,7 +42,7 @@
     		<div>
     			
     		</div>
-    		<h2 class="welcome">Welcome To Gate Pass</h2>
+    		<h2 class="welcome">Welcome To BetaRides</h2>
     		<div>
     			 <h4>Hello {{$user->first_name}} {{$user->last_name}}</h4>
     		</div>
