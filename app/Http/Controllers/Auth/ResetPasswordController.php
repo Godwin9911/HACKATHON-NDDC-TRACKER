@@ -22,7 +22,7 @@ class ResetPasswordController extends Controller
     //generate verify code for the user
     public function generatedPassword()
     {
-       return Str::random(6);
+       return mt_rand(1000,9999);
     }
 
     public function reset(Request $request)
