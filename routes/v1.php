@@ -17,7 +17,7 @@ Route::post('phone/verify', 'Auth\ForgotPasswordController@password');
 Route::post('verify', 'Auth\VerificationController@verify');
 
 //Resend Token
-Route::get('resend/token', 'Auth\ResetPasswordController@reset');
+Route::get('resend/token', 'Auth\VerificationController@reset');
 
 //Login
 Route::post('login', 'Auth\LoginController@authenticate'); //Not Needed

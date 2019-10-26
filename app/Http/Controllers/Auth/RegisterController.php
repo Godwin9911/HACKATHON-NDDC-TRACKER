@@ -37,18 +37,19 @@ class RegisterController extends Controller
     public function create($request, $role)
     {
         $this->validateRequest($request);
-        $verifycode = Str::random(6);
+        $verifycode = mt_rand(1000,9999);
 
         //start temporay transaction
         DB::beginTransaction();
 
         try{
            $user = User::create([
-                'name'       =>  $request->input('name'),
-                'email'      =>  $request->input('email'),
-                'image'      =>  'noimage.jpg',
-                'password'   =>  Hash::make($request->input('password')),
-                'role'       =>  $role,
+                'name'         =>  $request->input('name'),
+                'email'        =>  $request->input('email'),
+                'image'        =>  'noimage.jpg',
+                'password'     =>  Hash::make($request->input('password')),
+                'role'         =>  $role,
+                'accept_terms' => $request->input('accept_terms'),
                 'verifycode' =>  $verifycode 
             ]);
 
@@ -76,23 +77,16 @@ class RegisterController extends Controller
 
     public function validateRequest(Request $request){
             $rules = [
-                'email'    => 'required|email|unique:users',
-                'name'     => 'required|string',
-                'password' => 'required|min:8',
+                'email'        => 'required|email|unique:users',
+                'name'         => 'required|string',
+                'password'     => 'required|min:8',
+                'accept_terms' => 'required|regex:/(^([yes]+)?$)/u'
             ];
             $messages = [
                 'required' => ':attribute is required',
                 'email'    => ':attribute not a valid format',
+                'regex' => ':attribute condition must be accepted first to continue! (chosse yes)!'
             ];
         $this->validate($request, $rules, $messages);
     }
-
-    // protected function validator(array $data)
-    // {
-    //     return Validator::make($data, [
-    //         'name' => ['required', 'string', 'max:255'],
-    //         'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-    //         'password' => ['required', 'string', 'min:8', 'confirmed'],
-    //     ]);
-    // }
 }
