@@ -66,6 +66,7 @@ class LoginController extends Controller
             return response()->json($msg, 401);
         }
     }
+    
 
     public function validateRequest(Request $request){
             $rules = [

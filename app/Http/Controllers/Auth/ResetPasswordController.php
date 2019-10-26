@@ -30,7 +30,7 @@ class ResetPasswordController extends Controller
 
     // Do a validation for the input
         $this->validate($request, [
-            'verifycode' => 'required|max:6|min:5',
+            'verifycode' => 'required|max:4',
             'password'   => 'required|min:8',
         ]);
 

@@ -19,7 +19,7 @@ class VerificationController extends Controller
         public function verify(Request $request, User $user) {
 
             $this->validate($request, [
-                'verifycode' => 'required|max:6'
+                'verifycode' => 'required|max:4'
             ]);
 
             $verifycode = $request->input('verifycode');
