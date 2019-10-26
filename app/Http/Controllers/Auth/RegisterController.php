@@ -17,19 +17,19 @@ class RegisterController extends Controller
 {
 
     public function admin(Request $request) {
-        $msg = $this->create($request, $role='0');
+        $msg = $this->create($request,  $user_type='admin', $role='0');
 
         return response()->json($msg, $msg['status']);
     }
 
     public function rentee(Request $request) {
-        $msg = $this->create($request, $role='1');
+        $msg = $this->create($request,  $user_type='rentee', $role='1');
 
         return response()->json($msg, $msg['status']);
     }
 
     public function renter(Request $request) {
-        $msg = $this->create($request, $role='2');
+        $msg = $this->create($request,  $user_type='renter', $role='2');
 
         return response()->json($msg, $msg['status']);
     }
@@ -49,8 +49,9 @@ class RegisterController extends Controller
                 'image'        =>  'noimage.jpg',
                 'password'     =>  Hash::make($request->input('password')),
                 'role'         =>  $role,
+                'user_type'    => $user_type,
                 'accept_terms' => $request->input('accept_terms'),
-                'verifycode' =>  $verifycode 
+                'verifycode'  =>  $verifycode 
             ]);
 
             $msg['message']   = 'Account created successfully';
