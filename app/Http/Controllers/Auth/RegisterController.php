@@ -23,7 +23,7 @@ class RegisterController extends Controller
     }
 
     public function rentee(Request $request) {
-        $msg = $this->create($request,  $user_type='rentee', $role='1');
+        $msg = $this->create($request,  $user_type='owner', $role='1');
 
         return response()->json($msg, $msg['status']);
     }
@@ -46,12 +46,13 @@ class RegisterController extends Controller
            $user = User::create([
                 'name'         =>  $request->input('name'),
                 'email'        =>  $request->input('email'),
+                'phone'        =>  $request->input('phone'),
                 'image'        =>  'noimage.jpg',
                 'password'     =>  Hash::make($request->input('password')),
                 'role'         =>  $role,
                 'user_type'    => $user_type,
                 'accept_terms' => $request->input('accept_terms'),
-                'verifycode'  =>  $verifycode 
+                'verifycode'   =>  $verifycode 
             ]);
 
             $msg['message']   = 'Account created successfully';
@@ -80,13 +81,14 @@ class RegisterController extends Controller
             $rules = [
                 'email'        => 'required|email|unique:users',
                 'name'         => 'required|string',
+                'phone'        => 'required',
                 'password'     => 'required|min:8',
                 'accept_terms' => 'required|regex:/(^([yes]+)?$)/u'
             ];
             $messages = [
                 'required' => ':attribute is required',
                 'email'    => ':attribute not a valid format',
-                'regex' => ':attribute condition must be accepted first to continue! (chosse yes)!'
+                'regex'    => ':attribute condition must be accepted first to continue! (chosse yes)!'
             ];
         $this->validate($request, $rules, $messages);
     }

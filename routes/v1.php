@@ -6,7 +6,7 @@
 //Registration
 Route::post('register/admin', 'Auth\RegisterController@admin'); //has a role of 0
 
-Route::post('register/rentee', 'Auth\RegisterController@rentee'); //has a role of 1
+Route::post('register/owner', 'Auth\RegisterController@owner'); //has a role of 1
 
 Route::post('register/renter', 'Auth\RegisterController@renter'); //has a role 2
 
