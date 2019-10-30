@@ -22,7 +22,7 @@ class RegisterController extends Controller
         return response()->json($msg, $msg['status']);
     }
 
-    public function rentee(Request $request) {
+    public function owner(Request $request) {
         $msg = $this->create($request,  $user_type='owner', $role='1');
 
         return response()->json($msg, $msg['status']);
@@ -50,8 +50,8 @@ class RegisterController extends Controller
                 'image'        =>  'noimage.jpg',
                 'password'     =>  Hash::make($request->input('password')),
                 'role'         =>  $role,
-                'user_type'    => $user_type,
-                'accept_terms' => $request->input('accept_terms'),
+                'user_type'    =>  $user_type,
+                'accept_terms' =>  'yes',
                 'verifycode'   =>  $verifycode 
             ]);
 
@@ -83,12 +83,10 @@ class RegisterController extends Controller
                 'name'         => 'required|string',
                 'phone'        => 'required',
                 'password'     => 'required|min:8',
-                'accept_terms' => 'required|regex:/(^([yes]+)?$)/u'
             ];
             $messages = [
                 'required' => ':attribute is required',
                 'email'    => ':attribute not a valid format',
-                'regex'    => ':attribute condition must be accepted first to continue! (chosse yes)!'
             ];
         $this->validate($request, $rules, $messages);
     }
