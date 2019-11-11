@@ -55,12 +55,12 @@ class SocialAuthGoogleController extends Controller
                     $user->google_id = $googleUser->id;
                     $user->verifycode = $verifycode;
                     $user->save();
-                    $token = Auth::guard()->login($existUser);
+                    $token = Auth::guard()->login($user);
                 }
                 return redirect()->to('https://hackanthon-258716.firebaseapp.com/dashboard.html?auth='.$token);
             } 
             catch (Exception $e) {
-                return response(['error' => $e->getMessage()]);
+                return redirect()->to('https://hackanthon-258716.firebaseapp.com/dashboard.html?error='.$e->getMessage());
             }
         }else {
             return view('welcome');
