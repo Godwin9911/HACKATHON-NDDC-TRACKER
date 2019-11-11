@@ -18,8 +18,6 @@ class SocialAuthGoogleController extends Controller
 
     public function callback(Request $request)
     {
-        $state = $request->query('state');
-        if($state) {
             try {
         
                 $googleUser = Socialite::driver('google')->user();
@@ -44,8 +42,5 @@ class SocialAuthGoogleController extends Controller
             catch (Exception $e) {
                 return 'error';
             }
-        }else {
-            return view('welcome');
-        }
     }
 }
