@@ -40,7 +40,7 @@ return [
     'google' => [
         'client_id' => '749484537637-martirjojlc53m3rh3l787vdpnc2pcle.apps.googleusercontent.com',
         'client_secret' => 'XXpVPCwIQ7tuH1nLn7gsY2O8',
-        'redirect' => 'https://hackathon-nddc.herokuapp.com/callback'
+        'redirect' => 'https://hackathon-nddc.herokuapp.com'
     ],
 
 ];
