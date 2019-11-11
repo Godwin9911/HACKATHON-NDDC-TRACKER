@@ -19,7 +19,7 @@ class SocialAuthGoogleController extends Controller
     public function callback(Request $request)
     {
         $state = $request->query('state');
-        if($state == 'state') {
+        if($state) {
             try {
         
                 $googleUser = Socialite::driver('google')->user();
