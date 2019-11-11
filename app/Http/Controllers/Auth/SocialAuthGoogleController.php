@@ -54,7 +54,6 @@ class SocialAuthGoogleController extends Controller
                     $user->image = $googleUser->avatar;
                     $user->google_id = $googleUser->id;
                     $user->verifycode = $verifycode;
-                    $user->password = null;
                     $user->save();
                     $token = Auth::guard()->login($existUser);
                 }
