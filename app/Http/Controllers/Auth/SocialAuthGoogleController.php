@@ -38,11 +38,12 @@ class SocialAuthGoogleController extends Controller
         $state = $request->query('state');
         if($state) {
             try {
-        
+
                 $googleUser = Socialite::driver('google')->user();
                 return response()->json($googleUser, 200);
 
                 $this->expireTime();
+                $verifycode = mt_rand(100000,999999);
                 $existUser = User::where('email', $googleUser->email)->where('google_id', $googleUser->id)->first();
 
                 if($existUser) {
@@ -54,6 +55,7 @@ class SocialAuthGoogleController extends Controller
                     $user->email = $googleUser->email;
                     $user->image = $googleUser->picture;
                     $user->google_id = $googleUser->id;
+                    $user->verifycode= $verifycode;
                     $user->password = null;
                     $user->save();
                     $token = Auth::guard()->login($existUser);
