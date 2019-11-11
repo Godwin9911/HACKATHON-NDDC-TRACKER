@@ -16,37 +16,22 @@ use App\Mail\WelcomeMail;
 class RegisterController extends Controller
 {
 
-    public function admin(Request $request) {
-        $msg = $this->create($request,  $user_type='admin', $role='0');
-
-        return response()->json($msg, $msg['status']);
-    }
-
-    public function owner(Request $request) {
-        $msg = $this->create($request,  $user_type='owner', $role='1');
-
-        return response()->json($msg, $msg['status']);
-    }
-
-    public function renter(Request $request) {
-        $msg = $this->create($request,  $user_type='renter', $role='2');
-
+    public function community_member(Request $request) {
+        $msg = $this->create($request, $user_type='community_member', $role='1');
         return response()->json($msg, $msg['status']);
     }
 
     public function create($request, $user_type, $role)
     {
         $this->validateRequest($request);
-        $verifycode = mt_rand(1000,9999);
+        $verifycode = mt_rand(100000,999999);
 
         //start temporay transaction
         DB::beginTransaction();
 
         try{
            $user = User::create([
-                'name'         =>  $request->input('name'),
                 'email'        =>  $request->input('email'),
-                'phone'        =>  $request->input('phone'),
                 'image'        =>  'noimage.jpg',
                 'password'     =>  Hash::make($request->input('password')),
                 'role'         =>  $role,
@@ -81,7 +66,6 @@ class RegisterController extends Controller
             $rules = [
                 'email'        => 'required|email|unique:users',
                 'name'         => 'required|string',
-                'phone'        => 'required',
                 'password'     => 'required|min:8',
             ];
             $messages = [

@@ -4,11 +4,7 @@
 //Authentication Routes ******************************************************
 
 //Registration
-Route::post('register/admin', 'Auth\RegisterController@admin'); //has a role of 0
-
-Route::post('register/owner', 'Auth\RegisterController@owner'); //has a role of 1
-
-Route::post('register/renter', 'Auth\RegisterController@renter'); //has a role 2
+Route::post('register/renter', 'Auth\RegisterController@community_member'); //has a role 4
 
 //Login
 Route::post('login', 'Auth\LoginController@authenticate'); //
@@ -26,11 +22,16 @@ Route::post('verify', 'Auth\VerificationController@verify');
 Route::get('resend/token', 'Auth\VerificationController@reset');
 
 
+Route::get('/excel', 'importExcelController@indexAsJson');
+Route::get('downloadData/{type}', 'importExcelController@downloadData');
+Route::post('importExcel', 'importExcelController@importExcel');
+
 
 //Admin Routes (Specific Route)*******************************************************
 
 Route::group(['middleware' => ['jwt.verify']], function () {
     Route::get('user/all', 'UserProfileController@all')->middleware('admin');
+
 });
 
 
@@ -54,4 +55,6 @@ Route::group(['middleware' => ['jwt.verify']], function () {
 
     //Delete user account
     Route::delete('/user/delete', 'UserProfileController@destroy');
+
+    
 });

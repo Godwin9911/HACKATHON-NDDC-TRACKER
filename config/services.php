@@ -35,6 +35,12 @@ return [
     */
     'fcm' => [
         'key' => env('FCM_SECRET_KEY')
-    ]
+    ],
+
+    'google' => [
+        'client_id' => 'xxxx',
+        'client_secret' => 'XXpVPCwIQ7tuH1nLn7gsY2O8',
+        'redirect' => 'http://localhost:8080/callback'
+    ],
 
 ];

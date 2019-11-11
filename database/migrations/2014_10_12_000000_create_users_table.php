@@ -22,10 +22,10 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('image')->default('noimage.jpg');
             $table->string('verifycode');
-            $table->enum('user_type', array('admin','owner','renter'));
-            $table->enum('role', array(0,1,2));
+            $table->enum('user_type', array('admin','contractor','reviewers','community_member'));
+            $table->enum('role', array(0,1,2)); //0 => The Project Issuer(Admin) //1 => The Contractors Members //2 The Reviewers Members //3 The Community Members
             $table->enum('2_factor_enabled', array('no', 'yes'));
-            $table->string('device_id')->nullable();
+            $table->string('google_id');
             $table->rememberToken();
             $table->timestamps();
         });
