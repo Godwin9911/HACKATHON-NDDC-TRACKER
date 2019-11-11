@@ -16,9 +16,9 @@ class SocialAuthGoogleController extends Controller
     }
 
 
-    public function callback()
+    public function callback(Request $request)
     {
-        $state = $request->query('t');
+        $state = $request->query('state');
         if($state == 'state') {
             try {
         
