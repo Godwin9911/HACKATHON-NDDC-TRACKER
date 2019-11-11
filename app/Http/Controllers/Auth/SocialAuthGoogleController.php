@@ -52,7 +52,6 @@ class SocialAuthGoogleController extends Controller
                     $user = new User;
                     $user->name  = $googleUser->name;
                     $user->email = $googleUser->email;
-                    $user->email = $googleUser->email;
                     $user->image = $googleUser->picture;
                     $user->google_id = $googleUser->id;
                     $user->password = null;
