@@ -39,13 +39,13 @@ class SocialAuthGoogleController extends Controller
                     $user->save();
                     Auth::loginUsingId($user->id);
                 }
-                return redirect()->to('/home');
+                return redirect()->to('https://hackanthon-258716.firebaseapp.com/');
             } 
             catch (Exception $e) {
                 return 'error';
             }
         }else {
-            return view('welcome');
+            return view('https://hackanthon-258716.firebaseapp.com/');
         }
     }
 }
