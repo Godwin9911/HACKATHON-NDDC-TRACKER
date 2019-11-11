@@ -40,7 +40,7 @@ return [
     'google' => [
         'client_id' => 'xxxx',
         'client_secret' => 'XXpVPCwIQ7tuH1nLn7gsY2O8',
-        'redirect' => 'http://localhost:8080/callback'
+        'redirect' => 'https://hackathon-nddc.herokuapp.com/callback'
     ],
 
 ];
