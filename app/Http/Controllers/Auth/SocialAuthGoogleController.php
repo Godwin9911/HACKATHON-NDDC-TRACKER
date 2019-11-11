@@ -25,20 +25,23 @@ class SocialAuthGoogleController extends Controller
                 $googleUser = Socialite::driver('google')->user();
                 $existUser = User::where('email',$googleUser->email)->first();
                 
+                
     
                 if($existUser) {
-                    Auth::loginUsingId($existUser->id);
+                    return reponse()->json($existUser, 200);
+                }else {
+                    return reponse()->json('Not Found', 404);
                 }
-                else {
-                    $user = new User;
-                    $user->name = $googleUser->name;
-                    $user->email = $googleUser->email;
-                    $user->google_id = $googleUser->id;
-                    $user->password = md5(rand(1,10000));
-                    $user->save();
-                    Auth::loginUsingId($user->id);
-                }
-                return redirect()->to('https://hackanthon-258716.firebaseapp.com/');
+                // else {
+                //     $user = new User;
+                //     $user->name = $googleUser->name;
+                //     $user->email = $googleUser->email;
+                //     $user->google_id = $googleUser->id;
+                //     $user->password = md5(rand(1,10000));
+                //     $user->save();
+                //     Auth::loginUsingId($user->id);
+                // }
+                // return redirect()->to('https://hackanthon-258716.firebaseapp.com/');
             } 
             catch (Exception $e) {
                 return 'error';
