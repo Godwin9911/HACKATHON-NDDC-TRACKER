@@ -22,10 +22,11 @@ Route::post('verify', 'Auth\VerificationController@verify');
 Route::get('resend/token', 'Auth\VerificationController@reset');
 
 
+
 Route::get('/excel', 'importExcelController@indexAsJson');
 Route::get('downloadData/{type}', 'importExcelController@downloadData');
 Route::post('importExcel', 'importExcelController@importExcel');
-Route::get('/callback', 'Auth\SocialAuthGoogleController@callback');
+
 
 //Admin Routes (Specific Route)*******************************************************
 
