@@ -1,0 +1,81 @@
+@mixin connect-logo {
+    height: 6vh;
+    width: 6vh;
+    border-radius: 50%;
+}
+
+.auth-full {
+    min-height: 80vh;
+
+    .auth-con {
+        min-height: 55vh;
+        border: 1px solid lightgray;
+        border-top: 3px solid #0B273D;
+
+        .connect-btn {
+            min-height: 7.5vh;
+            border-radius: 5px;
+            cursor: pointer;
+
+            .fb-logo {
+                @include connect-logo;
+                background: #3b5998;
+
+                img {
+                    height: 60%;
+                    width: 100%;
+                }
+            }
+            .google-logo {
+                @include connect-logo;
+                img {
+                    height: 60%;
+                    width: 100%;
+                }
+            }
+            span {
+                font-size: 12px;
+            }
+        }
+        .continue-email {
+            font-size: 12px;
+            text-decoration: underline;
+            &:hover {
+                color: black;
+            }
+        }
+        form {
+            label {
+                font-size: 12px;
+            }
+            input {
+                font-size: 12px;
+                &::placeholder {
+                    font-size: 12px;
+                }
+            }
+            button {
+                font-size: 12px;
+            }
+        }
+        .confirm-form {
+            font-size: 12px;
+            span {
+                font-weight: 100;
+            }
+            a {
+                font-weight: 100;
+                text-decoration: underline;
+            }
+        }
+        .instructions-sent {
+            font-size: 12px;
+        }
+        .forgot-password-link {
+            font-size: 12px;
+            &:hover {
+                color: #0B273D;
+            }
+        }
+    }
+}

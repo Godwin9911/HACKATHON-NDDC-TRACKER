@@ -1,0 +1,187 @@
+// Imports
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import "media-queries";
+
+@mixin footer-links {
+    background: inherit;
+    color: white;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+    word-wrap: break-word;
+}
+
+// Scrollbar styles
+.scroller {
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        display: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        color: black;
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px #343a40;
+    }
+}
+
+.roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+.bold {
+    font-weight: bold;
+}
+.grey {
+    color: grey;
+}
+.btn-brand {
+    color: white;
+    background: #0B273D;
+}
+
+.btn-brand-outline {
+    color: #0B273D;
+    background: white;
+    border: 1px solid #0B273D;
+}
+
+.br-10px {
+    border-radius: 10px;
+}
+
+.navbar-brand {
+    display: flex;
+    color: white !important;
+    margin-left: 10vw;
+    font-size: 14px;
+
+    .logo-replace {
+        height: 5vh;
+        width: 5vh;
+    }
+}
+
+.our-nav {
+    background: #0B273D;
+
+    .nav-utilities {
+        margin-right: 10vw;
+
+        .nav-item .nav-link {
+            color: white !important;
+            font-size: 12px;
+            font-weight: 600;
+        }
+    }
+}
+
+.special-input {
+    min-height: 8vh;
+    background: white;
+
+    input {
+        background: inherit;
+        border: none;
+        font-size: 12px;
+
+        &:focus {
+            box-shadow: none;
+        }
+
+        &::placeholder {
+            font-size: 12px;
+            color: lightgray;
+        }
+    }
+
+    button {
+        font-size: 14px;
+        height: 5vh;
+        @include small-screens {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+footer {
+    min-height: 30vh;
+    background: #707070;
+
+    .links-contact {
+        min-height: 20vh;
+
+        .tracker-copyright {
+            display: flex;
+            flex-direction: column;
+
+            span {
+                color: white;
+                font-size: 12px;
+            }
+
+            p {
+                color: white;
+                font-size: 10px;
+                margin-top: auto;
+            }
+        }
+
+        .site-links {
+            ul {
+                li {
+                    @include footer-links
+                }
+            }
+        }
+
+        .contact-details {
+            ul {
+                li {
+                    @include footer-links
+                }
+            }
+        }
+    }
+
+    .subscribe-social {
+        .footer-subscribe {
+            span {
+                font-size: 12px;
+                color: white;
+            }
+
+            input {
+                &::placeholder {
+                    font-size: 10px;
+                }
+            }
+
+            button {
+                font-size: 10px;
+            }
+        }
+
+        .footer-social {
+            .social-links {
+                .link-con {
+                    background: white;
+                    height: 5vh;
+                    width: 5vh;
+                    border-radius: 50%;
+                    img {
+                        height: 60%;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

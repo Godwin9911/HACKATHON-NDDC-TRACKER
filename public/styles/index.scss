@@ -1,0 +1,148 @@
+@import "media-queries";
+
+@mixin explore-by-image($bg) {
+    min-height: 25vh;
+    background: $bg;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body {
+    background: rgba(247, 247, 247, 1);
+}
+
+.landing-full {
+    min-height: 100vh;
+
+    .landing-welcome {
+        .welcome-bg {
+            min-height: 60vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: linear-gradient(rgba(44, 94, 46, .7), rgba(44, 94, 46, .8)), url("../images/welcome-bg.png");
+            background-position: center;
+            background-size: cover;
+            @include small-screens {
+                min-height: 90vh;
+            }
+        }
+
+        .welcome-words {
+            color: white;
+        }
+
+        .explore-projects {
+            .explore-by {
+                min-height: 35vh;
+                color: grey;
+                .by-sector-image {
+                    @include explore-by-image(url("../images/crane-building.png"));
+                }
+                .by-location-image {
+                    @include explore-by-image(url("../images/NigerDeltaMap.svg"));
+                    background-color: #0B273D;
+                    background-size: 80%;
+                }
+                .by-organization-image {
+                    @include explore-by-image(url("../images/three-buildings.png"));
+                }
+                .explore-words {
+                    min-height: 10vh;
+                    background: white;
+
+                    span {
+                        font-size: 12px;
+                    }
+
+                    p {
+                        font-size: 18px;
+                    }
+                }
+            }
+
+        }
+    }
+    .some-text-1 {
+        p {
+            color: grey;
+        }
+    }
+    .some-video-con {
+        min-height: 53vh;
+        background: #2C5E2E;
+        .video-box {
+            height: 53vh;
+            border-radius: 10px 0px 0px 10px;
+            background: url("../images/welcome-bg.png");
+            background-position: center;
+            background-size: cover;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            &:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+            .video-overlay {
+                background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+                border-radius: 10px 0px 0px 10px;
+                padding-top: 50%;
+                cursor: pointer;
+                .play-overlay {
+                    height: 10vh;
+                    width: 10vh;
+                    border-radius: 50%;
+                    border: 1px solid #BCE0FD;
+                    i {
+                        color: rgb(115, 115, 236);
+                    }
+                }
+            }
+        }
+        .text-con{
+            color: white;
+            p {
+                font-size: 20px;
+                font-style: italic;
+            }
+            .company {
+                font-size: 12px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+.subscribe {
+    .twitter-feed {
+        height: 60vh;
+        overflow-y: scroll;
+        border-radius: 10px 0px 0px 10px;
+        .twitter-timeline {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .newsletter-subscribe {
+        border-radius: 0px 10px 10px 0px;
+        background: #54D0ED;
+        color: white;
+        @include small-screens {
+            padding: 10px !important;
+        }
+        p {
+            font-style: italic;
+        }
+        .social-links {
+            .link-con{
+                background: #0B273D;
+                height: 8vh;
+                width: 8vh;
+                border-radius: 50%;
+                img {
+                    height: 60%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
