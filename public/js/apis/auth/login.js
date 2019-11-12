@@ -43,12 +43,11 @@ const loginApi = (event, loginForm) => {
                 default:
                  //insert the data into broswer localStorage
                 localStorage.setItem('nddc-tracker-user', JSON.stringify(data));
-                if(data.user.user_type === 'community_member'){
+              
+                if(data.user.user_type === 'admin') {
+                    location.replace('account/admin/dashboard.html');
+                }else {
                     location.replace('account/user/dashboard.html');
-                }else if(data.user.user_type === 'reviewer') {
-                    location.replace('account/reviewer/dashboard.html');
-                }else if(data.user.user_type === 'contractor') {
-                    location.replace('account/contractor/dashboard.html');
                 }
             }
          }

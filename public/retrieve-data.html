@@ -1,6 +1,5 @@
 
 <script src="js/general/third_party_cdn.js""></script>
-<script src="js/general/placeholder.js""></script>
 <script src="js/general/routes.js""></script>
 <script>
 
@@ -33,26 +32,35 @@ const handleData = () => {
         console.log('succcess')
           //insert the data into broswer localStorage
           const routes = new Routes();
-          const url = `${routes.apiOrigin}${routes.}`; 
-          fetch(url)
+          const url = `${routes.apiOrigin}${routes.currentUser}`; 
+          const token = getUrlParam.get('auth');
+          fetch(url,{
+            method: "GET",
+            mode: "cors",
+            headers: {
+                "Accept": "aplication/json",
+                "Authorization": `Bearer ${token}`
+            },
+          })
           .then(res => res.json())
           .then(data => {
               console.log(data)
               localStorage.setItem('nddc-tracker-user', JSON.stringify(data));
-                if(data.user.user_type === 'community_member'){
-                    location.replace('account/user/dashboard.html');
-                }else if(data.user.user_type === 'reviewer') {
-                    location.replace('account/reviewer/dashboard.html');
-                }else if(data.user.user_type === 'contractor') {
-                    location.replace('account/contractor/dashboard.html');
-                }
-                location.replace('account/user/dashboard.html')
+              location.replace('account/user/dashboard.html');
           })
           .catch(err => {
               console.log(err)
+                Swal.fire({
+                    title: `<h5>Unexpected Error<h5>`,
+                    html:  `<p style="color:tomato; font-size:17px;">An error occured, this could a network disrupt or contact the website owner!</p>`,
+                    confirmButtonText: 'Close'
+                }) 
+                setTimeout(() => {
+                    location.replace('login.html');
+                }, 3000)
           })
     }
-    location.replace('login.html')
+    // location.replace('login.html')
 }
 
 handleData();
