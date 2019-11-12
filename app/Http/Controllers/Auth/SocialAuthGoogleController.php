@@ -49,7 +49,7 @@ class SocialAuthGoogleController extends Controller
                     if($on_platform_check) {
                         $token = Auth::guard()->login($existUser);
                     }else {
-                        return redirect()->to('https://hackanthon-258716.firebaseapp.com/login.html?status=true&retrieve-data.html?status=true&code=403&message=Not-allowed');
+                        return redirect()->to('https://hackanthon-258716.firebaseapp.com/retrieve-data.html?status=true&code=403&message=Not-allowed');
                     }
                 }
                 else {
