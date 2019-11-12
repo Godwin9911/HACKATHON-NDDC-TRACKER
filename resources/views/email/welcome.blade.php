@@ -1,7 +1,7 @@
 <!DOCTYPE html>
     <html lang="en-US">
     	<head>
-    		<title>Welcome</title>
+    		<title>Welcome | NDDC Tracker</title>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
     		<style type="text/css">
@@ -15,9 +15,9 @@
     				color: black !important;
     			}
     			.verifycode {
-    				color: lightgreen;
+    				color: purple;
     				background: white;
-    				border: 1px solid lightgreen;
+    				border: 1px solid purple;
     				text-align: center;
     				padding: 10px 50px 10px 50px;
     				width: 50%;
@@ -28,13 +28,19 @@
     			.welcome{
     				font-weight: bold;
     				text-align: center;
-                    color: lightgreen !important;
+                    color: purple !important;
     			}
     			.note{
     				font-weight: bold;
     				text-align: center;
                     color: black !important;
     			}
+				.team{
+                    font-weight: normal;
+                    font-size: 15px;
+                    text-align: center;
+                    color: grey !important;
+                }
 
     		</style>
     	</head>
@@ -42,13 +48,18 @@
     		<div>
     			
     		</div>
-    		<h2 class="welcome">Welcome To BetaRides</h2>
+    		<h2 class="welcome">Welcome To NDDC Tracker</h2>
     		<div>
-    			 <h4>Hello {{$user->first_name}} {{$user->last_name}}</h4>
+    			 <h4>Hello {{ $user->email}}</h4>
     		</div>
+    		
     		<div>
-    			 <p class="note">Use this verification token to confirm account</p>
+    			 <p class="note">Thank you for creating an account, use this verification token to confirm account</p>
     			 <p class="verifycode">{{ $user->verifycode}}</p>
     		</div>
+			<div>
+                 <p class="team">if this mail is not authourize by you please kindly discard</p>
+                 <p class="team" style="font-style: italic;">NDDC Tracker Team</p>
+            </div>
     	</body>
     </html>

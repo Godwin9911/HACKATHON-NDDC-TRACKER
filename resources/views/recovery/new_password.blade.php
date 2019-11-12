@@ -1,7 +1,7 @@
 <!DOCTYPE html>
     <html lang="en-US">
     	<head>
-            <title>VerifyToken</title>
+            <title>VerifyToken | NDDC Tracker</title>
     		<meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
     		<style type="text/css">
@@ -50,15 +50,15 @@
     		</div>
     		<h2 class="welcome">VerifyToken</h2>
     		<div>
-    			 <h4 style="color: grey;">Hello {{$user->first_name}} {{$user->last_name}}</h4>
+    			 <h4 style="color: grey;">Hello {{$user->email}}</h4>
     		</div>
     		<div>
-    			 <p class="note">Use this verification token to create a new password</p>
+    			 <p class="note">Please use this verification token to create a new password</p>
     			 <p class="verifycode">{{ $user->verifycode}}</p>
     		</div><br><br>
 
             <div>
-                 <p class="team">if this mail is not authourize by you please discard</p>
+                 <p class="team">if this mail is not authourize by you please kindly discard</p>
                  <p class="team" style="font-style: italic;">Gate Pass Team</p>
             </div>
     	</body>

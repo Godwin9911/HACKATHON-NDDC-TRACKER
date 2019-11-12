@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'noreply@BetaRides.ng'),
-        'name' => env('MAIL_FROM_NAME', 'BetaRides App'),
+        'address' => env('MAIL_FROM_ADDRESS', 'noreply@nddc-tracker.com'),
+        'name' => env('MAIL_FROM_NAME', 'NDDC Tracker'),
     ],
 
     /*
