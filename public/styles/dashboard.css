@@ -1,0 +1,24 @@
+.user-details {
+  min-height: 20vh;
+}
+
+.user-details .image-con {
+  height: 10vh;
+  width: 10vh;
+  border-radius: 50%;
+  border: 1px solid grey;
+}
+
+.user-details .image-con img {
+  height: 60%;
+  width: 100%;
+}
+
+.user-details .data-con p {
+  font-size: 20px;
+}
+
+.user-details .data-con span {
+  font-size: 14px;
+}
+/*# sourceMappingURL=dashboard.css.map */
