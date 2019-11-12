@@ -15,7 +15,7 @@
 //     return view('welcome');
 // });
 
-Route::get('/redirect', 'Auth\SocialAuthGoogleController@redirect');
+Route::get('/redirect/google', 'Auth\SocialAuthGoogleController@redirect');
 Route::get('/', 'Auth\SocialAuthGoogleController@callback');
 
 Route::get('/downloadData/{type}', 'imporExcelController@downloadData');
