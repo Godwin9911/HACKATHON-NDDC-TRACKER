@@ -61,7 +61,7 @@ class VerificationController extends Controller
 
                 $msg["message"] = "Account with code does not exist!";
 
-                return response()->json($msg, 404);
+                return response()->json($msg, 400);
 
             }
                 
@@ -74,11 +74,11 @@ class VerificationController extends Controller
                 'email' => 'required',
             ]);
     
-               $user = User::where('email', $request->input('email'))->first();
+               $user = User::where('email', $request->input('email'))->where('google_id', null)->first();
                if ($user == null) {
                     $res['success'] = false;
                     $res['message'] = 'User not found!';
-                    return response()->json($res, 404);
+                    return response()->json($res, 400);
                }else {
                  //start temporay transaction
                     DB::beginTransaction();
