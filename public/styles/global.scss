@@ -39,24 +39,44 @@
 .bold {
     font-weight: bold;
 }
+
 .grey {
     color: grey;
 }
+
 .btn-brand {
     color: white;
     background: #0B273D;
+
+    &:hover {
+        color: #0B273D;
+        background: white;
+        border: 1px solid #0B273D;
+    }
 }
 
 .btn-brand-outline {
     color: #0B273D;
     background: white;
     border: 1px solid #0B273D;
+
+    &:hover {
+        color: white;
+        background: #0B273D;
+    }
 }
 
 .br-10px {
     border-radius: 10px;
 }
 
+.font-12px {
+    font-size: 12px;
+}
+.border-brand {
+    border: 1px solid #0B273D;
+}
+// Navbar styling
 .navbar-brand {
     display: flex;
     color: white !important;
@@ -75,14 +95,42 @@
     .nav-utilities {
         margin-right: 10vw;
 
-        .nav-item .nav-link {
-            color: white !important;
-            font-size: 12px;
-            font-weight: 600;
+        .nav-item {
+            .nav-link {
+                color: white !important;
+                font-size: 12px;
+                font-weight: 600;
+
+                .nav-user {
+                    height: 6vh;
+                    width: 10vw;
+
+                    .nav-image {
+                        height: 5vh;
+                        width: 5vh;
+                        border-radius: 50%;
+
+                        img {
+                            height: 60%;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            .dropdown-menu {
+                background: #0B273D;
+
+                a {
+                    color: white !important;
+                    font-size: 12px;
+                }
+            }
         }
     }
 }
 
+// Special input
 .special-input {
     min-height: 8vh;
     background: white;
@@ -105,12 +153,14 @@
     button {
         font-size: 14px;
         height: 5vh;
+
         @include small-screens {
             margin-bottom: 10px;
         }
     }
 }
 
+// Footer styling
 footer {
     min-height: 30vh;
     background: #707070;
@@ -176,11 +226,121 @@ footer {
                     height: 5vh;
                     width: 5vh;
                     border-radius: 50%;
+
                     img {
                         height: 60%;
                         width: 100%;
                     }
                 }
+            }
+        }
+    }
+}
+
+// Loader styling
+.loading-overlay {
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    .spinner-con {
+        height: 10vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+// Dashboard User details section
+.user-details {
+    min-height: 15vh;
+
+    .image-con {
+        height: 10vh;
+        width: 10vh;
+        border-radius: 50%;
+        border: 1px solid grey;
+
+        img {
+            height: 60%;
+            width: 100%;
+        }
+    }
+
+    .data-con {
+        p {
+            font-size: 20px;
+        }
+
+        span {
+            font-size: 14px;
+        }
+    }
+
+    .shared-saved-data {
+        p {
+            font-size: 24px;
+        }
+
+        span {
+            font-size: 12px;
+            text-decoration: underline;
+        }
+    }
+}
+
+// Compact Project view
+.project {
+    min-height: 50vh;
+    background: white;
+
+    .project-image {
+        img {
+            height: 100%;
+            width: 100%
+        }
+    }
+
+    .project-details {
+        .title-removefrom {
+            span {
+                font-size: 10px;
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+
+        .activity-status {
+            span {
+                font-size: 12px;
+            }
+
+            .status-designed {
+                color: white;
+                background: #0B273D;
+                font-size: 10px;
+            }
+        }
+
+        .full-desc {
+            p {
+                font-size: 12px;
+            }
+        }
+
+        .project-stats {
+            p {
+                font-size: 12px;
+
+                span {
+                    color: #54D0ED;
+                }
+            }
+        }
+
+        .thumbs-comments {
+            span {
+                font-size: 12px;
             }
         }
     }

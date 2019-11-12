@@ -1,9 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<script src="js/general/third_party_cdn.js""></script>
-<script src="js/general/placeholder.js""></script>
-<script src="js/general/routes.js""></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title data-title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/auth.css">
+</head>
+
+<body class="roboto">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 loading-overlay">
+                <div class="col-1 spinner-con text-center">
+                    <div class="spinner-border mt-3" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/general/third_party_cdn.js""></script>
+<script src=" js/general/placeholder.js""> </script> <script src="js/general/routes.js""></script>
 <script>
-
 const parsedUrl = new URL(window.location.href);
 const getUrlParam = parsedUrl.searchParams
 
@@ -22,40 +47,45 @@ const handleData = () => {
             confirmButtonText: 'Close'
         }) 
 
-    }else if (code == '403') {
-        console.log('Not permmited')
-        Swal.fire({
-            title: `<h5>Not Allowed<h5>`,
-            html:  `<p style="color:tomato; font-size:17px;">Your email is already registered with password, please use your password to login!</p>`,
-            confirmButtonText: 'Close'
-        }) 
     }else if (code == '200'){
         console.log('succcess')
           //insert the data into broswer localStorage
           const routes = new Routes();
-          const url = `${routes.apiOrigin}${routes.}`; 
-          fetch(url)
+          const url = `${routes.apiOrigin}${routes.currentUser}`; 
+          const token = getUrlParam.get('auth');
+          fetch(url,{
+            method: "GET",
+            mode: "cors",
+            headers: {
+                "Accept": "aplication/json",
+                "Authorization": `Bearer ${token}`
+            },
+          })
           .then(res => res.json())
           .then(data => {
               console.log(data)
               localStorage.setItem('nddc-tracker-user', JSON.stringify(data));
-                if(data.user.user_type === 'community_member'){
-                    location.replace('account/user/dashboard.html');
-                }else if(data.user.user_type === 'reviewer') {
-                    location.replace('account/reviewer/dashboard.html');
-                }else if(data.user.user_type === 'contractor') {
-                    location.replace('account/contractor/dashboard.html');
-                }
-                location.replace('account/user/dashboard.html')
+              location.replace('account/user/dashboard.html');
           })
           .catch(err => {
               console.log(err)
+                Swal.fire({
+                    title: `<h5>Unexpected Error<h5>`,
+                    html:  `<p style="color:tomato; font-size:17px;">An error occured, this could a network disrupt or contact the website owner!</p>`,
+                    confirmButtonText: 'Close'
+                }) 
+                setTimeout(() => {
+                    location.replace('login.html');
+                }, 3000)
           })
     }
-    location.replace('login.html')
+    // location.replace('login.html')
 }
 
 handleData();
 
 
 </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+.shared-saved-listed {
+    min-height: 80vh;
+    background: #F7F7F7;
+
+    .nav-item {
+        .nav-link {
+            background-color: inherit;
+            color: grey;
+            border-radius: 0px;
+            font-weight: 100;
+
+            &.active {
+                font-weight: bold;
+                border-bottom: 3px solid grey;
+            }
+        }
+    }
+
+    .projects-listed {
+        max-height: 65vh;
+
+        .tab-pane {
+
+        }
+    }
+}

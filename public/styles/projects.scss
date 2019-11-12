@@ -1,0 +1,129 @@
+.project-header {
+    min-height: 20vh;
+    background: #2C5E2E;
+    color: white;
+}
+
+.project-full {
+    .nav-item {
+        .nav-link {
+            background-color: inherit;
+            color: grey;
+            border-radius: 0px;
+            font-weight: 100;
+
+            &.active {
+                font-weight: bold;
+                border-bottom: 3px solid grey;
+            }
+        }
+    }
+    .summary-section {
+        .project-detailed {
+            .stat-value {
+                color: #54D0ED;
+            }
+            min-height: 100vh;
+            .project-data {
+                min-height: 50vh;
+            }
+            .location-map {
+                min-height: 50vh;
+                .embedded-map {
+                    height: 40vh;
+                    iframe {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+            }
+            .status-progress {
+                min-height: 25vh;
+                .progress {
+                    height: 5vh;
+                    background: #0B273D;
+                    .progress-bar {
+                        background: #54D0ED;
+                    }
+                }
+            }
+            .project-graph {
+                .graph-con {
+                    height: 70vh;
+                }
+            }
+            .budget-detail {
+                min-height: 80vh;
+                .budget-table {
+                    min-height: 20vh;
+                    .budget-title {
+                        min-height: 5vh;
+                    }
+                }
+            }
+            .project-gallery {
+                min-height: 50vh;
+                .project-image {
+                    height: 40vh;
+                    img {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+                .view-gallery-link {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+            .project-activity {
+                div {
+                    cursor: pointer;
+                }
+            }
+        }
+        .comments-section {
+            min-height: 100vh;
+            .make-comment {
+                min-height: 15vh;
+                .user-image {
+                    height: 12vh;
+                    width: 12vh;
+                    border-radius: 50%;
+                }
+                .comment-submit {
+                    textarea {
+                        border: none;
+                        border-bottom: 1px solid lightgrey;
+                        font-size: 12px;
+                        &:focus {
+                            box-shadow: none;
+                            outline: none;
+                        }
+                    }
+                    button {
+                        height: 5vh;
+                    }
+                }
+            }
+            .view-comments {
+                min-height: 100vh;
+                .comment-image {
+                    height: 12vh;
+                    width: 12vh;
+                    border-radius: 50%;
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        border-radius: 50%;
+                    }
+                }
+                .view-all-replies {
+                    color: #54D0ED;
+                }
+            }
+        }
+    }
+    .documents-section {
+        min-height: 100vh;
+    }
+}
