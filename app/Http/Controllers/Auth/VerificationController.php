@@ -13,7 +13,7 @@ class VerificationController extends Controller
       //generate new password for the user
         public function generatedPassword()
         {
-            return substr(md5(time()), 0, 6);
+            return  mt_rand(100000,999999);
         }
 
         public function verify(Request $request, User $user) {
