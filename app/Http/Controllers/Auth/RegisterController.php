@@ -36,6 +36,7 @@ class RegisterController extends Controller
                 'password'     =>  Hash::make($request->input('password')),
                 'role'         =>  $role,
                 'user_type'    =>  $user_type,
+                'user_mode'    =>  'nddc-tracker',
                 'accept_terms' =>  'yes',
                 'verifycode'   =>  $verifycode 
             ]);

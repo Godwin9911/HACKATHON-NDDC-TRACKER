@@ -62,6 +62,7 @@ class SocialAuthGoogleController extends Controller
                     $user->user_type = 'community_member';
                     $user->role = '1';
                     $user->accept_terms =  'yes';
+                    $user->user_mode    =  'google';
                     $user->verifycode = $verifycode;
                     $user->save();
                     $token = Auth::guard()->login($user);
