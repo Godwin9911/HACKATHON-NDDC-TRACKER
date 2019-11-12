@@ -42,10 +42,15 @@ class SocialAuthGoogleController extends Controller
                 $googleUser = Socialite::driver('google')->user();
                 $this->expireTime();
                 $verifycode = mt_rand(100000,999999);
-                $existUser = User::where('email', $googleUser->email)->where('google_id', $googleUser->id)->first();
+                $existUser = User::where('email', $googleUser->email)->first();
 
                 if($existUser) {
-                    $token = Auth::guard()->login($existUser);
+                    $on_platform_check = User::where('email', $googleUser->email)->where('google_id', $googleUser->id)->first();
+                    if($on_platform_check) {
+                        $token = Auth::guard()->login($existUser);
+                    }else {
+                        return redirect()->to('https://hackanthon-258716.firebaseapp.com/login.html?status=true&retrieve-data.html?status=true&code=403&message=Not-allowed');
+                    }
                 }
                 else {
                     $user = new User;
@@ -61,10 +66,10 @@ class SocialAuthGoogleController extends Controller
                     $user->save();
                     $token = Auth::guard()->login($user);
                 }
-                return redirect()->to('https://hackanthon-258716.firebaseapp.com/status=true&retrieve-data.html?auth='.$token);
+                return redirect()->to('https://hackanthon-258716.firebaseapp.com/status=true&retrieve-data.html?status=true&code=200&auth='.$token);
             } 
             catch (Exception $e) {
-                return redirect()->to('https://hackanthon-258716.firebaseapp.com?status=fasle&error='.$e->getMessage());
+                return redirect()->to('https://hackanthon-258716.firebaseapp.com/login.html?status=false&code=501&error='.$e->getMessage());
             }
         }else {
             return view('welcome');
