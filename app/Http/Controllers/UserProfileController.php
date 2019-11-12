@@ -20,11 +20,13 @@ class UserProfileController extends Controller
         
         $res['status'] = true;
         $res['user'] = $user;
-        response()->json($res, 200);
+        return response()->json($res, 200);
     }
 
     public function all() {
-
+       $user = User::all();
+       $res['status'] = true;
+       $rs['message'] = 'All user in the website';
     }
 
     public function role() {
