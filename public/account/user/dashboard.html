@@ -11,14 +11,119 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../../styles/global.css">
     <link rel="stylesheet" href="../../styles/index.css">
+    <link rel="stylesheet" href="../../styles/dashboard.css">
     <script src="../../js/general/onSession.js""></script>
 </head>
 
 <body class="roboto scroller">
-  <div>
-     <h2>Dashboard User</h2> 
-  </div>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-light our-nav col-12">
+                <a class="navbar-brand" href="index.html">
+                    <div class="border logo-replace"></div>
+                    <span class="ml-3 mt-2 bold">NDDC TRACKER</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto nav-utilities">
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="#">Categories</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="login.html">Sign In</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="signup.html">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="user-details col-12 border-bottom row mx-0 mb-5">
+                <div class="border-right col-4">
+                    <div class="col-8 row mx-0 mt-4 mx-auto image-name-location">
+                        <div class="col-4 px-0">
+                            <div class="image-con">
+                                <img class="mt-2" src="../../images/user-grey.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-8 data-con">
+                            <p class="bold grey mb-0 pb-0">John Doe</p>
+                            <span class="grey">Port Harcourt</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="col-12">
+                <div class="col-12 col-md-10 mx-auto footer-con px-0 row mx-0">
+                    <div class="col-12 col-md px-0 links-contact row mx-0">
+                        <div class="col-12 col-md-4 mt-5 tracker-copyright text-center">
+                            <span class="ml-3 mt-2 bold">NDDC TRACKER</span>
+                            <p>&copy;NDDC TRACKER 2019</p>
+                        </div>
+                        <div class="col-12 col-md-4 mt-5 site-links px-0">
+                            <ul class="list-group">
+                                <li class="list-group-item py-1 px-1" onclick="location.href=''">
+                                    About Us</li>
+                                <li class="list-group-item py-1 px-1" onclick="location.href=''">
+                                    Projects</li>
+                                <li class="list-group-item py-1 px-1" onclick="location.href=''">
+                                    Contact</li>
+                                <li class="list-group-item py-1 px-1" onclick="location.href=''">Terms and Conditions
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-4 mt-5 contact-details px-0">
+                            <ul class="list-group">
+                                <li class="list-group-item py-1 px-1" onclick="location.href=''">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                                <li class="list-group-item py-1 px-1" onclick="location.href=''">
+                                    +234(0)80000000</li>
+                                <li class="list-group-item py-1 px-1" onclick="location.href=''">
+                                    help@nddcprojecttracker.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md px-0 subscribe-social row mx-0">
+                        <div class="col-12 col-md-6 footer-subscribe mt-5">
+                            <span class="">Subscribe to our newsletter</span>
+                            <div class="special-input br-10px mb-3 col-12 col-md-12 mx-auto row mx-0 px-2">
+                                <input type="text" class="form-control col-12 col-md-9 mt-2"
+                                    placeholder="Subscribe to our Newsletter">
+                                <button class="btn btn-brand col-12 col-md-3 mt-2 px-0">Subscribe</button>
+                            </div>
+                        </div>
+                        <div class="footer-social col-12 col-md-6 row mx-0 my-3">
+                            <div class="col-6 col-md px-0 social-links mt-5">
+                                <div class="link-con mx-auto">
+                                    <img class="mt-2" src="images/twitter-grey.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-6 col-md px-0 social-links mt-5">
+                                <div class="link-con mx-auto">
+                                    <img class="mt-2" src="images/facebook-grey.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-6 col-md px-0 social-links mt-5">
+                                <div class="link-con mx-auto">
+                                    <img class="mt-2" src="images/linkedin-grey.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-6 col-md px-0 social-links mt-5">
+                                <div class="link-con mx-auto">
+                                    <img class="mt-2" src="images/instagram-grey.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
 </body>
-    <script src="../../js/general/third_party_cdn.js""></script>
-    <script src="../../js/general/placeholder.js""></script>
-</html>
+<script src="../../js/general/third_party_cdn.js""></script>
+ <script src=" ../../js/general/placeholder.js""> </script> </html>
