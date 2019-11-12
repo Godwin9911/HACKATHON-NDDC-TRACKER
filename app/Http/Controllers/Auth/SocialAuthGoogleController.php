@@ -66,13 +66,13 @@ class SocialAuthGoogleController extends Controller
                     $user->save();
                     $token = Auth::guard()->login($user);
                 }
-                return redirect()->to('https://hackanthon-258716.firebaseapp.com/status=true&retrieve-data.html?status=true&code=200&auth='.$token);
+                return redirect()->to('https://hackanthon-258716.firebaseapp.com/retrieve-data.html?status=true&code=200&auth='.$token);
             } 
             catch (Exception $e) {
-                return redirect()->to('https://hackanthon-258716.firebaseapp.com/login.html?status=false&code=501&error='.$e->getMessage());
+                return redirect()->to('https://hackanthon-258716.firebaseapp.com/retrieve-data.html?status=false&code=501&error='.$e->getMessage());
             }
         }else {
-            return view('welcome');
+            return redirect()->to('https://hackanthon-258716.firebaseapp.com');
         }
     }
 }
