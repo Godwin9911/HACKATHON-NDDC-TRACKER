@@ -16,3 +16,4 @@ const website_logo = '';
 let status;
 //This permit placeholder is use to allow a button to work after the validation has been met
 let permit = false;
+let permit_verify = false;

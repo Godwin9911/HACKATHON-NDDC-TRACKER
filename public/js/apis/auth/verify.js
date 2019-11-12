@@ -1,12 +1,12 @@
-const routes = new Routes();
 
 const verifyApi = (event, verifyForm) => {
     event.preventDefault();
-    const submitBtn = event.target[2];
-    const url = `${ routes.api_origin }${ routes.verify }`;
+    const routes = new Routes();
+    const submitBtn = event.target[1];
+    const url = `${ routes.apiOrigin }${ routes.verify }`;
     console.log(url);
 
-    if(permit == true) {//Condition that check if validation is true
+    if(permit_verify == true) {//Condition that check if validation is true
          submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" style="width: 1.3em; height: 1.3em;" role="status" aria-hidden="true"></span>'
          //Convert form to formData
          const formData = new FormData(verifyForm);
@@ -24,31 +24,31 @@ const verifyApi = (event, verifyForm) => {
             const flashAlert = (title, result) => {
                 submitBtn.innerHTML = 'Verify Account';
                 Swal.fire({
-                    title: `${title}`,
+                    title: `<h5>${title}</h5>`,
                     html:  `<p style="color:tomato; font-size:17px;">${result}</p>`,
                     confirmButtonText: 'Close'
                 })       
             }
             switch(status) {
                 case 422:
-                    title = 'Registration failed';
+                    title = 'Verification failed';
                     result = JSON.stringify(data.errors).split('"').join('').split('{').join('').split('}').join('');
                     flashAlert(title,result);
                 break;
-                case 404:
-                    title  = 'Registration error';
+                case 400:
+                    title  = 'Verification error';
                     result = 'Invalid credentials';
                     flashAlert(title,result);
                 break;
                 case 200:
                     submitBtn.innerHTML = 'Verify Account';
                     Swal.fire({
-                        title: `Account Confirmation Successful`,
+                        title: `<h5>Account Confirmation Successful</h5>`,
                     })  
                     setTimeout(() => {
                         //insert the data into broswer localStorage
                         localStorage.setItem('nddc-tracker-user', JSON.stringify(data));
-                        if(data.user.user_type === 'community_members'){
+                        if(data.user.user_type === 'community_member'){
                             location.replace('account/user/dashboard.html');
                         }else if(data.user.user_type === 'reviewer') {
                             location.replace('account/reviewer/dashboard.html');

@@ -1,9 +1,9 @@
-const routes = new Routes();
 
 const registerApi = (event, registerForm) => {
     event.preventDefault();
+    const routes = new Routes();
     const submitBtn = event.target[2];
-    const url = `${ routes.api_origin }${ routes.register }`;
+    const url = `${ routes.apiOrigin }${ routes.register }`;
     console.log(url);
 
     if(permit == true) {//Condition that check if validation is true
@@ -24,7 +24,7 @@ const registerApi = (event, registerForm) => {
             const flashAlert = (title, result) => {
                 submitBtn.innerHTML = 'Continue with email';
                 Swal.fire({
-                    title: `${title}`,
+                    title: `<h5>${title}</h5>`,
                     html:  `<p style="color:tomato; font-size:17px;">${result}</p>`,
                     confirmButtonText: 'Close'
                 })       
@@ -35,13 +35,14 @@ const registerApi = (event, registerForm) => {
                     result = JSON.stringify(data.errors).split('"').join('').split('{').join('').split('}').join('');
                     flashAlert(title,result);
                 break;
-                case 404:
+                case 501:
                     title  = 'Registration error';
-                    result = 'Invalid credentials';
+                    result = 'An error occured while creating an account, please try again';
                     flashAlert(title,result);
                 break;
                 case 201:
                     submitBtn.innerHTML = 'Continue with email';
+                    permit = false;
                     Swal.fire({
                         title: `Registration Successful`,
                         html:  `<p style="color:lightgreen; font-size:17px;">Please check email a verification code has been sent to you to confirm account</p>`,

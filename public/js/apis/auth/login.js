@@ -3,7 +3,7 @@ const routes = new Routes();
 const loginApi = (event, loginForm) => {
     event.preventDefault();
     const submitBtn = event.target[2];
-    const url = `${ routes.api_origin }${ routes.signin }`;
+    const url = `${ routes.apiOrigin }${ routes.login }`;
     console.log(url);
 
     if(permit == true) {//Condition that check if validation is true
@@ -24,7 +24,7 @@ const loginApi = (event, loginForm) => {
             const flashAlert = (title, result) => {
                 submitBtn.innerHTML = 'Login';
                 Swal.fire({
-                    title: `${title}`,
+                    title: `<h5>${title}<h5>`,
                     html:  `<p style="color:tomato; font-size:17px;">${result}</p>`,
                     confirmButtonText: 'Close'
                 })       
@@ -35,7 +35,7 @@ const loginApi = (event, loginForm) => {
                     result = JSON.stringify(data.errors).split('"').join('').split('{').join('').split('}').join('');
                     flashAlert(title,result);
                 break;
-                case 404:
+                case 400:
                     title  = 'Login error';
                     result = 'Invalid credentials';
                     flashAlert(title,result);
@@ -43,7 +43,7 @@ const loginApi = (event, loginForm) => {
                 default:
                  //insert the data into broswer localStorage
                 localStorage.setItem('nddc-tracker-user', JSON.stringify(data));
-                if(data.user.user_type === 'community_members'){
+                if(data.user.user_type === 'community_member'){
                     location.replace('account/user/dashboard.html');
                 }else if(data.user.user_type === 'reviewer') {
                     location.replace('account/reviewer/dashboard.html');

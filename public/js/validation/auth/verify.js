@@ -2,10 +2,10 @@
 //Get the register form 
 const verifyForm   = document.querySelector('[data-verify-form]');
 //Get the error field
+
 let codeError    = document.querySelector('#codeError');
 
 const validateVerifyForm = (verifyForm) => {
-    console.log('jjj')
     //Clear the error field 
     codeError.innerHTML = '';
     //Convert form to formData
@@ -14,10 +14,21 @@ const validateVerifyForm = (verifyForm) => {
     if(formData.get('verifycode') == '') {
 
         codeError.innerHTML = 'Please email field is required';
-        permit = false;
+        permit_verify = false;
         return false;
     }
-    permit = true;
+    if(isNaN(formData.get('verifycode'))) {
+        codeError.innerHTML = 'Verification code must be an number digit';
+        permit_verify = false;
+        return false;
+    }
+    if(formData.get('verifycode').length < 6) {
+
+        codeError.innerHTML = 'Verification code cannot be less than six';
+        permit_verify = false;
+        return false;
+    }
+    permit_verify = true;
 }
 verifyForm.addEventListener('change', () => validateVerifyForm(verifyForm));
 //Next the register api found 

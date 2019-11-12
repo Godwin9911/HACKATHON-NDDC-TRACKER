@@ -7,7 +7,8 @@ Import Note: The base_url.js hold every every third party base url origin and ap
 // const api_origin = 'https://hackathon-nddc.herokuapp.com/';
 
 class Routes {
-  get api_origin() {
+
+  get apiOrigin() {
     return "https://hackathon-nddc.herokuapp.com/";
   }
   //Authentication Paths
@@ -31,8 +32,8 @@ class Routes {
     return "redirect/google";
   }
 
-  // showUser(id) {
-  //   return `api/v1/user/${id}`;
-  // }
+  currentUser() {
+    return `api/v1/user`;
+  }
  
 }
