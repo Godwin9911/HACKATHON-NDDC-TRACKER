@@ -15,9 +15,9 @@
     				color: black !important;
     			}
     			.verifycode {
-    				color: purple;
+    				color: dodgerblue;
     				background: white;
-    				border: 1px solid purple;
+    				border: 1px solid dodgerblue;
     				text-align: center;
     				padding: 10px 50px 10px 50px;
     				width: 50%;
@@ -28,7 +28,7 @@
     			.welcome{
     				font-weight: bold;
     				text-align: center;
-                    color: purple !important;
+                    color: dodgerblue !important;
     			}
     			.note{
     				font-weight: bold;
