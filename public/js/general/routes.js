@@ -31,7 +31,6 @@ class Routes {
   get googleAuth() {
     return "redirect/google";
   }
-
   get currentUser() {
     return "api/v1/user";
   }

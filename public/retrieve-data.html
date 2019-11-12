@@ -47,13 +47,6 @@ const handleData = () => {
             confirmButtonText: 'Close'
         }) 
 
-    }else if (code == '403') {
-        console.log('Not permmited')
-        Swal.fire({
-            title: `<h5>Not Allowed<h5>`,
-            html:  `<p style="color:tomato; font-size:17px;">Your email is already registered with password, please use your password to login!</p>`,
-            confirmButtonText: 'Close'
-        }) 
     }else if (code == '200'){
         console.log('succcess')
           //insert the data into broswer localStorage
