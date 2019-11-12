@@ -4,7 +4,7 @@
 //Authentication Routes ******************************************************
 
 //Registration
-Route::post('register/renter', 'Auth\RegisterController@community_member'); //has a role 4
+Route::post('register', 'Auth\RegisterController@community_member'); //has a role 4
 
 //Login
 Route::post('login', 'Auth\LoginController@authenticate'); //

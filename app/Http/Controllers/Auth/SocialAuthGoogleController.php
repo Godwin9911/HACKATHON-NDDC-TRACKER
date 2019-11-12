@@ -38,7 +38,7 @@ class SocialAuthGoogleController extends Controller
         $state = $request->query('state');
         if($state) {
             try {
-
+                $t = time();
                 $googleUser = Socialite::driver('google')->user();
                 $this->expireTime();
                 $verifycode = mt_rand(100000,999999);
@@ -53,6 +53,7 @@ class SocialAuthGoogleController extends Controller
                     $user->email = $googleUser->email;
                     $user->image = $googleUser->avatar;
                     $user->google_id = $googleUser->id;
+                    $user->email_verified_at = date("Y-m-d", $t);
                     $user->user_type = 'community_member';
                     $user->role = '1';
                     $user->accept_terms =  'yes';
