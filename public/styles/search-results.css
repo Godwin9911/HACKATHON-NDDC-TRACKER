@@ -1,0 +1,59 @@
+.search-results-head {
+  min-height: 20vh;
+  background: #2C5E2E;
+}
+
+.search-results-head h4 {
+  color: white;
+}
+
+@media (max-width: 767px) {
+  .search-results-head h4 {
+    margin-left: 0px !important;
+  }
+}
+
+.search-pagination .page-link {
+  border: none;
+  color: grey;
+}
+
+.search-pagination .page-link.active {
+  color: black;
+}
+
+.search-results-con {
+  min-height: 100vh;
+  background: lightgray;
+}
+
+.search-results-con .filter-section {
+  background: #f7f7f7;
+  max-height: 100vh;
+}
+
+.search-results-con .filter-section label {
+  font-size: 12px;
+  color: grey;
+}
+
+.search-results-con .filter-section .now-showing {
+  height: 8vh;
+}
+
+@media (max-width: 767px) {
+  .search-results-con .projects-section {
+    padding: 0px;
+  }
+}
+
+.search-results-con .projects-section .projects-listed {
+  max-height: 100vh;
+}
+
+@media (max-width: 767px) {
+  .search-results-con .projects-section .projects-listed {
+    padding: 0px;
+  }
+}
+/*# sourceMappingURL=search-results.css.map */
