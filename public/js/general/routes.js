@@ -32,8 +32,8 @@ class Routes {
     return "redirect/google";
   }
 
-  currentUser() {
-    return `api/v1/user`;
+  get currentUser() {
+    return "api/v1/user";
   }
  
 }

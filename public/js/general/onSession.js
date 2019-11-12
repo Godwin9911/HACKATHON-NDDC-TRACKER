@@ -12,5 +12,6 @@ checkUser();
 //Get the user info through object destructuring
 console.log(onsessionUser)
 const {token, user} = onsessionUser;
+console.log(token)
 
 
