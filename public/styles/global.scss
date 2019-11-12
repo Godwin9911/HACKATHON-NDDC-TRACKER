@@ -124,6 +124,12 @@
                 a {
                     color: white !important;
                     font-size: 12px;
+                    &:hover {
+                        color: #0B273D !important;
+                    }
+                    &:focus {
+                        background: #0B273D;
+                    }
                 }
             }
         }
@@ -307,6 +313,12 @@ footer {
                 font-size: 10px;
                 cursor: pointer;
                 text-decoration: underline;
+            }
+            h3 {
+                cursor: pointer;
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
 
