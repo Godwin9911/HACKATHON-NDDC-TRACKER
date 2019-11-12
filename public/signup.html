@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Unnamed</title>
+    <title data-title>Sign Up</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -60,31 +60,36 @@
                                 <img class="mt-2" src="images/google.svg" alt="">
                             </div>
                         </div>
-                        <div class="col-10 pt-2 pl-5">
+                        <div class="col-10 pt-2 pl-5" data-login-google>
                             <span class="grey bold">Connect with Google</span>
                         </div>
                     </div>
                     <div class="col-12 col-md-10 mx-auto text-center mt-3">
                         <a class="continue-email grey bold" href="">Continue with email</a>
                     </div>
-                    <form class="col-12 col-md-10 mx-auto px-0">
+
+                    <form class="col-12 col-md-10 mx-auto px-0" data-register-form>
                         <div class="form-group mb-2">
                             <label class="bold grey">Email</label>
-                            <input type="email" class="form-control" placeholder="Enter email">
+                            <input name="email" type="email" class="form-control" placeholder="Enter email">
+                            <p class="error-fields" id="emailError"></p>
                         </div>
-                        <div class="form-group mb-2">
+                        <div class="form-group mb-3">
                             <label class="bold grey">Password</label>
-                            <input type="password" class="form-control" placeholder="Password">
+                            <input name="password" type="password" class="form-control" placeholder="Password">
+                            <p class="error-fields" id="passwordError"></p>
                         </div>
-                        <button type="submit" class="btn btn-brand mb-5 col-12 bold">Continue with email</button>
+                        <button type="submit" class="btn btn-brand mb-5 col-12 bold button_sty">Continue with email</button>
                     </form>
-                    <form class="col-12 col-md-10 mx-auto px-0 confirm-form">
+
+                    <form class="col-12 col-md-10 mx-auto px-0 confirm-form"  data-verify-form>
                         <p class="bold mb-2">Please type in the code we just sent to your email <br>
-                        <span>cemma2035@gmail.com</span>. <a class="bold" href="">Edit email</a></p>
-                        <div class="form-group mb-2">
-                            <input type="text" class="form-control" placeholder="Enter your verification code">
+                        <span>cemma2035@gmail.com</span>. <a class="bold" href="">Use another email</a> | <a class="bold" href="">Resend verification code</a></p>
+                        <div class="form-group mb-3">
+                            <input name="verifycode" type="text" class="form-control" placeholder="Enter your verification code">
+                            <p class="error-fields" id="codeError"></p>
                         </div>
-                        <button type="submit" class="btn btn-brand mb-5 col-12 bold">Continue with email</button>
+                        <button type="submit" class="btn btn-brand mb-5 col-12 bold button_sty">Verify Account</button>
                     </form>
                 </div>
             </div>
@@ -155,15 +160,12 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script src="js/general/third_party_cdn.js""></script>
+    <script src="js/general/placeholder.js""></script>
+    <script src="js/general/routes.js""></script>
+    <script src="js/validation/auth/register.js""></script>
+    <script src="js/apis/auth/register.js""></script>
+    <script src="js/validation/auth/verify.js""></script>
 </body>
 
 </html>

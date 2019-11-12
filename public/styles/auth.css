@@ -102,4 +102,25 @@
 .auth-full .auth-con .forgot-password-link:hover {
   color: #0B273D;
 }
+.error-fields {
+  color: tomato;
+  font-size: 11px;
+  height: 1vh;
+  margin: 0;
+  padding: 0;
+}
+.button_sty {
+  transition: 1s all ease;
+  
+}
+.button_sty:hover {
+  color: #0B273D;
+  transform: scaleX(1.009);
+  background: white;
+  border: 2px solid #0B273D
+  
+}
+.swal2-confirm{
+  background: #0B273D !important;
+}
 /*# sourceMappingURL=auth.css.map */
