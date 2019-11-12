@@ -1,0 +1,170 @@
+body {
+  background: #f7f7f7;
+}
+
+.landing-full {
+  min-height: 100vh;
+}
+
+.landing-full .landing-welcome .welcome-bg {
+  min-height: 60vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(44, 94, 46, 0.7)), to(rgba(44, 94, 46, 0.8))), url("../images/welcome-bg.png");
+  background: linear-gradient(rgba(44, 94, 46, 0.7), rgba(44, 94, 46, 0.8)), url("../images/welcome-bg.png");
+  background-position: center;
+  background-size: cover;
+}
+
+@media (max-width: 767px) {
+  .landing-full .landing-welcome .welcome-bg {
+    min-height: 90vh;
+  }
+}
+
+.landing-full .landing-welcome .welcome-words {
+  color: white;
+}
+
+.landing-full .landing-welcome .explore-projects .explore-by {
+  min-height: 35vh;
+  color: grey;
+}
+
+.landing-full .landing-welcome .explore-projects .explore-by .by-sector-image {
+  min-height: 25vh;
+  background: url("../images/crane-building.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.landing-full .landing-welcome .explore-projects .explore-by .by-location-image {
+  min-height: 25vh;
+  background: url("../images/NigerDeltaMap.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #0B273D;
+  background-size: 80%;
+}
+
+.landing-full .landing-welcome .explore-projects .explore-by .by-organization-image {
+  min-height: 25vh;
+  background: url("../images/three-buildings.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.landing-full .landing-welcome .explore-projects .explore-by .explore-words {
+  min-height: 10vh;
+  background: white;
+}
+
+.landing-full .landing-welcome .explore-projects .explore-by .explore-words span {
+  font-size: 12px;
+}
+
+.landing-full .landing-welcome .explore-projects .explore-by .explore-words p {
+  font-size: 18px;
+}
+
+.landing-full .some-text-1 p {
+  color: grey;
+}
+
+.landing-full .some-video-con {
+  min-height: 53vh;
+  background: #2C5E2E;
+}
+
+.landing-full .some-video-con .video-box {
+  height: 53vh;
+  border-radius: 10px 0px 0px 10px;
+  background: url("../images/welcome-bg.png");
+  background-position: center;
+  background-size: cover;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.landing-full .some-video-con .video-box:hover {
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.landing-full .some-video-con .video-box .video-overlay {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4)));
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  border-radius: 10px 0px 0px 10px;
+  padding-top: 50%;
+  cursor: pointer;
+}
+
+.landing-full .some-video-con .video-box .video-overlay .play-overlay {
+  height: 10vh;
+  width: 10vh;
+  border-radius: 50%;
+  border: 1px solid #BCE0FD;
+}
+
+.landing-full .some-video-con .video-box .video-overlay .play-overlay i {
+  color: #7373ec;
+}
+
+.landing-full .some-video-con .text-con {
+  color: white;
+}
+
+.landing-full .some-video-con .text-con p {
+  font-size: 20px;
+  font-style: italic;
+}
+
+.landing-full .some-video-con .text-con .company {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.subscribe .twitter-feed {
+  height: 60vh;
+  overflow-y: scroll;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.subscribe .twitter-feed .twitter-timeline {
+  height: 100%;
+  width: 100%;
+}
+
+.subscribe .newsletter-subscribe {
+  border-radius: 0px 10px 10px 0px;
+  background: #54D0ED;
+  color: white;
+}
+
+@media (max-width: 767px) {
+  .subscribe .newsletter-subscribe {
+    padding: 10px !important;
+  }
+}
+
+.subscribe .newsletter-subscribe p {
+  font-style: italic;
+}
+
+.subscribe .newsletter-subscribe .social-links .link-con {
+  background: #0B273D;
+  height: 8vh;
+  width: 8vh;
+  border-radius: 50%;
+}
+
+.subscribe .newsletter-subscribe .social-links .link-con img {
+  height: 60%;
+  width: 100%;
+}
+/*# sourceMappingURL=index.css.map */

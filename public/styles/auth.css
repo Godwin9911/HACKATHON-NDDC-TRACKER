@@ -1,0 +1,126 @@
+.auth-full {
+  min-height: 80vh;
+}
+
+.auth-full .auth-con {
+  min-height: 55vh;
+  border: 1px solid lightgray;
+  border-top: 3px solid #0B273D;
+}
+
+.auth-full .auth-con .connect-btn {
+  min-height: 7.5vh;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth-full .auth-con .connect-btn .fb-logo {
+  height: 6vh;
+  width: 6vh;
+  border-radius: 50%;
+  background: #3b5998;
+}
+
+.auth-full .auth-con .connect-btn .fb-logo img {
+  height: 60%;
+  width: 100%;
+}
+
+.auth-full .auth-con .connect-btn .google-logo {
+  height: 6vh;
+  width: 6vh;
+  border-radius: 50%;
+}
+
+.auth-full .auth-con .connect-btn .google-logo img {
+  height: 60%;
+  width: 100%;
+}
+
+.auth-full .auth-con .connect-btn span {
+  font-size: 12px;
+}
+
+.auth-full .auth-con .continue-email {
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+.auth-full .auth-con .continue-email:hover {
+  color: black;
+}
+
+.auth-full .auth-con form label {
+  font-size: 12px;
+}
+
+.auth-full .auth-con form input {
+  font-size: 12px;
+}
+
+.auth-full .auth-con form input::-webkit-input-placeholder {
+  font-size: 12px;
+}
+
+.auth-full .auth-con form input:-ms-input-placeholder {
+  font-size: 12px;
+}
+
+.auth-full .auth-con form input::-ms-input-placeholder {
+  font-size: 12px;
+}
+
+.auth-full .auth-con form input::placeholder {
+  font-size: 12px;
+}
+
+.auth-full .auth-con form button {
+  font-size: 12px;
+}
+
+.auth-full .auth-con .confirm-form {
+  font-size: 12px;
+}
+
+.auth-full .auth-con .confirm-form span {
+  font-weight: 100;
+}
+
+.auth-full .auth-con .confirm-form a {
+  font-weight: 100;
+  text-decoration: underline;
+}
+
+.auth-full .auth-con .instructions-sent {
+  font-size: 12px;
+}
+
+.auth-full .auth-con .forgot-password-link {
+  font-size: 12px;
+}
+
+.auth-full .auth-con .forgot-password-link:hover {
+  color: #0B273D;
+}
+.error-fields {
+  color: tomato;
+  font-size: 11px;
+  height: 1vh;
+  margin: 0;
+  padding: 0;
+}
+.button_sty {
+  transition: 1s all ease;
+  
+}
+.button_sty:hover {
+  color: #0B273D;
+  transform: scaleX(1.009);
+  background: white;
+  border: 2px solid #0B273D
+  
+}
+.swal2-confirm{
+  background: #0B273D !important;
+}
+/*# sourceMappingURL=auth.css.map */
