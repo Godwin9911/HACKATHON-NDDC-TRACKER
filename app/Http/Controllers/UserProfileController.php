@@ -18,12 +18,12 @@ class UserProfileController extends Controller
     public function index() {
         $user = Auth::user();
         $token = Auth::guard()->login($user);
-        
+
         $res['status'] = true;
         $res['user'] = $user;
-        $msg['token'] = 'Bearer '. $token;
-        $msg['token_type'] = 'bearer';
-        $msg['expires_in(minutes)'] = auth()->factory()->getTTL();
+        $res['token'] = 'Bearer '. $token;
+        $res['token_type'] = 'bearer';
+        $res['expires_in(minutes)'] = auth()->factory()->getTTL();
 
         return response()->json($res, 200);
     }
