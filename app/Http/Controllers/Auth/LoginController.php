@@ -49,6 +49,7 @@ class LoginController extends Controller
         }
 
         $user = Auth::guard('api')->user();
+    
         $image_link = 'https://res.cloudinary.com/getfiledata/image/upload/';
         $image_format = 'w_200,c_thumb,ar_4:4,g_face/';
 
@@ -59,6 +60,8 @@ class LoginController extends Controller
             $msg['image_link'] = $image_link;
             $msg['image_small_view_format'] = $image_format;
             $msg['token'] = 'Bearer '. $token;
+            $msg['token_type'] = 'bearer';
+            $msg['expires_in(minutes)'] = auth()->factory()->getTTL();
             return response()->json($msg, 200);
         } else {
             $msg['success'] = false;
@@ -66,6 +69,17 @@ class LoginController extends Controller
             return response()->json($msg, 401);
         }
     }
+
+    
+    public function refresh()
+    {   
+        return response()->json([
+            'access_token' => 'Bearer '. auth()->refresh(),
+            'token_type'   => 'bearer',
+            'expires_in(minutes)'   => (int)auth()->factory()->getTTL()
+        ], 200);
+    }
+
     
 
     public function validateRequest(Request $request){

@@ -19,7 +19,7 @@ class VerificationController extends Controller
         public function verify(Request $request, User $user) {
 
             $this->validate($request, [
-                'verifycode' => 'required|max:4'
+                'verifycode' => 'required|max:6'
             ]);
 
             $verifycode = $request->input('verifycode');
@@ -44,6 +44,8 @@ class VerificationController extends Controller
                     $msg['token'] = 'Bearer ' . $token;
                     $msg['image_link'] = 'https://res.cloudinary.com/getfiledata/image/upload/';
                     $msg['image_format'] = 'w_200,c_thumb,ar_4:4,g_face/';
+                    $msg['token_type'] = 'bearer';
+                    $msg['expires_in(minutes)'] = auth()->factory()->getTTL();
 
                     return response()->json($msg, 200);
                     

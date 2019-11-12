@@ -16,9 +16,11 @@ class UserProfileController extends Controller
     //
 
     public function index() {
-    	$user = Auth::user(); //this is you active user logged in
-    	dd($user);// use this to break and check your code
-        // response()->json($user);
+        $user = Auth::user();
+        
+        $res['status'] = true;
+        $res['user'] = $user;
+        response()->json($res, 200);
     }
 
     public function all() {

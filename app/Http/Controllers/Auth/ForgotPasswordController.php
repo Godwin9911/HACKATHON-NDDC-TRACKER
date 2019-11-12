@@ -30,13 +30,13 @@ class ForgotPasswordController extends Controller
             'email' => 'required|email',
         ]);
         $userEmail = $request->input('email');
-        $user = User::where('email', $userEmail)->first();
+        $user = User::where('email', $userEmail)->where('google_id', null)->first();
 
            if ($user == null)
            {
                 $res['success'] = false;
-                $res['message'] = 'User not found!';
-                return response()->json($res, 404);
+                $res['message'] = 'User not found or not permitted!';
+                return response()->json($res, 402);
            }
         //start temporay transaction
         DB::beginTransaction();

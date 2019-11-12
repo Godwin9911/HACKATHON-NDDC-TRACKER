@@ -22,7 +22,7 @@ class ResetPasswordController extends Controller
     //generate verify code for the user
     public function generatedPassword()
     {
-       return mt_rand(1000,9999);
+       return mt_rand(100000,999999);
     }
 
     public function reset(Request $request)
@@ -30,7 +30,7 @@ class ResetPasswordController extends Controller
 
     // Do a validation for the input
         $this->validate($request, [
-            'verifycode' => 'required|max:4',
+            'verifycode' => 'required|max:6',
             'password'   => 'required|min:8',
         ]);
 

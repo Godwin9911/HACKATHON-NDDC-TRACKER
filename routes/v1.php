@@ -18,8 +18,10 @@ Route::post('reset/password', 'Auth\ResetPasswordController@reset');
 //Verify account
 Route::post('verify', 'Auth\VerificationController@verify');
 
+//Refresh JWT Token
+Route::get('refresh/token', 'Auth\LoginController@refresh');
 //Resend Token
-Route::get('resend/token', 'Auth\VerificationController@reset');
+// Route::get('resend/token', 'Auth\VerificationController@reset');
 
 
 
