@@ -1,21 +1,26 @@
-.user-details {
-    min-height: 20vh;
-    .image-con {
-        height: 10vh;
-        width: 10vh;
-        border-radius: 50%;
-        border: 1px solid grey;
-        img {
-            height: 60%;
-            width: 100%;
+.shared-saved-listed {
+    min-height: 80vh;
+    background: #F7F7F7;
+
+    .nav-item {
+        .nav-link {
+            background-color: inherit;
+            color: grey;
+            border-radius: 0px;
+            font-weight: 100;
+
+            &.active {
+                font-weight: bold;
+                border-bottom: 3px solid grey;
+            }
         }
     }
-    .data-con {
-        p {
-            font-size: 20px;
-        }
-        span {
-            font-size: 14px;
+
+    .projects-listed {
+        max-height: 65vh;
+
+        .tab-pane {
+
         }
     }
 }

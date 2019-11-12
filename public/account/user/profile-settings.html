@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title data-title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="../../styles/profile-settings.css">
+</head>
+
+<body class="roboto scroller">
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-light our-nav col-12">
+                <a class="navbar-brand" href="index.html">
+                    <div class="border logo-replace"></div>
+                    <span class="ml-3 mt-2 bold">NDDC TRACKER</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto nav-utilities">
+                        <li class="nav-item mx-3 mt-2">
+                            <a class="nav-link" href="#">Categories</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <div class="nav-user row mx-0">
+                                    <div class="col-4 px-0">
+                                        <div class="nav-image mx-auto border">
+                                            <img class="mt-1" src="../../images/user-grey.svg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-8 px-0 pt-2">
+                                        <span class="">John Doe</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Saved Projects</a>
+                                <a class="dropdown-item" href="#">Settings</a>
+                                <a class="dropdown-item" href="#">Help</a>
+                                <a class="dropdown-item" href="#">Log Out</a>
+                            </div>
+                        </li>
+                        <li class="nav-item mx-3 mt-2">
+                            <a class="nav-link" href="signup.html">Notifications</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="user-details col-12 row mx-0">
+                <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-8 row mx-0 mt-4 mx-auto image-name-location">
+                        <div class="col-12 col-md-4 px-0">
+                            <div class="image-con mx-auto">
+                                <img class="mt-2" src="../../images/user-grey.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-8 text-center data-con">
+                            <p class="bold grey mb-0 pb-0">John Doe</p>
+                            <span class="grey">Port Harcourt</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 ml-auto shared-saved-data row mx-0">
+                    <div class="col-12 col-md saved-stat text-center mb-3">
+                        <p class="grey mb-0 mt-4">1</p>
+                        <span class="grey">Saved Projects</span>
+                    </div>
+                    <div class="col-12 col-md shared-stat text-center mb-3">
+                        <p class="grey mb-0 mt-4">3</p>
+                        <span class="grey">Shared Projects</span>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-con col-12 mt-3">
+                <div class="col-12 col-md-4 personal-settings mt-3 border">
+                    <h5 class="grey bold mt-4 mb-2">Personal Settings</h5>
+                    <span class="setting-label grey">Your Profile Picture</span> <br>
+                    <button class="btn btn-brand upload-pic-btn font-12px bold mt-3">Upload new profile picture</button>
+                    <form class="update-data-form my-3">
+                        <div class="form-group mt-2">
+                            <label>Name</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label>Bio</label>
+                            <textarea type="text" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label>Email</label>
+                            <input type="email" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="">State</label>
+                            <select class="custom-select">
+                                <option class="fake-placeholder" selected>Select a state</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="">City</label>
+                            <select class="custom-select">
+                                <option class="fake-placeholder" selected>Select a city</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="">Gender</label>
+                            <select class="custom-select">
+                                <option class="fake-placeholder" selected>Select a gender</option>
+                                <option value="1">Male</option>
+                                <option value="2">Female</option>
+                                <option value="3">Rather not say</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-brand font-12px bold">Save Information</button>
+                    </form>
+                </div>
+                <div class="col-12 col-md-4 change-password my-5 border">
+                    <h5 class="grey bold mt-4 mb-2">Change Password</h5>
+                    <form class="change-pass-form my-3">
+                        <div class="form-group mt-2">
+                            <label>Current Password <span class="label-ast">*</span></label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label>New Password <span class="label-ast">*</span></label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label>Repeat Password</label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-brand font-12px bold">Save Information</button>
+                    </form>
+                </div>
+                <div class="col-12 col-md-4 email-notifs border mb-5">
+                    <h5 class="grey bold mt-4 mb-2">Email Notifications</h5>
+                    <form class="email-notifs-form">
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Recieve updates about your feedback
+                            </label>
+                        </div>
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Recieve updates regarding your saved projects
+                            </label>
+                        </div>
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Recieve updates regarding projects in your location
+                            </label>
+                        </div>
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Recieve updates on new projects
+                            </label>
+                        </div>
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Recieve newsletter from NDDC Tracker
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-brand font-12px bold my-3">Save email notification
+                            settings</button>
+                    </form>
+                </div>
+                <div class="col-12 col-md-4 delete-account border mb-5">
+                    <h5 class="grey bold mt-4 mb-2">Delete Profile</h5>
+                    <span class="grey font-12px mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Voluptatum omnis voluptates doloremque cum enim?</span> <br>
+                    <button class="btn btn-brand mt-4 font-12px bold">Delete Account</button>
+                </div>
+            </div>
+            <footer class="col-12">
+                <div class="col-12 col-md-10 mx-auto footer-con px-0 row mx-0">
+                    <div class="col-12 col-md px-0 links-contact row mx-0">
+                        <div class="col-12 col-md-4 mt-5 tracker-copyright text-center">
+                            <span class="ml-3 mt-2 bold">NDDC TRACKER</span>
+                            <p>&copy;NDDC TRACKER 2019</p>
+                        </div>
+                        <div class="col-12 col-md-4 mt-5 site-links px-0">
+                            <ul class="list-group">
+                                <li class="list-group-item py-1 px-1" onclick="location.href=''">
+                                    About Us</li>
+                                <li class="list-group-item py-1 px-1" onclick="location.href=''">
+                                    Projects</li>
+                                <li class="list-group-item py-1 px-1" onclick="location.href=''">
+                                    Contact</li>
+                                <li class="list-group-item py-1 px-1" onclick="location.href=''">Terms and Conditions
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-4 mt-5 contact-details px-0">
+                            <ul class="list-group">
+                                <li class="list-group-item py-1 px-1" onclick="location.href=''">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                                <li class="list-group-item py-1 px-1" onclick="location.href=''">
+                                    +234(0)80000000</li>
+                                <li class="list-group-item py-1 px-1" onclick="location.href=''">
+                                    help@nddcprojecttracker.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md px-0 subscribe-social row mx-0">
+                        <div class="col-12 col-md-6 footer-subscribe mt-5">
+                            <span class="">Subscribe to our newsletter</span>
+                            <div class="special-input br-10px mb-3 col-12 col-md-12 mx-auto row mx-0 px-2">
+                                <input type="text" class="form-control col-12 col-md-9 mt-2"
+                                    placeholder="Subscribe to our Newsletter">
+                                <button class="btn btn-brand col-12 col-md-3 mt-2 px-0">Subscribe</button>
+                            </div>
+                        </div>
+                        <div class="footer-social col-12 col-md-6 row mx-0 my-3">
+                            <div class="col-6 col-md px-0 social-links mt-5">
+                                <div class="link-con mx-auto">
+                                    <img class="mt-2" src="images/twitter-grey.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-6 col-md px-0 social-links mt-5">
+                                <div class="link-con mx-auto">
+                                    <img class="mt-2" src="images/facebook-grey.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-6 col-md px-0 social-links mt-5">
+                                <div class="link-con mx-auto">
+                                    <img class="mt-2" src="images/linkedin-grey.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-6 col-md px-0 social-links mt-5">
+                                <div class="link-con mx-auto">
+                                    <img class="mt-2" src="images/instagram-grey.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+<script src="../../js/general/third_party_cdn.js""></script>
+    <script src=" ../../js/general/placeholder.js""> </script> </html>

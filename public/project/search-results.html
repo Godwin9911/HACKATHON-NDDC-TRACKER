@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../styles/global.css">
-    <link rel="stylesheet" href="../../styles/dashboard.css">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/search-results.css">
 </head>
 
 <body class="roboto scroller">
@@ -33,8 +33,8 @@
                             <a class="nav-link" href="#">Categories</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
                                 <div class="nav-user row mx-0">
                                     <div class="col-4 px-0">
                                         <div class="nav-image mx-auto border">
@@ -54,100 +54,124 @@
                             </div>
                         </li>
                         <li class="nav-item mx-3 mt-2">
-                            <a class="nav-link" href="signup.html">Notifications</a>
+                            <a class="nav-link" href="">Notifications</a>
                         </li>
                     </ul>
                 </div>
             </nav>
-            <div class="user-details col-12 row mx-0">
-                <div class="col-12 col-md-4">
-                    <div class="col-12 col-md-8 row mx-0 mt-4 mx-auto image-name-location">
-                        <div class="col-12 col-md-4 px-0">
-                            <div class="image-con mx-auto">
-                                <img class="mt-2" src="../../images/user-grey.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-8 text-center data-con">
-                            <p class="bold grey mb-0 pb-0">John Doe</p>
-                            <span class="grey">Port Harcourt</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-3 ml-auto shared-saved-data row mx-0">
-                    <div class="col-12 col-md saved-stat text-center mb-3">
-                        <p class="grey mb-0 mt-4">1</p>
-                        <span class="grey">Saved Projects</span>
-                    </div>
-                    <div class="col-12 col-md shared-stat text-center mb-3">
-                        <p class="grey mb-0 mt-4">3</p>
-                        <span class="grey">Shared Projects</span>
-                    </div>
+            <div class="search-results-head col-12">
+                <h4 class="mt-5 ml-5">Search Results for: Port Harcourt</h4>
+            </div>
+            <div class="search-more col-12 col-md-6 mx-auto mt-4">
+                <div class="special-input br-10px mb-3 col-12 col-md-12 mx-auto row mx-0 px-2 border-brand">
+                    <input type="text" class="form-control col-12 col-md-9 mt-2" placeholder="Port Harcourt">
+                    <button class="btn btn-brand col-12 col-md-3 mt-2 px-0">Search</button>
                 </div>
             </div>
-            <div class="shared-saved-listed col-12">
-                <ul class="nav nav-pills my-3" id="pills-tab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="saved-projects-tab" data-toggle="pill" href="#saved-projects"
-                            role="tab" aria-controls="saved-projects" aria-selected="true">Saved Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="shared-projects-tab" data-toggle="pill" href="#shared-projects"
-                            role="tab" aria-controls="shared-projects" aria-selected="false">Shared Projects</a>
-                    </li>
-                </ul>
-                <div class="tab-content projects-listed scroller" id="pills-tabContent">
-                    <div class="tab-pane fade show active scroller" id="saved-projects" role="tabpanel"
-                        aria-labelledby="saved-projects-tab">
-                        <div class="col-12 col-md-8 my-3 project row mx-0 p-4">
-                            <div class="col-12 col-md-5 px-0 project-image">
-                                <img src="../../images/welcome-bg.png" alt="">
-                            </div>
-                            <div class="col-12 col-md-7 project-details">
-                                <div class="col-12 title-removefrom row mx-0">
-                                    <h3 class="grey bold px-0 col-12 col-md-9 mt-2">Project Title</h3>
-                                    <span class="col-12 col-md-3 px-0 mt-2 grey mt-2">Delete from saved</span>
-                                </div>
-                                <div class="col-12 contractor-name">
-                                    <h6 class="grey">Name of contractor</h6>
-                                </div>
-                                <div class="col-12 activity-status">
-                                    <span class="grey">Activity Status</span>
-                                    <span class="status-designed p-1 br-10px">In Progress</span>
-                                </div>
-                                <div class="col-12 full-desc mt-2">
-                                    <p class="grey scroller">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                        Similique voluptate reprehenderit molestiae quo laudantium blanditiis sint,
-                                        magni quibusdam doloremque vel voluptas est. Molestias,
-                                        ex! Cumque ut similique cum deleniti eius accusamus nihil!</p>
-                                </div>
-                                <div class="col-12 project-stats row mx-0">
-                                    <div class="col-12 col-md-6 px-0">
-                                        <p class="grey mb-1">Project ID: <span class="stat-value">012380483</span></p>
-                                    </div>
-                                    <div class="col-12 col-md-6 px-0">
-                                        <p class="grey mb-1">Total Budget: <span class="stat-value">N200,000</span></p>
-                                    </div>
-                                    <div class="col-12 col-md-6 px-0">
-                                        <p class="grey mb-1">Start Date: <span class="stat-value">12/11/2019</span></p>
-                                    </div>
-                                    <div class="col-12 col-md-6 px-0">
-                                        <p class="grey mb-1">Location: <span class="stat-value">Aba</span></p>
-                                    </div>
-                                </div>
-                                <div class="col-12 thumbs-comments row mx-0 mt-3">
-                                    <div class="col px-0 text-center">
-                                        <span class="grey"><i class="fa fas fa-2x fa-thumbs-up mr-2"></i>200</span>
-                                    </div>
-                                    <div class="col px-0 text-center">
-                                        <span class="grey"><i class="fa fas fa-2x fa-thumbs-down mr-2"></i>52</span>
-                                    </div>
-                                    <div class="col px-0 text-center">
-                                        <span class="grey"><i class="fa fas fa-2x fa-comments mr-2"></i>200</span>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="search-pagination col-12 border">
+                <div class="col-12 col-md-3 ml-auto text-center">
+                    <nav class="mt-3" aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="search-results-con col-12 row mx-0">
+                <div class="col-12 col-md-4 filter-section mt-5 scroller">
+                    <div class="now-showing col-12 mt-3 border-bottom">
+                        <span class="grey font-12px">Now showing projects 1-20 of 50</span>
+                    </div>
+                    <div class="status-filter col-12 mt-3 border-bottom">
+                        <p class="bold grey">Status</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                In Progress (10,200)
+                            </label>
                         </div>
-                        <div class="col-12 col-md-8 my-3 project row mx-0 p-4">
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Completed (1,200)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="state-filter col-12 mt-3 border-bottom">
+                        <p class="bold grey">State</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Abia (30)
+                            </label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Akwa Ibom (10)
+                            </label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Bayelsa (1200)
+                            </label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Cross River (1200)
+                            </label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Delta (150)
+                            </label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Edo (1200)
+                            </label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Imo (1200)
+                            </label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Ondo (120)
+                            </label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Rivers (100)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-8 mt-5 projects-section">
+                    <div class="col-12 projects-listed scroller">
+                        <div class="col-12 mb-3 project row mx-0 p-4">
                             <div class="col-12 col-md-5 px-0 project-image">
                                 <img src="../../images/welcome-bg.png" alt="">
                             </div>
@@ -197,9 +221,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="shared-projects" role="tabpanel"
-                        aria-labelledby="shared-projects-tab">
-                        ...</div>
                 </div>
             </div>
             <footer class="col-12">
@@ -269,5 +290,7 @@
         </div>
     </div>
 </body>
-<script src="../../js/general/third_party_cdn.js"></script>
-    <script src=" ../../js/general/placeholder.js"> </script> </html>
+<script src="../js/general/third_party_cdn.js"></script>
+<script src="../js/general/placeholder.js"> </script>
+
+</html>

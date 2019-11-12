@@ -1,0 +1,93 @@
+.settings-con {
+  background: #F7F7F7;
+}
+
+.settings-con .setting-label {
+  font-size: 12px;
+}
+
+.settings-con label {
+  font-size: 12px;
+  color: grey;
+}
+
+.settings-con input {
+  border-radius: 0px;
+  font-size: 12px;
+}
+
+.settings-con textarea {
+  border-radius: 0px;
+  font-size: 12px;
+  height: 13vh;
+}
+
+.settings-con select {
+  border-radius: 0px;
+  font-size: 12px;
+}
+
+.settings-con select option {
+  color: grey;
+}
+
+.settings-con select option.fake-placeholder {
+  color: grey;
+}
+
+.settings-con .label-ast {
+  color: red;
+}
+
+.settings-con .personal-settings {
+  min-height: 100vh;
+  margin-left: 10vw;
+  background: white;
+}
+
+@media (max-width: 767px) {
+  .settings-con .personal-settings {
+    margin-left: 0px;
+  }
+}
+
+.settings-con .change-password {
+  min-height: 60vh;
+  margin-left: 10vw;
+  background: white;
+}
+
+@media (max-width: 767px) {
+  .settings-con .change-password {
+    margin-left: 0px;
+  }
+}
+
+.settings-con .email-notifs {
+  min-height: 40vh;
+  margin-left: 10vw;
+  background: white;
+}
+
+@media (max-width: 767px) {
+  .settings-con .email-notifs {
+    margin-left: 0px;
+  }
+}
+
+.settings-con .email-notifs input {
+  cursor: pointer;
+}
+
+.settings-con .delete-account {
+  min-height: 30vh;
+  margin-left: 10vw;
+  background: white;
+}
+
+@media (max-width: 767px) {
+  .settings-con .delete-account {
+    margin-left: 0px;
+  }
+}
+/*# sourceMappingURL=profile-settings.css.map */
