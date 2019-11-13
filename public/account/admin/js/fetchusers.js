@@ -15,17 +15,18 @@ fetch(url, {
  .then(data => {
     console.log(data.all[0]);
     let userDataObject = data.all[0];
+    userTableBody.innerHTML = '';
     userDataObject.map(userData => {
         console.log(userData)
         userTableBody.innerHTML += `
+
         <tr>
         <td>${userData.name}</td>
         <td>${userData.email}</td>
-        <td>Edinburgh</td>
-        <td>61</td>
-        <td>2011/04/25</td>
-        <td>$320,800</td>
-        <th>In Progress</th>
+        <td>${userData.gender}</td>
+        <td>${userData.lga}</td>
+        <td>${userData.city}</td>
+        <th>${userData.state}</th>
         <th><a href="#" class="btn btn-primary btn-icon-split btn-sm">
           <span class="text">View</span>
         </a></th>
