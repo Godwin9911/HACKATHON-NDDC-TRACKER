@@ -7,6 +7,8 @@ console.log(query);
 
 if(query) {
     document.querySelector('[data-search-placeholder-box]').style.display = 'block'
+}else {
+    query = 'Rivers';
 }
 
 const searchPlaceHolder = document.querySelector('[data-search-placeholder]');
@@ -17,11 +19,15 @@ let projectResults = [];
 //Get the Dom
 const projectDOM = document.querySelector('[data-project-dom]');
 
-const fetchProjects = (query) => {
+const fetchProjects = (query="Rivers,Bayelsa,Cross,Delta") => {
     const routes = new Routes();
     const url = `${routes.apiOrigin}${routes.searchProject(query)}`;
     console.log(url)
-
+    projectDOM.innerHTML = `<div class="col-1 spinner-con text-center" style="top: 20%;">
+                                <div class="spinner-border mt-3" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </div>`;
     fetch(url)
     .then(response => response.json())
     .then(data => {
@@ -38,11 +44,7 @@ const fetchProjects = (query) => {
 const displayProjectResult = () => {
 
     if(projectResults.length != 0) {
-        projectDOM.innerHTML = `<div class="col-1 spinner-con text-center" style="top: 20%;">
-                                    <div class="spinner-border mt-3" role="status">
-                                        <span class="sr-only">Loading...</span>
-                                    </div>
-                                </div>`;
+        projectDOM.innerHTML = ``;
         
             projectResults.map(projectResult => {
             let like_count = 0;
@@ -61,8 +63,8 @@ const displayProjectResult = () => {
                             <img src="../../images/welcome-bg.png" alt="">
                         </div>
                         <div class="col-12 col-md-7 project-details">
-                            <div class="col-12 title-removefrom row mx-0 scroller">
-                                <h5 class="grey bold px-0 col-12 col-md-9 mt-2" onclick="location.href='project.html'">${PROJECT_DESCRIPTION}</h5>
+                            <div class="col-12 title-removefrom row mx-0 scroller" style="cursor:pointer;">
+                                <h5 class="grey bold px-0 col-12 col-md-9 mt-2 hover-fly" onclick="location.href='project.html?id=${id}'">${PROJECT_DESCRIPTION}</h5>
                                 ${delete_save}
                             </div>
                             <div class="col-12 contractor-name">
@@ -77,7 +79,7 @@ const displayProjectResult = () => {
                             </div>
                             <div class="col-12 project-stats row mx-0">
                                 <div class="col-12 col-md-6 px-0">
-                                    <p class="grey mb-1">Project ID: <span class="stat-value">Nddc/${Math.floor(1000 + Math.random() * 9000)}${id}</span></p>
+                                    <p class="grey mb-1">Project ID: <span class="stat-value">Nddc/${id}</span></p>
                                 </div>
                                 <div class="col-12 col-md-6 px-0">
                                     <p class="grey mb-1">Total Budget: <span class="stat-value">N${BUDGET_COST}</span></p>
@@ -107,7 +109,7 @@ const displayProjectResult = () => {
             if(projectlikes) {
                 projectlikes.map((current) => {
                     if(current.status == 'unlike'){
-                        like_count+=1
+                        unlike_count+=1
                     }
                     if(current.status == 'like'){
                         like_count+=1
