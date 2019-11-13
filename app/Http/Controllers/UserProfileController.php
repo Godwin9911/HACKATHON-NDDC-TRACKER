@@ -71,6 +71,7 @@ class UserProfileController extends Controller
     public function update(Request $request, ImageController $image)
     {  // update user information
         $user = Auth::user();
+        // dd($user);
 
         $this->validate($request, [
             'bio' => 'nullable|string',
@@ -90,8 +91,9 @@ class UserProfileController extends Controller
             $user->gender  = $request->input('gender');
             $user->email     = $request->input('email');
             $user->city  = $request->input('city');
-            $user->country  = $request->input('country');
+            $user->state  = $request->input('state');
             $user->name     = $request->input('name');
+            $user->lga  = $request->input('lga');
 
             //Upload image
             $data = null;
