@@ -32,7 +32,7 @@ class CountStatsController extends Controller
             $res['totalProject']  = $totalProject;
             $res['totalComment']  = $totalComment;
             $res['totalSubcribers']  = $totalSubcribers ;
-            $res['totalBudget ']  =  $totalBudget ;
+            $res['totalBudget']  =  $totalBudget ;
             return response()->json($res, 200);
     }
 
