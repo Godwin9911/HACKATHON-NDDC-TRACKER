@@ -26,6 +26,7 @@ const checkUser = (token, user) => {
         if(res) {
             if(res.status == 401 && action == 0){
                 token = false;
+                certified.push(token);
             }else if (res.status == 401 && action == 1) {
                 localStorage.removeItem('nddc-tracker-user');
                 location.replace('../login.html');

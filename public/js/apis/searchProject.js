@@ -20,6 +20,13 @@ let projectResults = [];
 const projectDOM = document.querySelector('[data-project-dom]');
 
 const fetchProjects = (query="Rivers,Bayelsa,Cross,Delta") => {
+
+    if(certified[0] == undefined) {
+        //Hide the user show box
+        document.querySelector('[data-user-drop-box]').style.display = 'none';
+        // document.querySelector('[data-save-project]').style.display = 'none';
+    }
+
     const routes = new Routes();
     const url = `${routes.apiOrigin}${routes.searchProject(query)}`;
     console.log(url)
@@ -50,7 +57,7 @@ const displayProjectResult = () => {
             let like_count = 0;
             let unlike_count = 0;
             const {id, AMOUNT_APPROVED_2016, AMOUNT_APPROVED_2017, contractor, BUDGET_COST, COMMITMENT, LGA, LOCATION, PROJECT_DESCRIPTION, PROJECT_TYPE, STATUS, project_image, comments_count, created_at, projectlikes} = projectResult;
-            if(certified[0]){
+            if(certified[0] != undefined ){
                delete_save = `<span class="col-12 col-md-3 px-0 mt-2 grey mt-2" id="deleteSaveProject${id}">Delete from saved</span>`;
             }else {
                 delete_save = '';
@@ -101,6 +108,10 @@ const displayProjectResult = () => {
                                 <div class="col px-0 text-center">
                                     <span class="grey"><i class="fa fas fa-2x fa-comments mr-2"></i><span>${comments_count}<span></span>
                                 </div>
+                                <div class="col px-0 text-center">
+                                    <span class="grey" style="cursor:pointer;"  onclick="location.href='${window.location.origin}/project/project.html?id=${id}'"><i class="fa fas fa-2x fa-eye  mr-2""></i></span>
+                                </div>
+                               
                             </div>
                         </div>
                     </div>

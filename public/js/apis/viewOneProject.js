@@ -26,7 +26,7 @@ const projectType = document.querySelector('[data-project-type]');
 const projectStatus = document.querySelector('[data-project-status]');
 
 const projectCommentBtn = document.querySelector('[data-project-comment-btn]');
-
+const loader = document.querySelector('[data-loader]');
 
 
 const viewOneProject = () => {
@@ -34,10 +34,19 @@ const viewOneProject = () => {
     const url = `${routes.apiOrigin}${routes.viewOneProject(query)}`;
     console.log(url)
 
+    //Hide some feautures from the unauthorize user
+    console.log(certified[0]);
+    if(certified[0] == undefined) {
+        //Hide the user show box
+        document.querySelector('[data-user-drop-box]').style.display = 'none';
+        document.querySelector('[data-save-project]').style.display = 'none';
+    }
+
     fetch(url)
     .then(response => response.json())
     .then(data => {
         console.log(data)
+        loader.style.display = 'none';
         if(data) {
             console.log(data.project[0])
             let like_count = 0;
@@ -56,11 +65,8 @@ const viewOneProject = () => {
             projectLocation.innerHTML = LOCATION;
             projectSpentBudget.innerHTML = AMOUNT_APPROVED_2016;
             projectCreated_2.innerHTML = updated_at;
-            projectLike.innerHTML =  like_count;
-            projectDislike.innerHTML = unlike_count;
             projectComment.innerHTML = comments_count;
-
-
+           
             if(projectlikes) {
                 projectlikes.map((current) => {
                     if(current.status == 'unlike'){
@@ -71,6 +77,8 @@ const viewOneProject = () => {
                     }
                 });
             }
+            projectLike.innerHTML =  like_count;
+            projectDislike.innerHTML = unlike_count;
         }
         
     
