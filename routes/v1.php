@@ -27,7 +27,7 @@ Route::get('refresh/token', 'Auth\LoginController@refresh');
 // Route::get('resend/token', 'Auth\VerificationController@reset');
 //Create Project
 Route::get('project/search/{query}', 'ProjectController@search');
-Route::get('project/one', 'ProjectController@search');
+Route::get('project/{id}', 'ProjectController@search');
 
 Route::get('/excel', 'importExcelController@indexAsJson');
 Route::get('downloadData/{type}', 'importExcelController@downloadData');
