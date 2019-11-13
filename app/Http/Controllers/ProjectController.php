@@ -23,23 +23,25 @@ class ProjectController extends Controller
     }
 
     //Search APi for the user
-    public function search($query) {
-
-     $query = explode(',', $query);
-
-     $result = Project::where('PROJECT_TYPE', 'LIKE', $query)
-                                 ->orwhereIn('LOCATION', 'LIKE', $query)
-                                 ->orWhere('LGA', 'LIKE',  $query)
-                                 ->orWhere('PROJECT_DESCRIPTION', 'LIKE',  $query)
+    public function search($d) {
+      $querys = explode(',', $d);
+      $result = [];  
+     foreach ($querys as $query) {
+                     $data = Project::where('PROJECT_TYPE', 'LIKE',  "%{$query}%")
+                                 ->orWhere('LOCATION', 'LIKE', "%{$query}%")
+                                 ->orWhere('LGA', 'LIKE', "%{$query}%")
+                                 ->orWhere('PROJECT_DESCRIPTION', 'LIKE', "%{$query}%")
                                  ->withCount('comments')
                                  ->with('projectlikes')
                                  ->get();
+
+                     array_push($result, $data);            
+                }
 
         $res['status'] = true;
         $res['search'] =    $result;
         return response()->json($res, 200);
     }
-
 
     public function store(Request $request) {
             //start temporay transaction
