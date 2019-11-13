@@ -1,9 +1,18 @@
 const routes = new Routes();
-
+const key = document.querySelector('[data-key]').innerHTML;
+console.log(key)
+console.log(permit)
+let url;
 const loginApi = (event, loginForm) => {
     event.preventDefault();
+    console.log(permit)
     const submitBtn = event.target[2];
-    const url = `${ routes.apiOrigin }${ routes.login }`;
+    if(key == 1){
+        url = `${ routes.apiOrigin }${ routes.login_1 }`;
+    }else if(key == 0){
+        url = `${ routes.apiOrigin }${ routes.login_0 }`;
+    }
+    
     console.log(url);
 
     if(permit == true) {//Condition that check if validation is true
@@ -43,9 +52,14 @@ const loginApi = (event, loginForm) => {
                 default:
                  //insert the data into broswer localStorage
                 localStorage.setItem('nddc-tracker-user', JSON.stringify(data));
-              
-                if(data.user.user_type === 'admin') {
-                    location.replace('account/admin/dashboard.html');
+                
+                console.log(data)
+
+                console.log(data.user.user_type)
+                console.log(key)
+
+                if(data.user.user_type == 'admin' && key == 0) {
+                    location.replace('../../../account/admin/index.html');
                 }else {
                     location.replace('account/user/dashboard.html');
                 }
