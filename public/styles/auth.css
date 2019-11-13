@@ -44,6 +44,7 @@
 .auth-full .auth-con .continue-email {
   font-size: 12px;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .auth-full .auth-con .continue-email:hover {

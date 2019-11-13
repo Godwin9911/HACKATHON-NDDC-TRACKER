@@ -1,4 +1,11 @@
+const useEmailForm = document.querySelector("#use-email-form");
+const continueEmailLink = document.querySelector("#continue-email");
+const confirmForm = document.querySelector("#confirm-form")
 
+continueEmailLink.addEventListener('click', () => {
+    useEmailForm.classList.remove("d-none");
+    continueEmailLink.classList.add("d-none");
+})
 const registerApi = (event, registerForm) => {
     event.preventDefault();
     const routes = new Routes();
@@ -51,6 +58,7 @@ const registerApi = (event, registerForm) => {
                     //Display field as none after register 
 
                     //Display confirm code field as block
+                    confirmForm.classList.remove("d-none")
                     break;
                 default:
 
