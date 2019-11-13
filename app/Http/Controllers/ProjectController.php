@@ -49,7 +49,7 @@ class ProjectController extends Controller
                                          ->with('projectlikes')
                                          ->get();           
         $res['status'] = true;
-        $res['search'] =    $result;
+        $res['project'] =    $data;
         return response()->json($res, 200);
     }
 
