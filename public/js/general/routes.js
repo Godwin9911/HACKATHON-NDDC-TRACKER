@@ -61,8 +61,12 @@ class Routes {
     return `api/v1/project/search/${query}`;
   }
 
-  // Get Admin Stats
+  // Admin Dashboard
   get getAdminStats() {
     return "api/v1/count";
+  }
+
+  get allUsers() {
+    return "api/v1/user/all"
   }
 }
