@@ -69,4 +69,12 @@ class Routes {
   get allUsers() {
     return "api/v1/user/all"
   }
+
+  get allProjects() {
+    return "api/v1/projects"
+  }
+
+  get uploadExcel() {
+    return "api/v1/import/project"
+  }
 }
