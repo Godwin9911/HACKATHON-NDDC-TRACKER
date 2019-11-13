@@ -8,7 +8,7 @@ const fetchEstates = () => {
         mode: "cors",
         headers: {
             "Accept": "aplication/json",
-            "Authorization": token
+            "Authorization": certified[0]
         },
 
     })
@@ -56,7 +56,7 @@ const addAdminApi = (event, addAdminForm) => {
                 mode: "cors",
                 headers: {
                     "Accept": "application/json",
-                    "Authorization": token
+                    "Authorization": certified[0]
                 },
                 body: formData
                 
