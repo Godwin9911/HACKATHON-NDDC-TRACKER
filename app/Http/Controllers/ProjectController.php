@@ -26,7 +26,7 @@ class ProjectController extends Controller
     public function search($query) {
 
      $query = explode(',', $query);
-     $result = Project::where('PROJECT_TYPE', 'LIKE',  "%{$query}%")
+     $result = Project::whereIn('PROJECT_TYPE', 'LIKE',  "%{$query}%")
                                  ->orWhereIn('LOCATION', 'LIKE', "%{$query}%")
                                  ->orWhereIn('LGA', 'LIKE', "%{$query}%")
                                  ->orWhereIn('PROJECT_DESCRIPTION', 'LIKE', "%{$query}%")
