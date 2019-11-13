@@ -189,6 +189,16 @@ class UserProfileController extends Controller
 
     }
 
+    public function check() {
+        $user = Auth::user();
+
+        if($user){
+            return response()->json($res, 200);
+        }else {
+            return response()->json($res, 401);
+        }
+    }
+
     public function destroy()
     {
         $user = Auth::user();

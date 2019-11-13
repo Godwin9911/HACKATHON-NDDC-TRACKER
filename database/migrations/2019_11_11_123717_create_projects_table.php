@@ -21,7 +21,8 @@ class CreateProjectsTable extends Migration
             $table->string('PROJECT_DESCRIPTION')->nullable();
             $table->string('BUDGET_COST')->nullable();
             $table->string('COMMITMENT')->nullable();
-            $table->string('STATUS')->nullable();
+            $table->enum('STATUS', array('Not-Completed','In-Progress','Completed'))->nullable();
+            $table->string('project_image')->nullable();
             $table->string('AMOUNT_APPROVED_2016')->nullable();
             $table->string('AMOUNT_APPROVED_2017')->nullable();
             $table->timestamps();

@@ -87,6 +87,8 @@ Route::group(['middleware' => ['jwt.verify']], function () {
      //Setting
      Route::post('/setting', 'UserProfileController@setting');
 
+     Route::get('check/session', 'UserProfileController@check');
+
 });
 
 //Project with User
