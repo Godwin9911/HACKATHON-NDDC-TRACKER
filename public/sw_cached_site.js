@@ -3,19 +3,19 @@ console.log(cacheName);
 
 // Call Install Event
 self.addEventListener('install', e => {
-    console.log("Service Worked: Installed");
+    // console.log("Service Worked: Installed");
 });
 
 // Call Activate Event
 self.addEventListener('activate', e => {
-    console.log("Service Worked: Activated")
+    // console.log("Service Worked: Activated")
     // Remove unwanted caches
     e.waitUntil(
         caches.keys().then(cacheNames => {
             return Promise.all(
                 cacheNames.map(cache => {
                     if(cache !== cacheName) {
-                        console.log('Service Worker: Clearing Old Caches');
+                        // console.log('Service Worker: Clearing Old Caches');
                         return caches.delete(cache);
                     }
                 })
@@ -26,7 +26,7 @@ self.addEventListener('activate', e => {
 
 // Call Fetch Event
 self.addEventListener('fetch', e => {
-    console.log('Service Worker: Fetching')
+    // console.log('Service Worker: Fetching')
     e.respondWith(
         fetch(e.request)
             .then(res => {

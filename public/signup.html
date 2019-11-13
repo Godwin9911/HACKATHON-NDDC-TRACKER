@@ -65,12 +65,12 @@
                             <span class="grey bold">Connect with Google</span>
                         </div>
                     </div>
-                    <div class="col-12 col-md-10 mx-auto text-center mt-3">
-                        <a class="continue-email grey bold" href="">Continue with email</a>
+                    <div class="col-12 col-md-10 mx-auto text-center my-3">
+                        <span class="continue-email grey bold" id="continue-email">Continue with email</span>
                     </div>
 
-                    <form class="col-12 col-md-10 mx-auto px-0" data-register-form>
-                        <div class="form-group mb-2">
+                    <form class="col-12 col-md-10 mx-auto px-0 d-none" id="use-email-form" data-register-form>
+                        <div class="form-group mb-1">
                             <label class="bold grey">Email</label>
                             <input name="email" type="email" class="form-control" placeholder="Enter email">
                             <p class="error-fields" id="emailError"></p>
@@ -83,7 +83,7 @@
                         <button type="submit" class="btn btn-brand mb-5 col-12 bold button_sty">Continue with email</button>
                     </form>
 
-                    <form class="col-12 col-md-10 mx-auto px-0 confirm-form"  data-verify-form>
+                    <form class="col-12 col-md-10 mx-auto px-0 confirm-form d-none" id="confirm-form" data-verify-form>
                         <p class="bold mb-2">Please type in the code we just sent to your email <br>
                         <span>cemma2035@gmail.com</span>. <a class="bold" href="">Use another email</a> | <a class="bold" href="">Resend verification code</a></p>
                         <div class="form-group mb-3">
