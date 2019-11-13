@@ -193,9 +193,9 @@ class UserProfileController extends Controller
         $user = Auth::user();
 
         if($user){
-            return response()->json($res, 200);
+            return response()->json(200);
         }else {
-            return response()->json($res, 401);
+            return response()->json(401);
         }
     }
 
