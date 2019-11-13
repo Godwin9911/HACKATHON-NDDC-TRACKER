@@ -31,7 +31,7 @@ Route::get('project/search/{query}', 'ProjectController@search');
 
 Route::get('/excel', 'importExcelController@indexAsJson');
 Route::get('downloadData/{type}', 'importExcelController@downloadData');
-Route::post('subscriber/create', ' SubscriberController@send');
+Route::post('subscriber/create', 'SubscriberController@send');
 
 
 //Admin Routes (Specific Route)*******************************************************
@@ -51,9 +51,9 @@ Route::group(['middleware' => ['jwt.verify']], function () {
     Route::post('project/create', 'ProjectController@store')->middleware('admin');
 
       //Subscribe
-    Route::get('subscribers', ' SubscriberController@index')->middleware('admin');
-    Route::get('subscriber/one/{id}', ' SubscriberController@show')->middleware('admin');
-    Route::post('subscriber/delete/{id}', ' SubscriberController@destroy')->middleware('admin');
+    Route::get('subscribers', 'SubscriberController@index')->middleware('admin');
+    Route::get('subscriber/one/{id}', 'SubscriberController@show')->middleware('admin');
+    Route::post('subscriber/delete/{id}', 'SubscriberController@destroy')->middleware('admin');
    
    
 

@@ -49,12 +49,12 @@ class SubscriberController extends Controller
 
         return response()->json(['message' => 'One subscribers message', 'support' => $subscribers]);
     }
+
     public function destroy($id)
     {
         $subscriber = Support::where('id', $id)->first();
         $support->delete();
         return response()->json(['message' => 'subscribers Message was successfully deleted']);
     }
-}
 
 }
