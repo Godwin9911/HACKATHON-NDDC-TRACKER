@@ -9,30 +9,29 @@ const totalReviewersValue = document.querySelector('#total-reviewers-value')
 const totalSubscribersValue = document.querySelector('#total-subscribers-value')
 const totalUserValue = document.querySelector('#total-user-value')
 
-fetch(url, {
-    method: "GET",
-    mode: "cors",
-    headers: {
-        "Accept": "aplication/json",
-        "Authorization": token
-    }
- })
- .then(response => response.json())
- .then(data => {
-    const  {totalBudget, totalComment, totalCommunity, totalContractors,
-         totalProject, totalReviewers, totalSubcribers, totalUser} =  data;
-    totalBudgetValue.innerHTML = "&#8358;"+totalBudget;
-    totalCommentValue.innerHTML = totalComment;
-    totalCommunityValue.innerHTML = totalCommunity;
-    totalContractorsValue.innerHTML = totalContractors;
-    totalProjectValue.innerHTML = totalProject;
-    totalReviewersValue.innerHTML = totalReviewers;
-    totalSubscribersValue.innerHTML = totalSubcribers;
-    totalUserValue.innerHTML = totalUser;
- })
- .catch(err => console.error(err))
 
-
-//  const name = ({}) => {
-
-//  }
+const getStat = (token) => {
+    fetch(url, {
+        method: "GET",
+        mode: "cors",
+        headers: {
+            "Accept": "aplication/json",
+            "Authorization": token
+        }
+     })
+     .then(response => response.json())
+     .then(data => {
+         console.log(data)
+        const  {totalBudget, totalComment, totalCommunity, totalContractors,
+             totalProject, totalReviewers, totalSubcribers, totalUser} =  data;
+        totalBudgetValue.innerHTML = "&#8358;"+totalBudget;
+        totalCommentValue.innerHTML = totalComment;
+        totalCommunityValue.innerHTML = totalCommunity;
+        totalContractorsValue.innerHTML = totalContractors;
+        totalProjectValue.innerHTML = totalProject;
+        totalReviewersValue.innerHTML = totalReviewers;
+        totalSubscribersValue.innerHTML = totalSubcribers;
+        totalUserValue.innerHTML = totalUser;
+     })
+     .catch(err => console.error(err))
+}
