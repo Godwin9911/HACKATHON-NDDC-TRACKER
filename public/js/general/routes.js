@@ -77,4 +77,14 @@ class Routes {
   get uploadExcel() {
     return "api/v1/import/project"
   }
+
+
+  // Edit Profile
+  get editProfile() {
+    return "api/v1/user/edit"
+  }
+
+  get changePassword() {
+    return "api/v1/password/change"
+  }
 }

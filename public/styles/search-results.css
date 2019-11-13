@@ -1,6 +1,7 @@
 .search-results-head {
-  min-height: 20vh;
+  min-height: 10vh;
   background: #2C5E2E;
+  display: none;
 }
 
 .search-results-head h4 {
@@ -39,6 +40,10 @@
 
 .search-results-con .filter-section .now-showing {
   height: 8vh;
+}
+
+.search-results-con .projects-section {
+  max-height: 100vh;
 }
 
 @media (max-width: 767px) {

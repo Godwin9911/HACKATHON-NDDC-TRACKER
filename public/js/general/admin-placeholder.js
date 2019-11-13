@@ -1,2 +1,7 @@
-console.log(user)
-console.log(token)
+
+
+
+// setTimeout
+// (() => {
+//     console.log(certified)
+// }, 5000)

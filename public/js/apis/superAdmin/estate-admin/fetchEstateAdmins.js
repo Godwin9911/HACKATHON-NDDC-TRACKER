@@ -14,13 +14,13 @@ const spinner = document.querySelector('[data-preloader]');
 
 
 
-// Access the API using the authorization token and url
+// Access the API using the authorization certified[0] and url
     fetch(url, {
         method: "GET",
         mode: "cors",
         headers: {
             "Accept": "aplication/json",
-            "Authorization": token
+            "Authorization": certified[0]
         },
         
     })

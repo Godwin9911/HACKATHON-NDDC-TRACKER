@@ -43,7 +43,7 @@ const displayEstateInfoToModal = (event, viewEstateBtn) => {
       baseURL: routes.api_origin,
       headers: {
          'Accept': "application/json",
-         'Authorization': token,
+         'Authorization': certified[0],
       },
    })
        .then(response => {

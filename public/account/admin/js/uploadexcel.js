@@ -2,7 +2,7 @@ const uploadForm = document.querySelector('#upload-form');
 const importFileInput = document.querySelector('#import-file')
 const fileName = document.querySelector('#file-name')
 
-const validateExecel = (event, uploadForm) => {
+const validateExcel = (event, uploadForm) => {
     event.preventDefault();
     console.log(event)
     console.log('hshssh')
@@ -14,7 +14,7 @@ const validateExecel = (event, uploadForm) => {
     fileName.innerHTML = input.name;
 }
 
-uploadForm.addEventListener('change', (event) => validateExecel(event, uploadForm))
+uploadForm.addEventListener('change', (event) => validateExcel(event, uploadForm))
 
 
 
@@ -48,8 +48,8 @@ const uploadApi = (event, uploadForm) => {
         method: "POST",
         mode: "cors",
         headers: {
-            "Accept": "aplication/json",
-            "Authorization": token
+            "Accept": "application/json",
+            "Authorization": certified[0]
         },
         body: formData
     })

@@ -13,7 +13,7 @@ const approve = (event, approveRequest) => {
         headers: {
             "Accept": "application/json",
             "Content-Type": "application/json",
-            "Authorization": token
+            "Authorization": certified[0]
         },
         body: ''
     })
