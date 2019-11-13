@@ -15,9 +15,14 @@ class ProjectsImport implements ToModel
     public function model(array $row)
     {
         return new Project([
-            'PROJECT'     => $row[0],
+            'PROJECT_TYPE'     => $row[0],
             'LOCATION'    => $row[1], 
-            'DESCRIPTION'    => $row[2], 
+            'LGA'    => $row[2], 
+            'PROJECT_DESCRIPTION'    => $row[3], 
+            'BUDGET_COST'    => $row[4], 
+            'COMMITMENT'    => $row[5], 
+            'AMOUNT_APPROVED_2016'    => $row[6], 
+            'AMOUNT_APPROVED_2017'    => $row[7],
         ]);
     }
 }

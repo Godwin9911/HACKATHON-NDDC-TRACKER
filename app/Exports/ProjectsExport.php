@@ -18,18 +18,26 @@ class ProjectsExport implements FromCollection
     public function headings(): array
     {
         return [
-            'PROJECT',
+            'PROJECT_TYPE',
             'LOCATION',
-            'DESCRIPTION',
+            'PROJECT_DESCRIPTION',
+            'BUDGET_COST',
+            'COMMITMENT',
+            'AMOUNT_APPROVED_2016',
+            'AMOUNT_APPROVED_2017',
         ];
     }
 
     public function map($project): array
     {
         return [
-            $project->PROJECT,
+            $project->PROJECT_TYPE,
             $project->LOCATION,
-            $project->DESCRIPTION,
+            $project->PROJECT_DESCRIPTION,
+            $project->BUDGET_COST,
+            $project->COMMITMENT,
+            $project->AMOUNT_APPROVED_2016,
+            $project->AMOUNT_APPROVED_2017,
         ];
     }
 }

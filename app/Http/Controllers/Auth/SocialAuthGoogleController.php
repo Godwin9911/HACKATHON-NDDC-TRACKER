@@ -45,12 +45,7 @@ class SocialAuthGoogleController extends Controller
                 $existUser = User::where('email', $googleUser->email)->first();
 
                 if($existUser) {
-                    $on_platform_check = User::where('email', $googleUser->email)->where('google_id', $googleUser->id)->first();
-                    if($on_platform_check) {
-                        $token = Auth::guard()->login($existUser);
-                    }else {
-                        return redirect()->to('https://hackanthon-258716.firebaseapp.com/retrieve-data.html?status=true&code=403&message=Not-allowed');
-                    }
+                     $token = Auth::guard()->login($existUser);
                 }
                 else {
                     $user = new User;

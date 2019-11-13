@@ -9,7 +9,7 @@ use App\Imports\ProjectsImport;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\DB;
 
-class importExcelController extends Controller
+class ImportExcelController extends Controller
 {
 
     public function index()
@@ -55,8 +55,9 @@ class importExcelController extends Controller
             $res['message'] = 'Successful Imported'; 
             return response()->json($res, 200);
         }catch(\Exception $e) {
-            $res['status'] = fasle;
+            $res['status'] = false;
             $res['message'] = 'Not implemented, please try gaian!';
+            $res['hint'] = $e->getMessage();
             return response()->json($res, 501);
         }
       

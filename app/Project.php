@@ -12,7 +12,7 @@ class Project extends Model
      * @var array
      */
     protected $fillable = [
-        'project_title', '', 'email', 'password', 'phone', 'image', 'verifycode', 'role', 'user_type', 'device_id', 'accept_terms'
+        'PROJECT_TYPE', 'LOCATION', 'LGA', 'PROJECT_DESCRIPTION', 'BUDGET_COST', 'COMMITMENT', 'AMOUNT_APPROVED_2016', 'AMOUNT_APPROVED_2017'
     ];
 
     /**
@@ -21,7 +21,17 @@ class Project extends Model
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token', 'email_verified_at', 'verifycode', 'role', 'fcm_token','google_id', '2_factor_enabled', 'accept_terms'
+        
     ];
+
+    
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+    public function projectlikes()
+    {
+        return $this->hasMany(ProjectLike::class);
+    }
 
 }

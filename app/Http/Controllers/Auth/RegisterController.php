@@ -17,7 +17,7 @@ class RegisterController extends Controller
 {
 
     public function community_member(Request $request) {
-        $msg = $this->create($request, $user_type='community_member', $role='1');
+        $msg = $this->create($request, $user_type='community_member', $role='3');
         return response()->json($msg, $msg['status']);
     }
 

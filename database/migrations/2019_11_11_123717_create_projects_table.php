@@ -15,9 +15,15 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('PROJECT')->nullable()->default('Building East west road');
-            $table->string('LOCATION')->nullable()->default('Rivers State');
-            $table->string('DESCRIPTION')->nullable()->default('This project will make the east west road work very well');
+            $table->string('PROJECT_TYPE')->nullable();
+            $table->string('LOCATION')->nullable();
+            $table->string('LGA')->nullable();
+            $table->string('PROJECT_DESCRIPTION')->nullable();
+            $table->string('BUDGET_COST')->nullable();
+            $table->string('COMMITMENT')->nullable();
+            $table->string('STATUS')->nullable();
+            $table->string('AMOUNT_APPROVED_2016')->nullable();
+            $table->string('AMOUNT_APPROVED_2017')->nullable();
             $table->timestamps();
         });
     }

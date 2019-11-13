@@ -23,9 +23,10 @@ class CreateUsersTable extends Migration
             $table->string('image')->default('noimage.jpg');
             $table->string('verifycode');
             $table->enum('user_type', array('admin','contractor','reviewer','community_member'));
-            $table->enum('role', array(0,1,2)); //0 => The Project Issuer(Admin) //1 => The Contractors Members //2 The Reviewers Members //3 The Community Members
+            $table->enum('role', array(0,1,2,3)); //0 => The Project Issuer(Admin) //1 => The Contractors Members //2 The Reviewers Members //3 The Community Members
             $table->enum('2_factor_enabled', array('no', 'yes'));
             $table->string('google_id');
+            $table->string('user_mode')->default('nddc-tracker');
             $table->enum('accept_terms', array('yes')); 
             $table->rememberToken();
             $table->timestamps();
