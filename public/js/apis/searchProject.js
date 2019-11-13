@@ -1,14 +1,23 @@
 const parsedUrl = new URL(window.location.href);
 const getUrlParam = parsedUrl.searchParams
 
-const query = getUrlParam.get('query');
+let query;
+query = getUrlParam.get('query');
 console.log(query);
 
-const projectResults = [];
+if(query) {
+    document.querySelector('[data-search-placeholder-box]').style.display = 'block'
+}
+
+const searchPlaceHolder = document.querySelector('[data-search-placeholder]');
+searchPlaceHolder.textContent = query;
+
+let delete_save;
+let projectResults = [];
 //Get the Dom
 const projectDOM = document.querySelector('[data-project-dom]');
 
-const fetchProjects = () => {
+const fetchProjects = (query) => {
     const routes = new Routes();
     const url = `${routes.apiOrigin}${routes.searchProject(query)}`;
     console.log(url)
@@ -17,7 +26,7 @@ const fetchProjects = () => {
     .then(response => response.json())
     .then(data => {
         console.log(data)
-        projectResults.push(data.search);
+        data.search.map(x => projectResults.push(...x));
         console.log(projectResults);
         displayProjectResult();
     })
@@ -30,12 +39,18 @@ const displayProjectResult = () => {
 
     if(projectResults) {
         projectDOM.innerHTML = '';
-        projectResults[0].map(projectResult => {
+        
+            projectResults.map(projectResult => {
+            let like_count = 0;
+            let unlike_count = 0;
             console.log(projectResult)
             const {id, AMOUNT_APPROVED_2016, AMOUNT_APPROVED_2017, contractor, BUDGET_COST, COMMITMENT, LGA, LOCATION, PROJECT_DESCRIPTION, PROJECT_TYPE, STATUS, project_image, comments_count, created_at, projectlikes} = projectResult;
             if(token){
-                 delete_save = `<span class="col-12 col-md-3 px-0 mt-2 grey mt-2" id="deleteSaveProject${id}">Delete from saved</span>`;
+               delete_save = `<span class="col-12 col-md-3 px-0 mt-2 grey mt-2" id="deleteSaveProject${id}">Delete from saved</span>`;
+            }else {
+                delete_save = '';
             }
+            console.log(projectlikes);
             console.log(id)
   
             projectDOM.innerHTML += `
@@ -45,8 +60,8 @@ const displayProjectResult = () => {
                             <img src="../../images/welcome-bg.png" alt="">
                         </div>
                         <div class="col-12 col-md-7 project-details">
-                            <div class="col-12 title-removefrom row mx-0">
-                                <h3 class="grey bold px-0 col-12 col-md-9 mt-2" onclick="location.href='project.html'">${PROJECT_DESCRIPTION}</h3>
+                            <div class="col-12 title-removefrom row mx-0 scroller">
+                                <h5 class="grey bold px-0 col-12 col-md-9 mt-2" onclick="location.href='project.html'">${PROJECT_DESCRIPTION}</h5>
                                 ${delete_save}
                             </div>
                             <div class="col-12 contractor-name">
@@ -61,7 +76,7 @@ const displayProjectResult = () => {
                             </div>
                             <div class="col-12 project-stats row mx-0">
                                 <div class="col-12 col-md-6 px-0">
-                                    <p class="grey mb-1">Project ID: <span class="stat-value">Nddc${Math.random()}${id}</span></p>
+                                    <p class="grey mb-1">Project ID: <span class="stat-value">Nddc/${Math.floor(1000 + Math.random() * 9000)}${id}</span></p>
                                 </div>
                                 <div class="col-12 col-md-6 px-0">
                                     <p class="grey mb-1">Total Budget: <span class="stat-value">N${BUDGET_COST}</span></p>
@@ -75,21 +90,52 @@ const displayProjectResult = () => {
                             </div>
                             <div class="col-12 thumbs-comments row mx-0 mt-3">
                                 <div class="col px-0 text-center">
-                                    <span class="grey"><i class="fa fas fa-2x fa-thumbs-up mr-2"></i>200</span>
+                                    <span class="grey"><i class="fa fas fa-2x fa-thumbs-up mr-2"></i><span id="view_like_count${id}">${like_count}<span></span>
                                 </div>
                                 <div class="col px-0 text-center">
-                                    <span class="grey"><i class="fa fas fa-2x fa-thumbs-down mr-2"></i>52</span>
+                                    <span class="grey"><i class="fa fas fa-2x fa-thumbs-down mr-2"></i><span id="view_unlike_count${id}">${unlike_count}<span></span>
                                 </div>
                                 <div class="col px-0 text-center">
-                                    <span class="grey"><i class="fa fas fa-2x fa-comments mr-2"></i>200</span>
+                                    <span class="grey"><i class="fa fas fa-2x fa-comments mr-2"></i><span>${comments_count}<span></span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             `;
+            if(projectlikes) {
+                projectlikes.map((current) => {
+                    if(current.status == 'unlike'){
+                        like_count+=1
+                    }
+                    if(current.status == 'like'){
+                        like_count+=1
+                    }
+                });
+            }
+            document.querySelector(`#view_like_count${id}`).textContent = like_count;
+            document.querySelector(`#view_unlike_count${id}`).textContent = unlike_count;
 
         })
     }
 }
-fetchProjects();
+fetchProjects(query);
+
+
+    const customFiterBoxs = Array.from(document.querySelectorAll('.client-search'));
+
+    const customFiter = (event, x) => {
+        if(x.checked == true) {
+            query += `,${x.value}`;
+            console.log(query)
+        }else {
+            query = query.replace(`,${x.value}`,'');
+            console.log(query)
+        }
+        projectResults = [];
+        fetchProjects(query);
+    }
+
+    customFiterBoxs.map(x => {
+        x.addEventListener('change', (event) => customFiter(event, x));
+    })

@@ -1,8 +1,9 @@
 @import "../styles/media-queries";
 
 .search-results-head {
-    min-height: 20vh;
+    min-height: 10vh;
     background: #2C5E2E;
+    display: none;
 
     h4 {
         color: white;
@@ -42,6 +43,7 @@
     }
 
     .projects-section {
+        max-height: 100vh;
         @include small-screens {
             padding: 0px;
         }

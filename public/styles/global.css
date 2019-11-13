@@ -315,6 +315,10 @@ footer .subscribe-social .footer-social .social-links .link-con img {
   width: 100%;
 }
 
+.project .project-details .title-removefrom {
+  max-height: 10vh;
+}
+
 .project .project-details .title-removefrom span {
   font-size: 10px;
   cursor: pointer;
