@@ -11,6 +11,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/manipulate.css">
 </head>
 
 <body class="roboto scroller">
@@ -49,9 +50,9 @@
                             increasing civic participation in NDDC Projects</h2>
                         <span class="">View, participate and share in the deliberations of NDDC Projects</span>
                         <div class="special-input br-10px mb-3 mt-5 col-12 col-md-8 mx-auto row mx-0">
-                            <input type="text" class="form-control col-10 mt-2"
+                            <input id="search_value" type="text" class="form-control col-10 mt-2"
                                 placeholder="Search projects e.g. location, sector,organization or keyword">
-                            <button class="btn btn-brand col-2 p-0 mt-2" onclick="location.href='project/search-results.html'">Search</button>
+                            <button class="btn btn-brand col-2 p-0 mt-2"  id="project_search">Search</button>
                         </div>
                     </div>
                     <div class="col-12 row mx-0 col-md-11 mx-auto explore-projects mt-4">
@@ -122,9 +123,9 @@
                     <p class="mt-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat animi maiores
                         iste.</p>
                     <div class="special-input br-10px mb-3 mt-5 col-12 col-md-12 mx-auto row mx-0">
-                        <input type="text" class="form-control col-12 col-md-9 mt-2"
-                            placeholder="Subscribe to our Newsletter">
-                        <button class="btn btn-brand col-12 col-md-3 mt-2">Subscribe</button>
+                        <input id="email-sub-1" type="text" class="form-control col-12 col-md-9 mt-2"
+                            placeholder="Enter Email">
+                        <button id="subscribe-btn-1" class="btn btn-brand col-12 col-md-3 mt-2">Subscribe</button>
                     </div>
                     <span class="mt-2">Connect with us on social media</span>
                     <div class="social-con col-12 col-md-9 mt-3 px-0 row mx-0">
@@ -185,9 +186,9 @@
                         <div class="col-12 col-md-6 footer-subscribe mt-5">
                             <span class="">Subscribe to our newsletter</span>
                             <div class="special-input br-10px mb-3 col-12 col-md-12 mx-auto row mx-0 px-2">
-                                <input type="text" class="form-control col-12 col-md-9 mt-2"
-                                    placeholder="Subscribe to our Newsletter">
-                                <button class="btn btn-brand col-12 col-md-3 mt-2 px-0">Subscribe</button>
+                                <input id="email-sub-2" type="text" class="form-control col-12 col-md-9 mt-2"
+                                    placeholder="Enter Email">
+                                <button id="subscribe-btn-2" class="btn btn-brand col-12 col-md-3 mt-2 px-0">Subscribe</button>
                             </div>
                         </div>
                         <div class="footer-social col-12 col-md-6 row mx-0 my-3">
@@ -218,8 +219,12 @@
         </div>
     </div>
 
-    <script src="js/general/third_party_cdn.js""></script>
-    <script src="js/general/placeholder.js""></script>
+    <script src="js/general/third_party_cdn.js"></script>
+    <script src="js/general/placeholder.js"></script>
+    <script src="js/general/routes.js"></script>
+    <script src="js/apis/newsletter.js"></script>
+    <script src="js/general/searchRedirect.js"></script>
+
 </body>
 
 </html>

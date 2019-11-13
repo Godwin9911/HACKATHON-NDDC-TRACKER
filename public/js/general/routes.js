@@ -11,6 +11,10 @@ class Routes {
   get apiOrigin() {
     return "https://hackathon-nddc.herokuapp.com/";
   }
+
+  get checkSession() {
+    return "api/v1/check/session"
+  }
   //Authentication Paths
   get register() {
     return "api/v1/register";
@@ -34,5 +38,23 @@ class Routes {
   get currentUser() {
     return "api/v1/user";
   }
+
+  //Subcribers
+  get subscribeSend() {
+    return "api/v1/subscriber/create";
+  }
+  get subscribers() {
+    return "api/v1/subscribers";
+  }
+  subscriberOne(id) {
+    return `api/v1/subscribers/one/${id}`;
+  }
+  subscriberDelete(id) {
+    return `api/v1/subscribers/delete/${id}`;
+  }
  
+  //Projects
+  searchProject(query) {
+    return `api/v1/project/search/${query}`;
+  }
 }

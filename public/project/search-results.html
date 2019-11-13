@@ -64,8 +64,8 @@
             </div>
             <div class="search-more col-12 col-md-6 mx-auto mt-4">
                 <div class="special-input br-10px mb-3 col-12 col-md-12 mx-auto row mx-0 px-2 border-brand">
-                    <input type="text" class="form-control col-12 col-md-9 mt-2" placeholder="Port Harcourt">
-                    <button class="btn btn-brand col-12 col-md-3 mt-2 px-0">Search</button>
+                    <input id="search_value" type="text" class="form-control col-12 col-md-9 mt-2" placeholder="Port Harcourt">
+                    <button class="btn btn-brand col-12 col-md-3 mt-2 px-0" id="project_search">Search</button>
                 </div>
             </div>
             <div class="search-pagination col-12 border">
@@ -169,7 +169,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-8 mt-5 projects-section">
+                <div class="col-12 col-md-8 mt-5 projects-section" data-project-dom>
                     <div class="col-12 projects-listed scroller">
                         <div class="col-12 mb-3 project row mx-0 p-4">
                             <div class="col-12 col-md-5 px-0 project-image">
@@ -221,6 +221,7 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
             <footer class="col-12">
@@ -292,5 +293,9 @@
 </body>
 <script src="../js/general/third_party_cdn.js"></script>
 <script src="../js/general/placeholder.js"> </script>
+<script src="../js/general/routes.js"></script>
+<script src="../js/general/onSession.js"></script>
+<script src="../js/general/searchRedirect.js"></script>
+<script src="../js/apis/searchProject.js"></script>
 
 </html>
