@@ -118,6 +118,14 @@
   font-size: 12px;
 }
 
+.our-nav .nav-utilities .nav-item .dropdown-menu a:hover {
+  color: #0B273D !important;
+}
+
+.our-nav .nav-utilities .nav-item .dropdown-menu a:focus {
+  background: #0B273D;
+}
+
 .special-input {
   min-height: 8vh;
   background: white;
@@ -310,6 +318,14 @@ footer .subscribe-social .footer-social .social-links .link-con img {
 .project .project-details .title-removefrom span {
   font-size: 10px;
   cursor: pointer;
+  text-decoration: underline;
+}
+
+.project .project-details .title-removefrom h3 {
+  cursor: pointer;
+}
+
+.project .project-details .title-removefrom h3:hover {
   text-decoration: underline;
 }
 

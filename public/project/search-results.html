@@ -17,7 +17,7 @@
     <div class="container-fluid">
         <div class="row">
             <nav class="navbar navbar-expand-lg navbar-light our-nav col-12">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="#">
                     <div class="border logo-replace"></div>
                     <span class="ml-3 mt-2 bold">NDDC TRACKER</span>
                 </a>
@@ -48,7 +48,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">Saved Projects</a>
-                                <a class="dropdown-item" href="#">Settings</a>
+                                <a class="dropdown-item" href="../account/user/profile-settings.html">Settings</a>
                                 <a class="dropdown-item" href="#">Help</a>
                                 <a class="dropdown-item" href="#">Log Out</a>
                             </div>
@@ -64,8 +64,8 @@
             </div>
             <div class="search-more col-12 col-md-6 mx-auto mt-4">
                 <div class="special-input br-10px mb-3 col-12 col-md-12 mx-auto row mx-0 px-2 border-brand">
-                    <input type="text" class="form-control col-12 col-md-9 mt-2" placeholder="Port Harcourt">
-                    <button class="btn btn-brand col-12 col-md-3 mt-2 px-0">Search</button>
+                    <input id="search_value" type="text" class="form-control col-12 col-md-9 mt-2" placeholder="Port Harcourt">
+                    <button class="btn btn-brand col-12 col-md-3 mt-2 px-0" id="project_search">Search</button>
                 </div>
             </div>
             <div class="search-pagination col-12 border">
@@ -169,7 +169,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-8 mt-5 projects-section">
+                <div class="col-12 col-md-8 mt-5 projects-section" data-project-dom>
                     <div class="col-12 projects-listed scroller">
                         <div class="col-12 mb-3 project row mx-0 p-4">
                             <div class="col-12 col-md-5 px-0 project-image">
@@ -177,7 +177,7 @@
                             </div>
                             <div class="col-12 col-md-7 project-details">
                                 <div class="col-12 title-removefrom row mx-0">
-                                    <h3 class="grey bold px-0 col-12 col-md-9 mt-2">Project Title</h3>
+                                    <h3 class="grey bold px-0 col-12 col-md-9 mt-2" onclick="location.href='project.html'">Project Title</h3>
                                     <span class="col-12 col-md-3 px-0 mt-2 grey mt-2">Delete from saved</span>
                                 </div>
                                 <div class="col-12 contractor-name">
@@ -221,6 +221,7 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
             <footer class="col-12">
@@ -292,5 +293,9 @@
 </body>
 <script src="../js/general/third_party_cdn.js"></script>
 <script src="../js/general/placeholder.js"> </script>
+<script src="../js/general/routes.js"></script>
+<script src="../js/general/onSession.js"></script>
+<script src="../js/general/searchRedirect.js"></script>
+<script src="../js/apis/searchProject.js"></script>
 
 </html>
