@@ -25,7 +25,7 @@ class ProjectController extends Controller
     //Search APi for the user
     public function search($d) {
       $querys = explode(',', $d);
-      $result = [];  
+      $result = array();  
      foreach ($querys as $query) {
                      $data = Project::where('PROJECT_TYPE', 'LIKE',  "%{$query}%")
                                  ->orWhere('LOCATION', 'LIKE', "%{$query}%")
@@ -34,8 +34,8 @@ class ProjectController extends Controller
                                  ->withCount('comments')
                                  ->with('projectlikes')
                                  ->get();
-
-                     array_push($result, $data);            
+                    $array2 = array($data);
+                   $result = array_merge($result, $array2);           
                 }
 
         $res['status'] = true;
