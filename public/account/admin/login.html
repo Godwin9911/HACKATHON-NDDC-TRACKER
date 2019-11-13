@@ -9,14 +9,18 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>NDDC Tracker Admin Login</title>
+  <title data-title>Admin Login</title>
 
   <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet"
+    type="text/css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles/global.css">
 
 </head>
 
@@ -39,12 +43,17 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Welcome Back! Adminisrator</h1>
                   </div>
-                  <form class="user">
+                  <form class="user" data-login-form>
+                    <span class="" data-key>0</span>
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                      <input name="email" type="email" class="form-control form-control-user" id="exampleInputEmail"
+                        aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                        <p class="error-fields" id="emailError"></p>
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                      <input name="password" type="password" class="form-control form-control-user"
+                        id="exampleInputPassword" placeholder="Password">
+                        <p class="error-fields" id="passwordError"></p>
                     </div>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
@@ -52,17 +61,18 @@
                         <label class="custom-control-label" for="customCheck">Remember Me</label>
                       </div>
                     </div>
-                    <a href="index.html" class="btn btn-primary btn-user btn-block">
+                    <!-- <a href="index.html" class="btn btn-primary btn-user btn-block">
                       Login
-                    </a>
+                    </a> -->
+                    <button type="submit" class="btn btn-brand mb-3 col-12 bold">Continue with email</button>
                     <hr>
-                                        
+
                   </form>
                   <hr>
                   <div class="text-center">
                     <a class="small" href="forgot-password.html">Forgot Password?</a>
                   </div>
-                  
+
                 </div>
               </div>
             </div>
@@ -76,15 +86,18 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-
-</body>
-
-</html>
+  <script src="../../js/general/third_party_cdn.js""></script>
+    <script src=" ../../js/general/placeholder.js""> </script> <script src="../../js/general/routes.js""></script>
+    <script src=" ../../js/validation/auth/login.js""> </script> <script src="../../js/apis/auth/login.js""></script>
+   </body> </html>
+  

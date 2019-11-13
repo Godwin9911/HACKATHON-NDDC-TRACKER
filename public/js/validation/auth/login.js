@@ -5,7 +5,7 @@ const loginForm   = document.querySelector('[data-login-form]');
 let emailError    = document.querySelector('#emailError');
 let passwordError    = document.querySelector('#passwordError');
 
-
+console.log(permit)
 const validateForm = (loginForm) => {
     //Clear the error field 
     emailError.innerHTML = '';
@@ -33,6 +33,7 @@ const validateForm = (loginForm) => {
         return false;
     }
     permit = true;
+    console.log(permit)
 }
 loginForm.addEventListener('change', () => validateForm(loginForm));
 //Next the login api found 
