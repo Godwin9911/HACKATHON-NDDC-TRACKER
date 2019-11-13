@@ -13,7 +13,7 @@ function revoke(event, revokeButton) {
       mode: "cors",
         headers: {
             "Accept": "aplication/json",
-            "Authorization": token
+            "Authorization": certified[0]
         }
       
      // body: JSON.stringify({data})

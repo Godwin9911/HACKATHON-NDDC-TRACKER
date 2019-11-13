@@ -8,7 +8,7 @@ fetch(url, {
     mode: "cors",
     headers: {
         "Accept": "aplication/json",
-        "Authorization": token
+        "Authorization": certified[0]
     }
  })
  .then(response => response.json())
