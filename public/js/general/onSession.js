@@ -35,7 +35,7 @@ const checkUser = (token) => {
                 token = token;
                 user = user;
                 console.log(token)
-                getStat(token);
+              
             }
         }
     })

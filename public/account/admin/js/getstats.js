@@ -35,3 +35,7 @@ const getStat = (token) => {
      })
      .catch(err => console.error(err))
 }
+
+setTimeout(() => {
+    getStat(token);
+}, 3000)

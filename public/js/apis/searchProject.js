@@ -37,22 +37,23 @@ const fetchProjects = (query) => {
 
 const displayProjectResult = () => {
 
-    if(projectResults) {
-        projectDOM.innerHTML = '';
+    if(projectResults.length != 0) {
+        projectDOM.innerHTML = `<div class="col-1 spinner-con text-center" style="top: 20%;">
+                                    <div class="spinner-border mt-3" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                </div>`;
         
             projectResults.map(projectResult => {
             let like_count = 0;
             let unlike_count = 0;
-            console.log(projectResult)
             const {id, AMOUNT_APPROVED_2016, AMOUNT_APPROVED_2017, contractor, BUDGET_COST, COMMITMENT, LGA, LOCATION, PROJECT_DESCRIPTION, PROJECT_TYPE, STATUS, project_image, comments_count, created_at, projectlikes} = projectResult;
             if(token){
                delete_save = `<span class="col-12 col-md-3 px-0 mt-2 grey mt-2" id="deleteSaveProject${id}">Delete from saved</span>`;
             }else {
                 delete_save = '';
             }
-            console.log(projectlikes);
-            console.log(id)
-  
+
             projectDOM.innerHTML += `
                     <div class="col-12 projects-listed scroller">
                     <div class="col-12 mb-3 project row mx-0 p-4">
@@ -117,6 +118,8 @@ const displayProjectResult = () => {
             document.querySelector(`#view_unlike_count${id}`).textContent = unlike_count;
 
         })
+    }else {
+        projectDOM.innerHTML = `<h3 style="text-align:center;">No Search result was found!<h3>`
     }
 }
 fetchProjects(query);
