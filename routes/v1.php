@@ -51,7 +51,7 @@ Route::group(['middleware' => ['jwt.verify']], function () {
     Route::post('project/create', 'ProjectController@store')->middleware('admin');
 
       //Subscribe
-    Route::get('subscriber', ' SubscriberController@index')->middleware('admin');
+    Route::get('subscribers', ' SubscriberController@index')->middleware('admin');
     Route::get('subscriber/one/{id}', ' SubscriberController@show')->middleware('admin');
     Route::post('subscriber/delete/{id}', ' SubscriberController@destroy')->middleware('admin');
    
