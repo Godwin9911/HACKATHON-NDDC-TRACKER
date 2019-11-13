@@ -260,13 +260,13 @@ footer .subscribe-social .footer-social .social-links .link-con img {
 
 .loading-overlay {
   min-height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(22, 5, 39, 0.322);
 }
 
-.loading-overlay .spinner-con {
+.spinner-con {
   height: 10vh;
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -313,6 +313,10 @@ footer .subscribe-social .footer-social .social-links .link-con img {
 .project .project-image img {
   height: 100%;
   width: 100%;
+}
+
+.project .project-details .title-removefrom {
+  max-height: 10vh;
 }
 
 .project .project-details .title-removefrom span {

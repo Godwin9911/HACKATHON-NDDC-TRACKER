@@ -19,8 +19,11 @@ class Routes {
   get register() {
     return "api/v1/register";
   }
-  get login() {
+  get login_1() {
     return "api/v1/login";
+  }
+  get login_0() {
+    return "api/v1/admin/login";
   }
   get verify() {
     return "api/v1/verify";
@@ -56,5 +59,22 @@ class Routes {
   //Projects
   searchProject(query) {
     return `api/v1/project/search/${query}`;
+  }
+
+  // Admin Dashboard
+  get getAdminStats() {
+    return "api/v1/count";
+  }
+
+  get allUsers() {
+    return "api/v1/user/all"
+  }
+
+  get allProjects() {
+    return "api/v1/projects"
+  }
+
+  get uploadExcel() {
+    return "api/v1/import/project"
   }
 }
