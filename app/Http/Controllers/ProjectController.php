@@ -23,8 +23,8 @@ class ProjectController extends Controller
     }
 
     //Search APi for the user
-    public function search($d) {
-      $querys = explode(',', $d);
+    public function search($id) {
+      $querys = explode(',', $id);
       $result = [];  
      foreach ($querys as $query) {
                      $data = Project::where('PROJECT_TYPE', 'LIKE',  "%{$query}%")
@@ -42,6 +42,17 @@ class ProjectController extends Controller
         $res['search'] =    $result;
         return response()->json($res, 200);
     }
+
+     public function show($id) { 
+                     $data = Project::where('id', $id)
+                                         ->withCount('comments')
+                                         ->with('projectlikes')
+                                         ->get();           
+        $res['status'] = true;
+        $res['search'] =    $result;
+        return response()->json($res, 200);
+    }
+
 
     public function store(Request $request) {
             //start temporay transaction
