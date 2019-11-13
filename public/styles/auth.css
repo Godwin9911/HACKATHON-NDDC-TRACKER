@@ -92,7 +92,7 @@
   text-decoration: underline;
 }
 
-.auth-full .auth-con .instructions-sent {
+.auth-full .auth-con .request-status {
   font-size: 12px;
 }
 

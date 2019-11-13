@@ -20,7 +20,7 @@ const fetchAllStat = (requestkey = 'wkly') => {
                 headers: {
                     "Accept": "application/json",
                     "Content-Type": "application/json",
-                    "Authorization": token
+                    "Authorization": certified[0]
                 }
             });
     }
@@ -50,8 +50,8 @@ const fetchAllStat = (requestkey = 'wkly') => {
         switch(res.status) {
             case 401:
                     Swal.fire({
-                        title: `Token Error`,
-                        html:  `<p style="color:tomato; font-size:17px;">Invalid token or token has expired!</p>`,
+                        title: `certified[0] Error`,
+                        html:  `<p style="color:tomato; font-size:17px;">Invalid certified[0] or certified[0] has expired!</p>`,
                         confirmButtonText: 'Close'
                     }) 
                 break;

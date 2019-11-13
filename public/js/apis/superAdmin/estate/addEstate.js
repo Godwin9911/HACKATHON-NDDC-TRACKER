@@ -42,8 +42,8 @@ const addEstateApi = (event, addEstateForm) => {
                     flashAlert(title,result);
                 break;
                 case 401:
-                        title = 'Token Invalid';
-                        result = 'Token is invalid or have expired';
+                        title = 'certified[0] Invalid';
+                        result = 'certified[0] is invalid or have expired';
                         flashAlert(title,result);
                         setTimeout(() => {
                             location.replace('../login.html');
@@ -65,7 +65,7 @@ const addEstateApi = (event, addEstateForm) => {
             mode: "cors",
             headers: {
                 "Accept": "application/json",
-                "Authorization": token
+                "Authorization": certified[0]
             },
             body: formData
          })

@@ -10,13 +10,14 @@ const totalSubscribersValue = document.querySelector('#total-subscribers-value')
 const totalUserValue = document.querySelector('#total-user-value')
 
 
-const getStat = (token) => {
+const getStat = () => {
+    console.log(certified)
     fetch(url, {
         method: "GET",
         mode: "cors",
         headers: {
             "Accept": "aplication/json",
-            "Authorization": token
+            "Authorization": certified[0]
         }
      })
      .then(response => response.json())
@@ -37,5 +38,5 @@ const getStat = (token) => {
 }
 
 setTimeout(() => {
-    getStat(token);
+    getStat();
 }, 3000)
