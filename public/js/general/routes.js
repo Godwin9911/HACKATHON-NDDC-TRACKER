@@ -11,12 +11,19 @@ class Routes {
   get apiOrigin() {
     return "https://hackathon-nddc.herokuapp.com/";
   }
+
+  get checkSession() {
+    return "api/v1/check/session"
+  }
   //Authentication Paths
   get register() {
     return "api/v1/register";
   }
-  get login() {
+  get login_1() {
     return "api/v1/login";
+  }
+  get login_0() {
+    return "api/v1/admin/login";
   }
   get verify() {
     return "api/v1/verify";
@@ -31,9 +38,31 @@ class Routes {
   get googleAuth() {
     return "redirect/google";
   }
-
   get currentUser() {
     return "api/v1/user";
   }
+
+  //Subcribers
+  get subscribeSend() {
+    return "api/v1/subscriber/create";
+  }
+  get subscribers() {
+    return "api/v1/subscribers";
+  }
+  subscriberOne(id) {
+    return `api/v1/subscribers/one/${id}`;
+  }
+  subscriberDelete(id) {
+    return `api/v1/subscribers/delete/${id}`;
+  }
  
+  //Projects
+  searchProject(query) {
+    return `api/v1/project/search/${query}`;
+  }
+
+  // Get Admin Stats
+  get getAdminStats() {
+    return "api/v1/count";
+  }
 }

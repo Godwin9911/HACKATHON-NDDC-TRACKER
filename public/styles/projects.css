@@ -1,0 +1,148 @@
+.project-header {
+  min-height: 20vh;
+  background: #2C5E2E;
+  color: white;
+}
+
+.project-full .nav-item .nav-link {
+  background-color: inherit;
+  color: grey;
+  border-radius: 0px;
+  font-weight: 100;
+}
+
+.project-full .nav-item .nav-link.active {
+  font-weight: bold;
+  border-bottom: 3px solid grey;
+}
+
+.project-full .summary-section .project-detailed {
+  min-height: 100vh;
+}
+
+.project-full .summary-section .project-detailed .stat-value {
+  color: #54D0ED;
+}
+
+.project-full .summary-section .project-detailed .project-data {
+  min-height: 50vh;
+}
+
+.project-full .summary-section .project-detailed .location-map {
+  min-height: 50vh;
+}
+
+.project-full .summary-section .project-detailed .location-map .embedded-map {
+  height: 40vh;
+}
+
+.project-full .summary-section .project-detailed .location-map .embedded-map iframe {
+  height: 100%;
+  width: 100%;
+}
+
+.project-full .summary-section .project-detailed .status-progress {
+  min-height: 25vh;
+}
+
+.project-full .summary-section .project-detailed .status-progress .progress {
+  height: 5vh;
+  background: #0B273D;
+}
+
+.project-full .summary-section .project-detailed .status-progress .progress .progress-bar {
+  background: #54D0ED;
+}
+
+.project-full .summary-section .project-detailed .project-graph .graph-con {
+  height: 70vh;
+}
+
+.project-full .summary-section .project-detailed .budget-detail {
+  min-height: 80vh;
+}
+
+.project-full .summary-section .project-detailed .budget-detail .budget-table {
+  min-height: 20vh;
+}
+
+.project-full .summary-section .project-detailed .budget-detail .budget-table .budget-title {
+  min-height: 5vh;
+}
+
+.project-full .summary-section .project-detailed .project-gallery {
+  min-height: 50vh;
+}
+
+.project-full .summary-section .project-detailed .project-gallery .project-image {
+  height: 40vh;
+}
+
+.project-full .summary-section .project-detailed .project-gallery .project-image img {
+  height: 100%;
+  width: 100%;
+}
+
+.project-full .summary-section .project-detailed .project-gallery .view-gallery-link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.project-full .summary-section .project-detailed .project-activity div {
+  cursor: pointer;
+}
+
+.project-full .summary-section .comments-section {
+  min-height: 100vh;
+}
+
+.project-full .summary-section .comments-section .make-comment {
+  min-height: 15vh;
+}
+
+.project-full .summary-section .comments-section .make-comment .user-image {
+  height: 12vh;
+  width: 12vh;
+  border-radius: 50%;
+}
+
+.project-full .summary-section .comments-section .make-comment .comment-submit textarea {
+  border: none;
+  border-bottom: 1px solid lightgrey;
+  font-size: 12px;
+}
+
+.project-full .summary-section .comments-section .make-comment .comment-submit textarea:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+}
+
+.project-full .summary-section .comments-section .make-comment .comment-submit button {
+  height: 5vh;
+}
+
+.project-full .summary-section .comments-section .view-comments {
+  min-height: 100vh;
+}
+
+.project-full .summary-section .comments-section .view-comments .comment-image {
+  height: 12vh;
+  width: 12vh;
+  border-radius: 50%;
+}
+
+.project-full .summary-section .comments-section .view-comments .comment-image img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.project-full .summary-section .comments-section .view-comments .view-all-replies {
+  color: #54D0ED;
+}
+
+.project-full .documents-section {
+  min-height: 100vh;
+}
+/*# sourceMappingURL=projects.css.map */

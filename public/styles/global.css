@@ -36,14 +36,33 @@
   background: #0B273D;
 }
 
+.btn-brand:hover {
+  color: #0B273D;
+  background: white;
+  border: 1px solid #0B273D;
+}
+
 .btn-brand-outline {
   color: #0B273D;
   background: white;
   border: 1px solid #0B273D;
 }
 
+.btn-brand-outline:hover {
+  color: white;
+  background: #0B273D;
+}
+
 .br-10px {
   border-radius: 10px;
+}
+
+.font-12px {
+  font-size: 12px;
+}
+
+.border-brand {
+  border: 1px solid #0B273D;
 }
 
 .navbar-brand {
@@ -72,6 +91,39 @@
   color: white !important;
   font-size: 12px;
   font-weight: 600;
+}
+
+.our-nav .nav-utilities .nav-item .nav-link .nav-user {
+  height: 6vh;
+  width: 10vw;
+}
+
+.our-nav .nav-utilities .nav-item .nav-link .nav-user .nav-image {
+  height: 5vh;
+  width: 5vh;
+  border-radius: 50%;
+}
+
+.our-nav .nav-utilities .nav-item .nav-link .nav-user .nav-image img {
+  height: 60%;
+  width: 100%;
+}
+
+.our-nav .nav-utilities .nav-item .dropdown-menu {
+  background: #0B273D;
+}
+
+.our-nav .nav-utilities .nav-item .dropdown-menu a {
+  color: white !important;
+  font-size: 12px;
+}
+
+.our-nav .nav-utilities .nav-item .dropdown-menu a:hover {
+  color: #0B273D !important;
+}
+
+.our-nav .nav-utilities .nav-item .dropdown-menu a:focus {
+  background: #0B273D;
 }
 
 .special-input {
@@ -218,5 +270,88 @@ footer .subscribe-social .footer-social .social-links .link-con img {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.user-details {
+  min-height: 15vh;
+}
+
+.user-details .image-con {
+  height: 10vh;
+  width: 10vh;
+  border-radius: 50%;
+  border: 1px solid grey;
+}
+
+.user-details .image-con img {
+  height: 60%;
+  width: 100%;
+}
+
+.user-details .data-con p {
+  font-size: 20px;
+}
+
+.user-details .data-con span {
+  font-size: 14px;
+}
+
+.user-details .shared-saved-data p {
+  font-size: 24px;
+}
+
+.user-details .shared-saved-data span {
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+.project {
+  min-height: 50vh;
+  background: white;
+}
+
+.project .project-image img {
+  height: 100%;
+  width: 100%;
+}
+
+.project .project-details .title-removefrom span {
+  font-size: 10px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.project .project-details .title-removefrom h3 {
+  cursor: pointer;
+}
+
+.project .project-details .title-removefrom h3:hover {
+  text-decoration: underline;
+}
+
+.project .project-details .activity-status span {
+  font-size: 12px;
+}
+
+.project .project-details .activity-status .status-designed {
+  color: white;
+  background: #0B273D;
+  font-size: 10px;
+}
+
+.project .project-details .full-desc p {
+  font-size: 12px;
+}
+
+.project .project-details .project-stats p {
+  font-size: 12px;
+}
+
+.project .project-details .project-stats p span {
+  color: #54D0ED;
+}
+
+.project .project-details .thumbs-comments span {
+  font-size: 12px;
 }
 /*# sourceMappingURL=global.css.map */
