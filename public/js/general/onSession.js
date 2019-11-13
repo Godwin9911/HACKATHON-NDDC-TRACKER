@@ -5,12 +5,11 @@ Import Note: This script file should be use to hold data of the current user tha
 const onsessionUser = JSON.parse(localStorage.getItem('nddc-tracker-user'));
 //Check if this user is real or else redirect to login
 let validSession;
-let token;
-let user;
+let certified = [];
 
 let action = localStorage.getItem('action');
 
-const checkUser = (token) => {
+const checkUser = (token, user) => {
     //Redirect if not true
     const routes = new Routes();
     const url = `${routes.apiOrigin}${routes.checkSession}`;
@@ -32,10 +31,8 @@ const checkUser = (token) => {
                 location.replace('../login.html');
             }else {
                 console.log('hahaha')
-                token = token;
-                user = user;
-                console.log(token)
-              
+                certified.push(token);
+                certified.push(user)
             }
         }
     })
@@ -47,6 +44,7 @@ if(!onsessionUser){
     console.log(token)
 }else {
     let {token, user} = onsessionUser;
+    console.log(token)
     checkUser(token, user);
 }
 

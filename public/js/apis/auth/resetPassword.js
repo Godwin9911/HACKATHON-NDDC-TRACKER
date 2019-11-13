@@ -1,12 +1,12 @@
 const routes = new Routes();
-const url = `${ routes.apiOrigin}${ routes.forgotPassword}`;
-const forgotForm = document.querySelector('#forgot-form')
+const url = `${ routes.apiOrigin}${ routes.resetPassword}`;
+const resetForm = document.querySelector('#reset-form')
 const requestStatus = document.querySelectorAll('.request-status')[0]
 
-forgotForm.addEventListener('submit', (event) => {
+resetForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    const formData = new FormData(forgotForm);
+    const formData = new FormData(resetForm);
 
     fetch(url, {
         method: "POST",
@@ -21,7 +21,7 @@ forgotForm.addEventListener('submit', (event) => {
          console.log(data.message);
         requestStatus.classList.remove('d-none')
         setTimeout(() => {
-            location.replace("reset-password.html")
+            location.replace("login.html")
         }, 3000);
         })
      .catch(err => console.error(err))

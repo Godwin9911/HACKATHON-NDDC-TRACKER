@@ -59,9 +59,9 @@ const loginApi = (event, loginForm) => {
                 console.log(key)
 
                 if(data.user.user_type == 'admin' && key == 0) {
-                    location.replace('../../../account/admin/index.html');
+                    location.replace(`${window.location.origin}/account/admin/index.html`);
                 }else {
-                    location.replace('account/user/dashboard.html');
+                    location.replace(`${window.location.origin}/account/user/dashboard.html`);
                 }
             }
          }

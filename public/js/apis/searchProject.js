@@ -48,7 +48,7 @@ const displayProjectResult = () => {
             let like_count = 0;
             let unlike_count = 0;
             const {id, AMOUNT_APPROVED_2016, AMOUNT_APPROVED_2017, contractor, BUDGET_COST, COMMITMENT, LGA, LOCATION, PROJECT_DESCRIPTION, PROJECT_TYPE, STATUS, project_image, comments_count, created_at, projectlikes} = projectResult;
-            if(token){
+            if(certified[0]){
                delete_save = `<span class="col-12 col-md-3 px-0 mt-2 grey mt-2" id="deleteSaveProject${id}">Delete from saved</span>`;
             }else {
                 delete_save = '';

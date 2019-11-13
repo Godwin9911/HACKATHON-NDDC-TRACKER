@@ -13,7 +13,7 @@ const restore = (event, restoreButton) => {
       mode: "cors",
         headers: {
             "Accept": "aplication/json",
-            "Authorization": token
+            "Authorization": certified[0]
         }
 
       
