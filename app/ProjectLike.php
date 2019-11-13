@@ -24,4 +24,9 @@ class ProjectLike extends Model
     protected $hidden = [
      
     ];
+
+     public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
 }

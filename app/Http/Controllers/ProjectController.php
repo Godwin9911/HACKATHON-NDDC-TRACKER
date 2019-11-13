@@ -75,7 +75,51 @@ class ProjectController extends Controller
         public function  savedProject() {
             $user = Auth::user();
 
-            $saved_project = 
+            $saved_project = ProjectSave::where('user_id', $user->id)
+                                         ->with('project')
+                                         ->get();
+            $res['status'] = true;
+            $res['result'] = $saved_project;
+
+            return response()->json($res, 200);                   
 
         }
+        public function  saveAProject($project_id) {
+            $user = Auth::user();
+
+              DB::beginTransaction();
+
+              try{
+                   $user = ProjectSave::create([
+                        'user_id'      =>  $user->id,
+                        'project_id'   =>  $project_id
+                    ]);
+
+                    $msg['status'] = 201;
+                    return response()->json($res, 200);  
+                }catch(\Exception $e) {
+                    //if any operation fails, Thanos snaps finger - user was not created rollback what is saved
+                    DB::rollBack();
+
+                    $err['error']  = "Error: Account not created, please try again!";
+                    $err['hint']   = $e->getMessage();
+                    $err['status'] = 501;
+                    return response()->json($err, 200);  
+                }
+
+        }
+
+        public function destroySavedProject($project_id)
+            {
+                $findProject = ProjectSave::find($project_id);
+                if ($user) {         // removes user account
+                    $findProject->delete();
+                    $res['message'] = 'Project deleted successfully';
+                    return response()->json($res, 200);
+                } else {
+                    $res['message'] = 'Project unsuccessfully, please try again!';
+                    return response()->json($res, 501);
+                }
+            }
+
 }

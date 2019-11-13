@@ -92,5 +92,8 @@ Route::group(['middleware' => ['jwt.verify']], function () {
 //Project with User
 Route::group(['middleware' => ['jwt.verify']], function () {
 
+    Route::get('saved/project', 'ProjectController@savedProject');
+    Route::post('saved/project/create', 'ProjectController@saveAProject');
+    Route::delete('saved/project/delete', 'ProjectController@destroySavedProject');
 
 });
