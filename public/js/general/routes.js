@@ -61,6 +61,10 @@ class Routes {
     return `api/v1/project/search/${query}`;
   }
 
+  viewOneProject(id) {
+    return `api/v1/project/${id}`;
+  }
+
   // Admin Dashboard
   get getAdminStats() {
     return "api/v1/count";

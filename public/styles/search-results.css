@@ -7,6 +7,14 @@
 .search-results-head h4 {
   color: white;
 }
+.hover-fly {
+  transition: 1s all ease;
+}
+
+.hover-fly:hover {
+  transform: scale(1.003);
+  color: #0B273D;
+}
 
 @media (max-width: 767px) {
   .search-results-head h4 {

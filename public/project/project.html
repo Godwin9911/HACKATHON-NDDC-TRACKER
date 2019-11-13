@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title data-title>Dashboard</title>
+    <title data-title>Project</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -17,7 +17,7 @@
     <div class="container-fluid">
         <div class="row">
             <nav class="navbar navbar-expand-lg navbar-light our-nav col-12">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="../index.html">
                     <div class="border logo-replace"></div>
                     <span class="ml-3 mt-2 bold">NDDC TRACKER</span>
                 </a>
@@ -31,6 +31,12 @@
                     <ul class="navbar-nav ml-auto nav-utilities">
                         <li class="nav-item mx-3 mt-2">
                             <a class="nav-link" href="#">Categories</a>
+                        </li>
+                        <li class="nav-item mx-3 mt-2">
+                            <a class="nav-link" href="search-results.html">Search</a>
+                        </li>
+                        <li class="nav-item mx-3 mt-2">
+                            <a class="nav-link" href="">Notifications</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -53,15 +59,17 @@
                                 <a class="dropdown-item" href="#">Log Out</a>
                             </div>
                         </li>
-                        <li class="nav-item mx-3 mt-2">
-                            <a class="nav-link" href="">Notifications</a>
-                        </li>
                     </ul>
                 </div>
             </nav>
-            <div class="col-12 project-header pl-5">
-                <p class="project-title mt-5 mb-0">Construction/Rehabilitation Of Abia Road</p>
-                <span class="font-12px">Name of Contractor</span>
+            <div class="col-12 project-header row mx-0 pl-5">
+                <div class="col-12 col-md-6">
+                    <p class="project-title mt-5 mb-0" data-project-topic>Construction/Rehabilitation Of Abia Road</p>
+                    <span class="font-12px" data-project-contractor>Not Specified</span>
+                </div>
+                <div class="col-12 col-md-6 text-right">
+                    <h5 class="mt-5">Project Type: <span data-project-type>Health</span></h5>
+                </div>
             </div>
             <div class="col-12 project-full">
                 <ul class="nav nav-pills mb-3 ml-5" id="pills-tab" role="tablist">
@@ -79,14 +87,16 @@
                         aria-labelledby="summary-tab">
                         <div class="col-12 col-md-11 mx-auto row mx-0 project-detailed">
                             <div class="col-12 col-md-7 project-data mt-2">
-                                <span class="last-updated grey font-12px">Project last updated: 10/07/2019</span>
+                                <span class="last-updated grey font-12px">Project last updated: <span
+                                        data-project-updated>10/07/2019</span></span>
                                 <p class="total-budget font-12px grey bold mb-2 mt-5">Total Budget: <span
-                                        class="stat-value">N200,000,000</span></p>
-                                <p class="project-id font-12px grey bold mb-2">Project ID: <span
-                                        class="stat-value">12354739</span></p>
-                                <p class="start-date font-12px grey bold mb-2">Start Date: <span
-                                        class="stat-value">10/11/2019</span></p>
-                                <p class="col-12 px-0 font-12px grey">Lorem ipsum dolor sit, amet consectetur
+                                        class="stat-value" data-project-budget>N200,000,000</span></p>
+                                <p class="project-id font-12px grey bold mb-2">Project ID: <span class="stat-value"
+                                        data-project-id>12354739</span></p>
+                                <p class="start-date font-12px grey bold mb-2">Start Date: <span class="stat-value"
+                                        data-project-created>10/11/2019</span></p>
+                                <p class="col-12 px-0 font-12px grey" data-project-desc>Lorem ipsum dolor sit, amet
+                                    consectetur
                                     adipisicing elit.
                                     Ratione doloribus, magni alias distinctio impedit iusto quis praesentium quibusdam
                                     id ab,
@@ -98,16 +108,16 @@
                                     Asperiores non accusamus obcaecati voluptatum, ipsum magni.</p>
                             </div>
                             <div class="col-12 col-md-5 location-map mt-2">
-                                <p class="total-budget font-12px grey bold mb-2 mt-4">Location: <span
-                                        class="stat-value">Port Harcourt</span></p>
+                                <p class="total-budget font-12px grey bold mb-2 mt-4">Location: <span class="stat-value"
+                                    data-project-location>Port Harcourt</span></p>
                                 <div class="col-12 col-md-9 embedded-map border px-0">
-                                    <iframe id="gmap_canvas"
+                                    <iframe data-project-location-map id="gmap_canvas"
                                         src="https://maps.google.com/maps?q=port%20harcourt&t=&z=13&ie=UTF8&iwloc=&output=embed"
                                         frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                                 </div>
                             </div>
                             <div class="col-12 status-progress pt-4">
-                                <span class="bold grey">Status: In Progress</span>
+                                <span class="bold grey">Status: <span data-project-status>Progress</span></span>
                                 <div class="progress col-12 col-md-9 px-0 mt-4">
                                     <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75"
                                         aria-valuemin="0" aria-valuemax="100"></div>
@@ -122,16 +132,17 @@
                                 <p class="grey bold mt-4">Budget</p>
                                 <div class="budget-table col-12 col-md-5 border px-0">
                                     <div class="col-12 budget-title px-2 border-bottom">
-                                        <p class="grey bold font-12px mt-2">Budget Title</p>
+                                        <p class="grey bold font-12px mt-2">Budget Title: Not Specified</p>
                                     </div>
                                     <div class="budget-data col-12 px-2">
-                                        <span class="grey font-12px">Spent: <span
-                                                class="stat-value">N50,000,000</span></span> <br>
-                                        <span class="grey font-12px">Start Date: <span
-                                                class="stat-value">10/11/2019</span></span>
+                                        <span class="grey font-12px">Spent: <span class="stat-value"
+                                                data-project-budget-spent>N50,000,000</span></span> <br>
+                                        <span class="grey font-12px">Start Date: <span class="stat-value"
+                                            data-project-created-2>10/11/2019</span></span>
                                     </div>
                                 </div>
-                                <p class="budget-desc px-0 col-12 font-12px mt-3 grey">Lorem ipsum dolor sit amet
+                                <p class="budget-desc px-0 col-12 font-12px mt-3 grey" data-project-desc_2>Lorem ipsum
+                                    dolor sit amet
                                     consectetur adipisicing elit.
                                     Aperiam, molestias? Optio expedita doloribus veritatis porro quam asperiores
                                     possimus
@@ -141,11 +152,9 @@
                                     voluptatem,
                                     alias quod dolore error voluptas enim quae autem culpa dolor deleniti veritatis?</p>
                                 <p class="contractor-header bold grey">Contractors</p>
-                                <p class="contractor-desc px-0 col-12 font-12px grey mt-3">Lorem ipsum dolor sit amet,
-                                    consectetur adipisicing elit.
-                                    Ex ipsa enim at maxime dignissimos consequuntur culpa accusantium tenetur cumque
-                                    libero?</p>
-                                <button class="btn btn-brand font-12px">Download CSV</button>
+                                <p class="contractor-desc px-0 col-12 font-12px grey mt-3"
+                                    data-project-contractors-info>Details about contractor [Not Specified]</p>
+                                <button class="btn btn-brand font-12px" data-project-download>Download CSV</button>
                             </div>
                             <div class="project-gallery col-12 row mx-0">
                                 <div class="col-12 col-md px-0 project-image mx-2 mt-3">
@@ -165,19 +174,24 @@
                             </div>
                             <div class="project-activity col-12 col-md-4 row mx-0 mb-5">
                                 <div class="col text-center px-0">
-                                    <span class="grey font-12px"><i class="fa fas fa-2x fa-thumbs-up"></i> 200</span>
+                                    <span class="grey font-12px"><i class="fa fas fa-2x fa-thumbs-up"></i> <span
+                                            data-project-like></span></span>
                                 </div>
                                 <div class="col text-center px-0">
-                                    <span class="grey font-12px"><i class="fa fas fa-2x fa-thumbs-down"></i> 59</span>
+                                    <span class="grey font-12px"><i class="fa fas fa-2x fa-thumbs-down"></i> <span
+                                        data-project-dislike></span></span>
                                 </div>
                                 <div class="col text-center px-0">
-                                    <span class="grey font-12px"><i class="fa fas fa-2x fa-comments"></i> 5</span>
+                                    <span class="grey font-12px"><i class="fa fas fa-2x fa-comments"></i> <span
+                                            data-project-comment></span></span>
                                 </div>
                                 <div class="col text-center px-0">
-                                    <span class="grey font-12px"><i class="fa fas fa-2x fa-share"></i> Share</span>
+                                    <span class="grey font-12px"><i class="fa fas fa-2x fa-share"></i> <span
+                                            data-project-share></span> Share</span>
                                 </div>
                                 <div class="col text-center px-0">
-                                    <span class="grey font-12px"><i class="fa fas fa-2x fa-save"></i> Save</span>
+                                    <span class="grey font-12px" data-project-save><i class="fa fas fa-2x fa-save"></i>
+                                        Save</span>
                                 </div>
                             </div>
                         </div>
@@ -189,10 +203,11 @@
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-11 comment-submit">
-                                    <form>
+                                    <form data-project-comment>
                                         <div class="form-group mb-1">
-                                            <textarea class="col-12 mt-4 pl-4 scroller" type="text" class="form-control"
-                                                placeholder="Add a public comment"></textarea>
+                                            <textarea name="comment" class="col-12 mt-4 pl-4 scroller" type="text"
+                                                class="form-control" placeholder="Add a public comment"></textarea>
+                                            <span name="anonymous" style="visibility: hidden;">Anonymous</span>
                                         </div>
                                         <div class="col-12 text-right">
                                             <button type="submit" class="btn btn-brand br-10px py-0">Submit</button>
@@ -384,5 +399,8 @@
 </body>
 <script src="../js/general/third_party_cdn.js"></script>
 <script src="../js/general/placeholder.js"> </script>
+<script src="../js/general/routes.js"></script>
+<script src="../js/general/onSession.js"></script>
+<script src="../js/apis/viewOneProject.js"></script>
 
 </html>
