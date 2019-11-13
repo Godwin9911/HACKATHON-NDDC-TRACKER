@@ -79,7 +79,7 @@ class UserProfileController extends Controller
             'city'    => 'nullable|string',
             'state' => 'nullable|string',
              'lga'    => 'nullable|string',
-            'email'    => 'nullable|unique:users,email,' . $user->id,
+            'email'    => 'required|unique:users,email,' . $user->id,
             'name'     => 'required|string'
         ]);
 
