@@ -7,6 +7,8 @@ console.log(query);
 
 if(query) {
     document.querySelector('[data-search-placeholder-box]').style.display = 'block'
+}else {
+    query = 'Rivers';
 }
 
 const searchPlaceHolder = document.querySelector('[data-search-placeholder]');
@@ -107,7 +109,7 @@ const displayProjectResult = () => {
             if(projectlikes) {
                 projectlikes.map((current) => {
                     if(current.status == 'unlike'){
-                        like_count+=1
+                        unlike_count+=1
                     }
                     if(current.status == 'like'){
                         like_count+=1
