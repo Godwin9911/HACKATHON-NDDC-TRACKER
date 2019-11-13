@@ -87,4 +87,8 @@ class Routes {
   get changePassword() {
     return "api/v1/password/change"
   }
+
+  get deleteAccount() {
+    return "api/vi/user/delete"
+  }
 }

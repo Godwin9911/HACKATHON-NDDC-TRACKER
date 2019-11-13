@@ -1,4 +1,5 @@
 const editProfileForm = document.querySelector('#edit-profile-form')
+const changePasswordForm = document.querySelector('#change-password-form')
 const fileName = document.querySelector('#file-name')
 
 const validateExcel = (event, editProfileForm) => {
@@ -42,3 +43,70 @@ const editProfileApi = (event, editProfileForm) => {
 
 
 editProfileForm.addEventListener('submit', (event) => editProfileApi(event, editProfileForm, certified[0]))
+
+
+// Change Password
+const oldPwdInput = document.querySelector("#old-pwd-input");
+const pwdInput = document.querySelector("#pwd-input");
+const confirmPwdInput = document.querySelector("#confirm-pwd-input");
+const changePasswordApi = (event, changePasswordForm) => {
+    event.preventDefault();
+    const routes = new Routes();
+    const changePasswordUrl = `${routes.apiOrigin}${routes.changePassword}`;
+    const formData = new FormData(changePasswordForm);
+    console.log(certified[0])
+    data = {
+        old_password : oldPwdInput.value,
+        password : pwdInput.value,
+        password_confirmation : confirmPwdInput.value
+    };
+    
+    fetch(changePasswordUrl, {
+        method: "PUT",
+        mode: "cors",
+        headers: {
+            "Accept": "application/json",
+            "Authorization": certified[0],
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            // requestStatus.classList.remove('d-none')
+        })
+        .catch(err => console.error(err))
+}
+
+
+changePasswordForm.addEventListener('submit', (event) => changePasswordApi(event, changePasswordForm, certified[0]))
+
+// Delete Account
+const deleteAccountBtn = document.querySelector('#delete-account-btn');
+const deleteAccountApi = (event) => {
+    event.preventDefault();
+    console.log("whatev")
+    const routes = new Routes();
+    const deleteAccountUrl = `${routes.apiOrigin}${routes.deleteAccount}`;
+    console.log(certified[0])
+    fetch(deleteAccountUrl, {
+        method: "DELETE",
+        mode: "cors",
+        headers: {
+            "Accept": "application/json",
+            "Authorization": certified[0],
+            "Content-type": "application/json"
+        }
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            // requestStatus.classList.remove('d-none')
+            location.replace(`${window.location.origin}`)
+        })
+        .catch(err => console.error(err))
+}
+
+
+deleteAccountBtn.addEventListener('click', (event) => deleteAccountApi(event, certified[0]))

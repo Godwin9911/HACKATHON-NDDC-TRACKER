@@ -90,15 +90,7 @@
                     <span class="setting-label grey">Your Profile Picture</span> <br>
                     <!-- <button class="btn btn-brand upload-pic-btn font-12px bold mt-3">Upload new profile picture</button> -->
                     <form class="update-data-form my-3" id="edit-profile-form">
-                        <div class="input-group mb-3">
-                            <span class="grey font-12px col-12 px-0">Upload new picture</span> <br>
-                            <div class="custom-file">
-                                <input name="image" type="file" class="custom-file-input"  accept=".png, .jpg, .jpeg, .svg" id="upload-image-input"
-                                    aria-describedby="inputGroupFileAddon01">
-                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                            </div>
-                            <span class="grey font-12px col-12 px-0" id="file-name"></span>
-                        </div>
+                        
                         <div class="form-group mt-2">
                             <label>Name</label>
                             <input name="name" type="text" class="form-control" required>
@@ -114,7 +106,7 @@
                         <div class="form-group mt-2">
                             <label for="">State</label>
                             <select name="state" class="custom-select">
-                                <option class="fake-placeholder" selected>Select a state</option>
+                                <option class="fake-placeholder" value="Not selected" selected>Select a state</option>
                                 <option value="Abia">Abia</option>
                                 <option value="Akwa Ibom">Akwa Ibom</option>
                                 <option value="Bayelsa">Bayelsa</option>
@@ -129,7 +121,7 @@
                         <div class="form-group mt-2">
                             <label for="">City</label>
                             <select name="city" class="custom-select">
-                                <option class="fake-placeholder" selected>Select a city</option>
+                                <option class="fake-placeholder" value="Not selected" selected>Select a city</option>
                                 <option value="Port Harcourt">Port Harcourt</option>
                                 <option value="Aba">Aba</option>
                                 <option value="Yenagoa">Yenagoa</option>
@@ -144,29 +136,38 @@
                         <div class="form-group mt-2">
                             <label for="">Gender</label>
                             <select name="gender" class="custom-select">
-                                <option class="fake-placeholder" selected>Select a gender</option>
+                                <option class="fake-placeholder" value="Not selected" selected>Select a gender</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                                 <option value="Rather not say">Rather not say</option>
                             </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="grey font-12px col-12 px-0">Upload new picture</span> <br>
+                            <div class="custom-file">
+                                <input name="image" type="file" class="custom-file-input"  accept=".png, .jpg, .jpeg," id="upload-image-input"
+                                    aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            </div>
+                            <span class="grey font-12px col-12 px-0" id="file-name"></span>
                         </div>
                         <button type="submit" class="btn btn-brand font-12px bold">Save Information</button>
                     </form>
                 </div>
                 <div class="col-12 col-md-4 change-password my-5 border">
                     <h5 class="grey bold mt-4 mb-2">Change Password</h5>
-                    <form class="change-pass-form my-3">
+                    <form class="change-pass-form my-3" id="change-password-form">
                         <div class="form-group mt-2">
                             <label>Current Password <span class="label-ast">*</span></label>
-                            <input type="password" class="form-control">
+                            <input name="old_password" type="password" class="form-control" id="old-pwd-input">
                         </div>
                         <div class="form-group mt-2">
                             <label>New Password <span class="label-ast">*</span></label>
-                            <input type="password" class="form-control">
+                            <input name="password" type="password" class="form-control"id="pwd-input">
                         </div>
                         <div class="form-group mt-2">
                             <label>Repeat Password</label>
-                            <input type="password" class="form-control">
+                            <input name="password_confirmation" type="password" class="form-control" id="confirm-pwd-input">
                         </div>
                         <button type="submit" class="btn btn-brand font-12px bold">Save Information</button>
                     </form>
@@ -212,7 +213,8 @@
                     <h5 class="grey bold mt-4 mb-2">Delete Profile</h5>
                     <span class="grey font-12px mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Voluptatum omnis voluptates doloremque cum enim?</span> <br>
-                    <button class="btn btn-brand mt-4 font-12px bold">Delete Account</button>
+                    <button class="btn btn-brand mt-4 font-12px bold"
+                    id="delete-account-btn">Delete Account</button>
                 </div>
             </div>
             <footer class="col-12">
