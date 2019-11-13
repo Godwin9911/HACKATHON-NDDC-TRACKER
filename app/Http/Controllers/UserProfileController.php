@@ -76,7 +76,8 @@ class UserProfileController extends Controller
             'bio' => 'nullable|string',
             'gender' => 'string',
             'city'    => 'nullable|string',
-            'country' => 'nullable|string',
+            'state' => 'nullable|string',
+             'lga'    => 'nullable|string',
             'email'    => 'nullable|unique:users,email,' . $user->id,
             'name'     => 'required|string'
         ]);
