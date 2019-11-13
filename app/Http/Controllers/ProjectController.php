@@ -23,11 +23,11 @@ class ProjectController extends Controller
     }
 
     //Search APi for the user
-    public function search($query) {
+    public function search($query = []) {
      $result = Project::where('PROJECT_TYPE', 'LIKE',  "%{$query}%")
-                                 ->orWhere('LOCATION', 'LIKE', "%{$query}%")
-                                 ->orWhere('LGA', 'LIKE', "%{$query}%")
-                                 ->orWhere('PROJECT_DESCRIPTION', 'LIKE', "%{$query}%")
+                                 ->orWhereIn('LOCATION', 'LIKE', "%{$query}%")
+                                 ->orWhereIn('LGA', 'LIKE', "%{$query}%")
+                                 ->orWhereIn('PROJECT_DESCRIPTION', 'LIKE', "%{$query}%")
                                  ->withCount('comments')
                                  ->with('projectlikes')
                                  ->get();
