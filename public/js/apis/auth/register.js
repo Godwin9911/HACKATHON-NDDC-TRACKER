@@ -41,6 +41,7 @@ const registerApi = (event, registerForm) => {
                     title = 'Registration failed';
                     result = JSON.stringify(data.errors).split('"').join('').split('{').join('').split('}').join('');
                     flashAlert(title,result);
+                    confirmForm.classList.remove("d-none")
                 break;
                 case 501:
                     title  = 'Registration error';
