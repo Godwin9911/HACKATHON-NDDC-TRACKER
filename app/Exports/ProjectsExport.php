@@ -25,6 +25,7 @@ class ProjectsExport implements FromCollection
             'COMMITMENT',
             'AMOUNT_APPROVED_2016',
             'AMOUNT_APPROVED_2017',
+            'STATUS',
         ];
     }
 
@@ -38,6 +39,7 @@ class ProjectsExport implements FromCollection
             $project->COMMITMENT,
             $project->AMOUNT_APPROVED_2016,
             $project->AMOUNT_APPROVED_2017,
+            $project->STATUS,
         ];
     }
 }
