@@ -9,7 +9,7 @@ fetch(url, {
     method: "GET",
     mode: "cors",
     headers: {
-        "Accept": "aplication/json",
+        "Accept": "application/json",
         "Authorization": token
     }
  })

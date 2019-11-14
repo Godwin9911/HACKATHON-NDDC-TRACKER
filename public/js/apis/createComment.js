@@ -64,31 +64,31 @@ const comment = (event, commentBtn, query) => {
 commentBtn.addEventListener('click', (event) => comment(event, commentBtn, query));
 
 
-// const fetchAllComment = (query) => {
-//     const routes = new Routes();
-//     const url = `${routes.apiOrigin}${routes.fetchProjectComments(query)}`;
-//     console.log(url)
+const fetchAllComment = (query) => {
+    const routes = new Routes();
+    const url = `${routes.apiOrigin}${routes.fetchProjectComments(query)}`;
+    console.log(url)
 
-//     fetch(url, {
-//         method: "GET",
-//         mode: "cors",
-//         headers: {
-//             "Accept": "aplication/json"
-//         }
-//      })
-//      .then(response => response.json())
-//      .then(data => {
-//          console.log(data.project);
-//          viewComment(data.project);
-//      })
-//      .catch(err => {
-//          console.error(err)
-//      })
-// }
+    fetch(url, {
+        method: "GET",
+        mode: "cors",
+        headers: {
+            "Accept": "aplication/json"
+        }
+     })
+     .then(response => response.json())
+     .then(data => {
+         console.log(data.project);
+         viewComment(data.project);
+     })
+     .catch(err => {
+         console.error(err)
+     })
+}
 
-// fetchAllComment(query);
+fetchAllComment(query);
 
 
-// viewComment = () => {
-
-// }
+viewComment = (data) => {
+    console.log(data);
+}
