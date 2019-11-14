@@ -1,14 +1,19 @@
+
+const allUsersData = () => {
+  
 const routes = new Routes();
 const url = `${ routes.apiOrigin}${ routes.allUsers }`;
 const userTableBody = document.querySelector("#user-table-body")
 console.log(url)
 
+const data = JSON.parse(localStorage.getItem('nddc-tracker-user'));
+const {token} = data;
 fetch(url, {
     method: "GET",
     mode: "cors",
     headers: {
-        "Accept": "aplication/json",
-        "Authorization": certified[0]
+        "Accept": "application/json",
+        "Authorization": token
     }
  })
  .then(response => response.json())
@@ -35,3 +40,5 @@ fetch(url, {
     })
  })
  .catch(err => console.error(err))
+}
+allUsersData();

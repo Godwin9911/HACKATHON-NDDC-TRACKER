@@ -3,12 +3,14 @@ const url = `${ routes.apiOrigin}${ routes.allProjects }`;
 const projectTableBody = document.querySelector("#project-table-body")
 console.log(url)
 
+const data = JSON.parse(localStorage.getItem('nddc-tracker-user'));
+const {token} = data;
 fetch(url, {
     method: "GET",
     mode: "cors",
     headers: {
         "Accept": "aplication/json",
-        "Authorization": certified[0]
+        "Authorization": token
     }
  })
  .then(response => response.json())
