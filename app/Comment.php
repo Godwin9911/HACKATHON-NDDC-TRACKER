@@ -24,7 +24,7 @@ class Comment extends Model
         
     ];
 
-    public function project()
+    public function projects()
     {
         return $this->hasOne(Project::class);
     }
