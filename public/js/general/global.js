@@ -8,9 +8,20 @@ for example: If the app needs to redirect to login after session has expires
 const logout = document.querySelector('[data-logout]');
 
 const logoutAdmin = () => {
-    localStorage.removeItem('nddc-tracker-user');
-    localStorage.removeItem('action');
-    location.replace(`${window.location.origin}/login.html`);
+    let x = JSON.parse(localStorage.getItem('nddc-tracker-user'));
+ 
+    const {user} = x;
+    console.log(user)
+    if(user.user_type == 'admin'){
+        localStorage.removeItem('nddc-tracker-user');
+        localStorage.removeItem('action');
+        location.replace(`${window.location.origin}/account/admin/login.html`);
+    }else {
+            localStorage.removeItem('nddc-tracker-user');
+            localStorage.removeItem('action');
+            location.replace(`${window.location.origin}/login.html`);
+    }
+
 }
 
 logout.addEventListener('click', logoutAdmin);

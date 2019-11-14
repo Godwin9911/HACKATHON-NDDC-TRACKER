@@ -94,6 +94,7 @@
                                 <label>Name</label>
                                 <input name="name" type="text" class="form-control" required>
                             </div>
+<<<<<<< HEAD
                             <div class="form-group mt-2">
                                 <label>Bio</label>
                                 <textarea name="bio" type="text" class="form-control"></textarea>
@@ -216,6 +217,12 @@
                         <button class="btn btn-brand mt-4 font-12px bold" id="delete-modal-btn" data-toggle="modal"
                             data-target="#deleteModal">Delete Account</button>
                     </div>
+=======
+                            <span class="grey font-12px col-12 px-0" id="file-name"></span>
+                        </div>
+                        <button type="submit" class="btn btn-brand font-12px bold" id="submitBtn">Save Information</button>
+                    </form>
+>>>>>>> 8749e525d90b3a89bb04e4d4e8d2a30351a07841
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="col-12 col-md-10 mx-auto profile-details mt-3 border">
@@ -230,9 +237,23 @@
                             <p class="grey mb-0">Bio</p>
                             <span class="grey font-12px" id="bio-listed">Bio here</span>
                         </div>
+<<<<<<< HEAD
                         <div class="col-12 mb-3">
                             <p class="grey mb-0">Email</p>
                             <span class="grey font-12px" id="email-listed">Email here</span>
+=======
+                        <button type="submit" id="passBtn" class="btn btn-brand font-12px bold">Save Information</button>
+                    </form>
+                </div>
+                <div class="col-12 col-md-4 email-notifs border mb-5">
+                    <h5 class="grey bold mt-4 mb-2">Email Notifications</h5>
+                    <form class="email-notifs-form">
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Recieve updates about your feedback
+                            </label>
+>>>>>>> 8749e525d90b3a89bb04e4d4e8d2a30351a07841
                         </div>
                         <div class="col-12 mb-3">
                             <p class="grey mb-0">State</p>
@@ -338,9 +359,9 @@
                     <h4>Are you sure you want to delete your account?</h4>
                     <small class="mt-4">This action cannot be undone!</small>
                     <div class=" mt-4 col-12 row mx-0">
-                        <button class="btn btn-success col-12 col-md mx-3 mt-2" data-dismiss="modal">Cancel</button>
-                        <button class="btn btn-danger col-12 col-md mx-3 mt-2" id="delete-account-btn">Yes,
-                            Delete</button>
+                        <button class="btn btn-danger col-12 col-md mx-3 mt-2" id="delete-account-btn" style="background:none; color: tomato; border:none;">Yes,
+                                    Delete</button>
+                        <button class="btn btn-success col-12 col-md mx-3 mt-2" style="background:none; color: #0B273D; border:none; " data-dismiss="modal">Cancel</button>
                     </div>
                 </div>
             </div>
