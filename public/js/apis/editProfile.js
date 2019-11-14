@@ -120,8 +120,7 @@ changePasswordForm.addEventListener('submit', (event) => changePasswordApi(event
 const deleteAccountBtn = document.querySelector('#delete-account-btn');
 const deleteAccountApi = (event) => {
     event.preventDefault();
-    const submitBtn = document.querySelector('#deleteBtn');
-    submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" style="width: 1.3em; height: 1.3em;" role="status" aria-hidden="true"></span>'
+    deleteAccountBtn.innerHTML = '<span class="spinner-border spinner-border-sm" style="width: 1.3em; height: 1.3em;" role="status" aria-hidden="true"></span>'
     console.log("whatev")
     const routes = new Routes();
     const deleteAccountUrl = `${routes.apiOrigin}${routes.deleteAccount}`;
@@ -138,12 +137,12 @@ const deleteAccountApi = (event) => {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            submitBtn.innerHTML = 'Deleting Account'
+            deleteAccountBtn.innerHTML = 'Yes Delete'
             // requestStatus.classList.remove('d-none')
             location.replace(`${window.location.origin}`)
         })
         .catch(err => {
-            submitBtn.innerHTML = 'Deleting'
+            deleteAccountBtn.innerHTML = 'Yes Delete'
             console.error(err)
         })
 }

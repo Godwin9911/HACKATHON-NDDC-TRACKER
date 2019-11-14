@@ -61,4 +61,24 @@ const comment = (event, commentBtn, query) => {
 }
 
 
-commentBtn.addEventListener('click', (event) => comment(event, commentBtn, query))
+// commentBtn.addEventListener('click', (event) => comment(event, commentBtn, query));
+
+
+// const fetchAllComment = () => {
+//     fetch(url, {
+//         method: "GET",
+//         mode: "cors",
+//         headers: {
+//             "Accept": "aplication/json"
+//         }
+//      })
+//      .then(response => response.json())
+//      .then(data => {
+//          console.log(data);
+//      })
+//      .catch(err => {
+//          console.error(err)
+//      })
+// }
+
+// fetchAllComment();
