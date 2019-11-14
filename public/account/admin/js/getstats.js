@@ -9,7 +9,8 @@ const totalReviewersValue = document.querySelector('#total-reviewers-value')
 const totalSubscribersValue = document.querySelector('#total-subscribers-value')
 const totalUserValue = document.querySelector('#total-user-value')
 
-
+const data = JSON.parse(localStorage.getItem('nddc-tracker-user'));
+const {token} = data;
 const getStat = () => {
     console.log(certified)
     fetch(url, {
@@ -17,7 +18,7 @@ const getStat = () => {
         mode: "cors",
         headers: {
             "Accept": "aplication/json",
-            "Authorization": certified[0]
+            "Authorization": token
         }
      })
      .then(response => response.json())

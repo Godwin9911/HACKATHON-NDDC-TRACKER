@@ -43,13 +43,14 @@ const uploadApi = (event, uploadForm) => {
         console.log(status)
         return response.json();
     }
-
+    const data = JSON.parse(localStorage.getItem('nddc-tracker-user'));
+    const {token} = data;
     fetch(url, {
         method: "POST",
         mode: "cors",
         headers: {
             "Accept": "application/json",
-            "Authorization": certified[0]
+            "Authorization": token
         },
         body: formData
     })

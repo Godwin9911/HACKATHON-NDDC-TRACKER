@@ -20,6 +20,7 @@ editProfileForm.addEventListener('change', (event) => validateExcel(event, editP
 
 const editProfileApi = (event, editProfileForm) => {
     event.preventDefault();
+    const submitBtn = document.querySelector('#submitBtn');
     submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" style="width: 1.3em; height: 1.3em;" role="status" aria-hidden="true"></span>'
     const routes = new Routes();
     const editProfileUrl = `${routes.apiOrigin}${routes.editProfile}`;
@@ -36,13 +37,17 @@ const editProfileApi = (event, editProfileForm) => {
     })
         .then(response => response.json())
         .then(data => {
+            submitBtn.innerHTML = 'Save Information';
             console.log(data);
             // requestStatus.classList.remove('d-none')
             $('#alertModal').modal('show');
             responseText.innerHTML = data.message;
 
         })
-        .catch(err => console.error(err))
+        .catch(err => {
+            submitBtn.innerHTML = 'Save Information';
+            console.error(err)
+        })
 }
 
 
@@ -55,6 +60,8 @@ const pwdInput = document.querySelector("#pwd-input");
 const confirmPwdInput = document.querySelector("#confirm-pwd-input");
 const changePasswordApi = (event, changePasswordForm) => {
     event.preventDefault();
+    const submitBtn = document.querySelector('#passBtn');
+    submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" style="width: 1.3em; height: 1.3em;" role="status" aria-hidden="true"></span>'
     const routes = new Routes();
     const changePasswordUrl = `${routes.apiOrigin}${routes.changePassword}`;
     const formData = new FormData(changePasswordForm);
@@ -82,6 +89,7 @@ const changePasswordApi = (event, changePasswordForm) => {
         .then(response => errorHandling(response))
         .then(data => {
             console.log(data);
+            submitBtn.innerHTML = 'Save Information';
             $('#alertModal').modal('show');
             if (status == 422) {
                 console.log(data)
@@ -97,6 +105,7 @@ const changePasswordApi = (event, changePasswordForm) => {
         })
         .catch(err => {
             console.error(err.errors)
+            submitBtn.innerHTML = 'Save Information';
             $('#alertModal').modal('show');
             // responseText.innerHTML = data.errors.message;
             result = JSON.stringify(data.errors).split('"').join('').split('{').join('').split('}').join('');
@@ -111,6 +120,7 @@ changePasswordForm.addEventListener('submit', (event) => changePasswordApi(event
 const deleteAccountBtn = document.querySelector('#delete-account-btn');
 const deleteAccountApi = (event) => {
     event.preventDefault();
+    deleteAccountBtn.innerHTML = '<span class="spinner-border spinner-border-sm" style="width: 1.3em; height: 1.3em;" role="status" aria-hidden="true"></span>'
     console.log("whatev")
     const routes = new Routes();
     const deleteAccountUrl = `${routes.apiOrigin}${routes.deleteAccount}`;
@@ -127,10 +137,14 @@ const deleteAccountApi = (event) => {
         .then(response => response.json())
         .then(data => {
             console.log(data);
+            deleteAccountBtn.innerHTML = 'Yes Delete'
             // requestStatus.classList.remove('d-none')
             location.replace(`${window.location.origin}`)
         })
-        .catch(err => console.error(err))
+        .catch(err => {
+            deleteAccountBtn.innerHTML = 'Yes Delete'
+            console.error(err)
+        })
 }
 
 

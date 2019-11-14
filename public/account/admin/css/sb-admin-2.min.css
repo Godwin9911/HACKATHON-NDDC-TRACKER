@@ -10907,9 +10907,9 @@ a:focus {
 }
 
 .bg-login-image {
-    background-image: url("../img/nddc.jpg");
+    background: url(../img/nddc.jpg) no-repeat;
     background-position: center;
-    background-size: cover
+    background-size: 80% 80%;
 }
 
 
