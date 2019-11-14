@@ -76,6 +76,9 @@
 .border-brand {
     border: 1px solid #0B273D;
 }
+.data-key {
+    font-size: 0px;
+}
 // Navbar styling
 .navbar-brand {
     display: flex;
@@ -103,7 +106,7 @@
 
                 .nav-user {
                     height: 6vh;
-                    width: 10vw;
+                    min-width: 10vw;
 
                     .nav-image {
                         height: 5vh;
@@ -111,8 +114,9 @@
                         border-radius: 50%;
 
                         img {
-                            height: 60%;
+                            height: 100%;
                             width: 100%;
+                            border-radius: 50%;
                         }
                     }
                 }
@@ -264,15 +268,19 @@ footer {
         height: 10vh;
         width: 10vh;
         border-radius: 50%;
-        border: 1px solid grey;
+        border: 1px solid lightgrey;
 
         img {
-            height: 60%;
+            border-radius: 50%;
+            height: 100%;
             width: 100%;
         }
     }
 
     .data-con {
+        @include small-screens {
+            text-align: center !important;
+        }
         p {
             font-size: 20px;
         }

@@ -40,16 +40,16 @@
                                 <div class="nav-user row mx-0">
                                     <div class="col-4 px-0">
                                         <div class="nav-image mx-auto border">
-                                            <img class="mt-1" src="../../images/user-grey.svg" alt="">
+                                            <img class="" id="nav-user-image" src="../../images/user-grey.svg" alt="">
                                         </div>
                                     </div>
-                                    <div class="col-8 px-0 pt-2">
-                                        <span class="">John Doe</span>
+                                    <div class="col-8 px-0">
+                                        <span class="" id="nav-name">John Doe</span>
                                     </div>
                                 </div>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Saved Projects</a>
+                                <a class="dropdown-item" href="dashboard.html">Dashboard</a>
                                 <a class="dropdown-item" href="profile-settings.html">Settings</a>
                                 <a class="dropdown-item" href="#">Help</a>
                                 <a class="dropdown-item" href="#">Log Out</a>
@@ -62,20 +62,20 @@
                 </div>
             </nav>
             <div class="user-details col-12 row mx-0">
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-6">
                     <div class="col-12 col-md-8 row mx-0 mt-4 mx-auto image-name-location">
                         <div class="col-12 col-md-4 px-0">
                             <div class="image-con mx-auto">
-                                <img class="mt-2" src="../../images/user-grey.svg" alt="">
+                                <img class="" id="user-image" src="../../images/user-grey.svg" alt="">
                             </div>
                         </div>
                         <div class="col-12 col-md-8 text-center data-con">
-                            <p class="bold grey mb-0 pb-0">John Doe</p>
-                            <span class="grey">Port Harcourt</span>
+                            <p class="bold grey mb-0 pb-0" id="data-con-name">John Doe</p>
+                            <span class="grey" id="data-con-city">Port Harcourt</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-3 ml-auto shared-saved-data row mx-0">
+                <div class="col-12 col-md-6 ml-auto shared-saved-data row mx-0">
                     <div class="col-12 col-md saved-stat text-center mb-3">
                         <p class="grey mb-0 mt-4">1</p>
                         <span class="grey">Saved Projects</span>
@@ -273,4 +273,5 @@
 </body>
 <script src=" ../../js/general/placeholder.js"> </script>
 <script src="../../js/general/third_party_cdn.js"></script>
+<script src="../../js/manipulation/userData.js"></script>
  </html>
