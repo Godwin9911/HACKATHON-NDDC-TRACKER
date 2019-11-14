@@ -10,7 +10,7 @@ const comment = (event, commentBtn, query) => {
     event.preventDefault();
 
     if(commentBox.value == '') {
-        return ''
+        return commenterror.innerHTML = 'Please comment field cannot be empty!';
     }
     commentBtn.innerHTML = '<span class="spinner-border spinner-border-sm" style="width: 1.3em; height: 1.3em;" role="status" aria-hidden="true"></span>'
     console.log('hellow');
@@ -40,7 +40,8 @@ const comment = (event, commentBtn, query) => {
         method: "POST",
         mode: "cors",
         headers: {
-            "Accept": "application/json"
+            "Accept": "application/json",
+            "Content-type": "application/json"
         },
         body: JSON.stringify(data)
     })
@@ -48,9 +49,7 @@ const comment = (event, commentBtn, query) => {
         .then(data => {
             commentBtn.innerHTML = 'Comment';
             console.log(data);
-            // requestStatus.classList.remove('d-none')
-            // $('#alertModal').modal('show');
-            // responseText.innerHTML = data.message;
+            commenterror.innerHTML = '<h5 style="color: green;">Comment created Successfully!</h5>';
 
         })
         .catch(err => {
