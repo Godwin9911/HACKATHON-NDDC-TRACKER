@@ -16,6 +16,14 @@
 <body class="roboto scroller">
     <div class="container-fluid">
         <div class="row">
+                <div class="col-12 loading-overlay" style="position: fixed; z-index: 999999;" data-loader>
+                    <div class="col-1 spinner-con text-center">
+                        <div style="height: 100px; width: 100px; color: azure;" class="spinner-border mt-3" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+    
+                    </div>
+                </div>
             <nav class="navbar navbar-expand-lg navbar-light our-nav col-12">
                 <a class="navbar-brand" href="../index.html">
                     <div class="border logo-replace"></div>
@@ -38,7 +46,7 @@
                         <li class="nav-item mx-3 mt-2">
                             <a class="nav-link" href="">Notifications</a>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown" data-user-drop-box>
                             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
                                 <div class="nav-user row mx-0">
@@ -185,11 +193,11 @@
                                     <span class="grey font-12px"><i class="fa fas fa-2x fa-comments"></i> <span
                                             data-project-comment></span></span>
                                 </div>
-                                <div class="col text-center px-0">
+                                <div class="col text-center px-0" data-share-project>
                                     <span class="grey font-12px"><i class="fa fas fa-2x fa-share"></i> <span
                                             data-project-share></span> Share</span>
                                 </div>
-                                <div class="col text-center px-0">
+                                <div class="col text-center px-0" data-save-project>
                                     <span class="grey font-12px" data-project-save><i class="fa fas fa-2x fa-save"></i>
                                         Save</span>
                                 </div>
@@ -208,6 +216,7 @@
                                             <textarea name="comment" class="col-12 mt-4 pl-4 scroller" type="text"
                                                 class="form-control" placeholder="Add a public comment"></textarea>
                                             <span name="anonymous" style="visibility: hidden;">Anonymous</span>
+                                            <span name="anonymous" style="visibility: hidden;" data-reply>Anonymous</span>
                                         </div>
                                         <div class="col-12 text-right">
                                             <button type="submit" class="btn btn-brand br-10px py-0">Submit</button>

@@ -38,7 +38,7 @@
                         <li class="nav-item mx-3 mt-2">
                             <a class="nav-link" href="">Notifications</a>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown"  data-user-drop-box>
                             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
                                 <div class="nav-user row mx-0">
@@ -53,10 +53,10 @@
                                 </div>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Saved Projects</a>
+                                <a class="dropdown-item" href="../account/user/profile-settings.html">Saved Projects</a>
                                 <a class="dropdown-item" href="../account/user/profile-settings.html">Settings</a>
                                 <a class="dropdown-item" href="#">Help</a>
-                                <a class="dropdown-item" href="#">Log Out</a>
+                                <a class="dropdown-item" data-logout style="cursor: pointer;">Log Out</a>
                             </div>
                         </li>
                     </ul>
@@ -253,5 +253,6 @@
 <script src="../js/general/onSession.js"></script>
 <script src="../js/general/searchRedirect.js"></script>
 <script src="../js/apis/searchProject.js"></script>
+<script src="../js/general/global.js"></script>
 
 </html>
