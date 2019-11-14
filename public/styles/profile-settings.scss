@@ -1,8 +1,6 @@
 @import "media-queries";
 
 @mixin profile-info-sections {
-    margin-left: 10vw;
-
     background: white;
 
     @include small-screens {
@@ -72,5 +70,12 @@
     .delete-account {
         min-height: 30vh;
         @include profile-info-sections;
+    }
+    .profile-listed {
+        min-height: 100vh;
+        @include profile-info-sections;
+        img {
+            border-radius: 50%;
+        }
     }
 }
