@@ -46,6 +46,7 @@ displayUserData = () => {
   const stateListed = document.querySelector("#state-listed");
   const genderListed = document.querySelector("#gender-listed");
   const userTypeListed = document.querySelector("#user-type-listed");
+  const imageListed = document.querySelector("#image-listed");
 
   dataConName.innerHTML = name;
   dataConCity.innerHTML = city;
@@ -54,6 +55,7 @@ displayUserData = () => {
   bioListed.innerHTML = bio;
   emailListed.innerHTML = email;
   stateListed.innerHTML = state;
+  genderListed.innerHTML = gender;
   userTypeListed.innerHTML = user_type;
 
   navName.innerHTML = name;
@@ -62,6 +64,7 @@ displayUserData = () => {
   if (user_mode == "nddc-tracker") {
     dataUserImage.src = `${image_link}${image}`;
     navUserImage.src = `${image_link}${image}`;
+    imageListed.src = `${image_link}${image}`;
   }
 };
 displayUserData();
