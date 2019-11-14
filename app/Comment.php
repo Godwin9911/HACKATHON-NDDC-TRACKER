@@ -12,7 +12,7 @@ class Comment extends Model
      * @var array
      */
     protected $fillable = [
-        'owner_id', 'project_id', 'comment'
+        'user_id', 'project_id', 'user_name',
     ];
 
     /**
@@ -27,6 +27,18 @@ class Comment extends Model
     public function project()
     {
         return $this->hasOne(Project::class);
+    }
+     public function commentlikes()
+    {
+        return $this->hasMany(CommentLike::class);
+    }
+      public function commentreplys()
+    {
+        return $this->hasMany(CommentReply::class);
+    }
+       public function commentreplylikes()
+    {
+        return $this->hasMany(CommentReplyLike::class);
     }
 
 }

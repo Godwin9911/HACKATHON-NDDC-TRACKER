@@ -33,6 +33,8 @@ Route::get('/excel', 'importExcelController@indexAsJson');
 Route::get('downloadData/{type}', 'importExcelController@downloadData');
 Route::post('subscriber/create', 'SubscriberController@send');
 
+Route::post('comment/create/{project_id}/{user_id}/{anonymous}', 'CommentController@createComment');
+Route::post('project/comment/show/{id}', 'CommentController@projectComment');
 
 //Admin Routes (Specific Route)*******************************************************
 
@@ -89,13 +91,17 @@ Route::group(['middleware' => ['jwt.verify']], function () {
 
      Route::get('check/session', 'UserProfileController@check');
 
+ 
+
 });
 
 //Project with User
 Route::group(['middleware' => ['jwt.verify']], function () {
 
-    Route::get('saved/project', 'ProjectController@savedProject');
-    Route::post('saved/project/create', 'ProjectController@saveAProject');
-    Route::delete('saved/project/delete', 'ProjectController@destroySavedProject');
+    Route::get('project/saved', 'ProjectController@savedProject');
+    Route::post('save/project', 'ProjectController@saveAProject');
+    Route::delete('project/saved/delete', 'ProjectController@destroySavedProject');
+
+    Route::get('user/project/comment/show/{id}', 'CommentController@index');
 
 });

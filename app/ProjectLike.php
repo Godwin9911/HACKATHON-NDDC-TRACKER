@@ -13,7 +13,7 @@ class ProjectLike extends Model
      */
     protected $table = 'projectlikes';
     protected $fillable = [
-        'owner_id', 'project_id', 'comment'
+        'user_id', 'project_id',
     ];
 
     /**
