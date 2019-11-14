@@ -2,13 +2,13 @@ const userInfo = JSON.parse(localStorage.getItem("nddc-tracker-user"));
 console.log(userInfo);
 const {user, image_link} = userInfo;
 console.log(user)
-const {name,city, user_mode, image} = user;
+let {name,city, user_mode, image} = user;
 console.log(name, city)
 if (name == null) {
-    name = 'Not Set'
+    name = 'Hello Member'
 }
 if (city == null) {
-    city = 'Not Set'
+    city = 'Location: Not set yet'
 }
 
 const dataConName = document.querySelector('#data-con-name')

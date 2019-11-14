@@ -95,4 +95,8 @@ class Routes {
   get deleteAccount() {
     return "api/v1/user/delete"
   }
+
+  createComment(project_id, user_id=null, anonymous=no) {
+    return `api/v1/comment/create/${project_id}/${user_id}/${anonymous}`;
+  }
 }

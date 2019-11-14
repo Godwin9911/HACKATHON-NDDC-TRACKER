@@ -213,14 +213,15 @@
                                 <div class="col-12 col-md-11 comment-submit">
                                     <form data-project-comment>
                                         <div class="form-group mb-1">
-                                            <textarea name="comment" class="col-12 mt-4 pl-4 scroller" type="text"
-                                                class="form-control" placeholder="Add a public comment"></textarea>
-                                            <span name="anonymous" style="visibility: hidden;">Anonymous</span>
-                                            <span name="anonymous" style="visibility: hidden;" data-reply>Anonymous</span>
+                                            <textarea data-comment-box name="comment" class="col-12 mt-4 pl-4 scroller" type="text"
+                                                class="form-control" placeholder="Add a public comment" required></textarea>
+                                            <input  data-anonymous-spot name="anonymous" value="no" type="checkbox"><span style="color: grey; font-size: 13px;">Anonymous<span style="font-size:10px; font-style: italic;">(click to disclose you identity)</span></span>
                                         </div>
+                                        <span data-comment-error style="font-size:11px; color:tomato;">gdgdfgdfgfgfgfgf</span>
                                         <div class="col-12 text-right">
-                                            <button type="submit" class="btn btn-brand br-10px py-0">Submit</button>
+                                            <button data-comment-btn type="submit" class="btn btn-brand br-10px py-0" style="width: 30%;">Comment</button>
                                         </div>
+                                     
                                     </form>
                                 </div>
                             </div>
@@ -411,6 +412,7 @@
 <script src="../js/general/routes.js"></script>
 <script src="../js/general/onSession.js"></script>
 <script src="../js/apis/viewOneProject.js"></script>
+<script src="../js/apis/createComment.js"></script>
 <script src="../js/general/global.js"></script>
 
 </html>
