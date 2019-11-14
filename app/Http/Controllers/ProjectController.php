@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ImportExcelController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
+use App\Http\Controllers\ImageController;
 use App\Project;
+use App\ProjectComplian;
 use App\ProjectSave;
 
 class ProjectController extends Controller
@@ -138,5 +140,57 @@ class ProjectController extends Controller
                     return response()->json($res, 501);
                 }
             }
+
+
+
+    public function complian(Request $request, ImageController $image)
+    {  
+        $this->validate($request, [
+            'name' => 'nullable|string',
+            'report' => 'required|string',
+            'lga' => 'nullable|string'
+        ]);
+
+
+        //start temporay transaction
+        DB::beginTransaction();
+        try {
+            $complian = new ProjectComplian;
+            $user->name      = $request->input('name');
+            $user->report  = $request->input('report');
+            $user->lga  = $request->input('lga');
+
+            //Upload image
+            $data = null;
+            if ($request->hasFile('image')) {
+                $data = $this->upload($request, $image, $user);
+                if ($data['status_code'] !=  200) {
+                    return response()->json($data, $data['status_code']);
+                }
+                $user->image = $data['image'];
+            }
+
+            $user->save();
+
+            //if operation was successful save commit save to database
+            DB::commit();
+            $res['status']  = true;
+            $res['user']    = $user;
+            $res['image_info']   = $data;
+            $res['message'] = 'Report Submitted';
+
+            return response()->json($res, 200);
+        } catch (\Exception $e) {
+            //rollback what is saved
+            DB::rollBack();
+
+            $res['status'] = false;
+            $res['message'] = 'An Error Occured While Trying To submit report';
+            $res['hint'] = $e->getMessage();
+
+            return response()->json($res, 501);
+        }
+    }
+
 
 }

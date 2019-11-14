@@ -57,6 +57,7 @@ class CommentController extends Controller
                         $comment->user_id  = $user->id;
                         $comment->user_image = $user->image ?? 'no-image.png';
                         $comment->user_name = $user->name ?? $user->email;
+                        $comment->user_mode = $user->mode;
                      }
 
                       $comment->project_id  = $project_id;
