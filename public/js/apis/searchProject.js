@@ -21,12 +21,11 @@ const projectDOM = document.querySelector('[data-project-dom]');
 
 const fetchProjects = (query="Rivers,Bayelsa,Cross,Delta") => {
 
-    if(certified[0] == undefined) {
+    console.log(certified[0])
+    if(!JSON.parse(localStorage.getItem('nddc-tracker-user'))){
         //Hide the user show box
         document.querySelector('[data-user-drop-box]').style.display = 'none';
-        // document.querySelector('[data-save-project]').style.display = 'none';
     }
-
     const routes = new Routes();
     const url = `${routes.apiOrigin}${routes.searchProject(query)}`;
     console.log(url)
@@ -57,8 +56,8 @@ const displayProjectResult = () => {
             let like_count = 0;
             let unlike_count = 0;
             const {id, AMOUNT_APPROVED_2016, AMOUNT_APPROVED_2017, contractor, BUDGET_COST, COMMITMENT, LGA, LOCATION, PROJECT_DESCRIPTION, PROJECT_TYPE, STATUS, project_image, comments_count, created_at, projectlikes} = projectResult;
-            if(certified[0] != undefined ){
-               delete_save = `<span class="col-12 col-md-3 px-0 mt-2 grey mt-2" id="deleteSaveProject${id}">Delete from saved</span>`;
+            if(JSON.parse(localStorage.getItem('nddc-tracker-user'))){
+                delete_save = `<span class="col-12 col-md-3 px-0 mt-2 grey mt-2" id="deleteSaveProject${id}">Delete from saved</span>`;
             }else {
                 delete_save = '';
             }

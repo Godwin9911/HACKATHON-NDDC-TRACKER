@@ -5,14 +5,15 @@ for example: If the app needs to redirect to login after session has expires
 */
 
 //Logout Code
-// const logout = document.querySelector('[data-admin-logout]');
+const logout = document.querySelector('[data-logout]');
 
-// const logoutAdmin = () => {
-//     localStorage.removeItem('gateguard-admin');
-//     location.replace('../login.html');
-// }
+const logoutAdmin = () => {
+    localStorage.removeItem('nddc-tracker-user');
+    localStorage.removeItem('action');
+    location.replace(`${window.location.origin}/login.html`);
+}
 
-// logout.addEventListener('click', logoutAdmin);
+logout.addEventListener('click', logoutAdmin);
 
 // //Resize Sidebar in mobile view
 

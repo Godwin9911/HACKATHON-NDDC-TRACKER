@@ -34,6 +34,8 @@ const checkUser = (token, user) => {
                 console.log('hahaha')
                 certified.push(token);
                 certified.push(user)
+
+                console.log(certified)
             }
         }
     })
