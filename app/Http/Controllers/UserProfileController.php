@@ -37,9 +37,7 @@ class UserProfileController extends Controller
         $contractors = [];
         $reviewers = [];
 
-        $users = User::with(['comments' => function ($query) {
-            $query->with('projects');
-		}])->get();
+        $users = User::all();
 		
         array_push($all, $users);
 
