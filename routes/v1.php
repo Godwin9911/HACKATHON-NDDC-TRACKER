@@ -34,7 +34,7 @@ Route::get('downloadData/{type}', 'importExcelController@downloadData');
 Route::post('subscriber/create', 'SubscriberController@send');
 
 Route::post('comment/create/{project_id}/{user_id}/{anonymous}', 'CommentController@createComment');
-Route::post('project/comment/show/{id}', 'CommentController@projectComment');
+Route::get('project/comment/show/{id}', 'CommentController@projectComment');
 
 //Admin Routes (Specific Route)*******************************************************
 
