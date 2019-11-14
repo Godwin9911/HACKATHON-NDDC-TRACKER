@@ -7,11 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title data-title>Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../../styles/global.css">
     <link rel="stylesheet" href="../../styles/profile-settings.css">
     <script src="../../js/general/routes.js""></script>
-    <script src=" ../../js/general/onSession.js"> </script> </head> <body class="roboto scroller">
+    <script src=" ../../js/general/onSession.js"> </script>
+</head>
+
+<body class="roboto scroller">
     <div class="container-fluid">
         <div class="row">
             <nav class="navbar navbar-expand-lg navbar-light our-nav col-12">
@@ -82,166 +86,92 @@
                     </div>
                 </div>
             </div>
-            <div class="settings-con col-12 mt-3 row mx-0">
-                <div class="col-12 col-md-6 px-0">
-                    <div class="col-12 col-md-8 mx-auto personal-settings mt-3 border">
-                        <h5 class="grey bold mt-4 mb-2">Personal Settings</h5>
-                        <span class="setting-label grey">Your Profile Picture</span> <br>
-                        <!-- <button class="btn btn-brand upload-pic-btn font-12px bold mt-3">Upload new profile picture</button> -->
-                        <form class="update-data-form my-3" id="edit-profile-form">
-    
-                            <div class="form-group mt-2">
-                                <label>Name</label>
-                                <input name="name" type="text" class="form-control" required>
+            <div class="settings-con col-12 mt-3">
+                <div class="col-12 col-md-4 personal-settings mt-3 border">
+                    <h5 class="grey bold mt-4 mb-2">Personal Settings</h5>
+                    <span class="setting-label grey">Your Profile Picture</span> <br>
+                    <!-- <button class="btn btn-brand upload-pic-btn font-12px bold mt-3">Upload new profile picture</button> -->
+                    <form class="update-data-form my-3" id="edit-profile-form">
+
+                        <div class="form-group mt-2">
+                            <label>Name</label>
+                            <input name="name" type="text" class="form-control" required>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label>Bio</label>
+                            <textarea name="bio" type="text" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label>Email</label>
+                            <input name="email" type="email" class="form-control" required>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="">State</label>
+                            <select name="state" class="custom-select">
+                                <option class="fake-placeholder" value="Not selected" selected>Select a state</option>
+                                <option value="Abia">Abia</option>
+                                <option value="Akwa Ibom">Akwa Ibom</option>
+                                <option value="Bayelsa">Bayelsa</option>
+                                <option value="Cross River">Cross River</option>
+                                <option value="Delta">Delta</option>
+                                <option value="Edo">Edo</option>
+                                <option value="Imo">Imo</option>
+                                <option value="Ondo">Ondo</option>
+                                <option value="Rivers">Rivers</option>
+                            </select>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="">City</label>
+                            <select name="city" class="custom-select">
+                                <option class="fake-placeholder" value="Not selected" selected>Select a city</option>
+                                <option value="Port Harcourt">Port Harcourt</option>
+                                <option value="Aba">Aba</option>
+                                <option value="Yenagoa">Yenagoa</option>
+                                <option value="Uyo">Uyo</option>
+                                <option value="Calabar">Calabar</option>
+                                <option value="Asaba">Asaba</option>
+                                <option value="Benin">Benin</option>
+                                <option value="Owerri">Owerri</option>
+                                <option value="Akure">Akure</option>
+                            </select>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="">Gender</label>
+                            <select name="gender" class="custom-select">
+                                <option class="fake-placeholder" value="Not selected" selected>Select a gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Rather not say">Rather not say</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="grey font-12px col-12 px-0">Upload new picture</span> <br>
+                            <div class="custom-file">
+                                <input name="image" type="file" class="custom-file-input" accept=".png, .jpg, .jpeg,"
+                                    id="upload-image-input" aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                             </div>
-<<<<<<< HEAD
-                            <div class="form-group mt-2">
-                                <label>Bio</label>
-                                <textarea name="bio" type="text" class="form-control"></textarea>
-                            </div>
-                            <div class="form-group mt-2">
-                                <label>Email</label>
-                                <input name="email" type="email" class="form-control" required>
-                            </div>
-                            <div class="form-group mt-2">
-                                <label for="">State</label>
-                                <select name="state" class="custom-select">
-                                    <option class="fake-placeholder" value="Not selected" selected>Select a state</option>
-                                    <option value="Abia">Abia</option>
-                                    <option value="Akwa Ibom">Akwa Ibom</option>
-                                    <option value="Bayelsa">Bayelsa</option>
-                                    <option value="Cross River">Cross River</option>
-                                    <option value="Delta">Delta</option>
-                                    <option value="Edo">Edo</option>
-                                    <option value="Imo">Imo</option>
-                                    <option value="Ondo">Ondo</option>
-                                    <option value="Rivers">Rivers</option>
-                                </select>
-                            </div>
-                            <div class="form-group mt-2">
-                                <label for="">City</label>
-                                <select name="city" class="custom-select">
-                                    <option class="fake-placeholder" value="Not selected" selected>Select a city</option>
-                                    <option value="Port Harcourt">Port Harcourt</option>
-                                    <option value="Aba">Aba</option>
-                                    <option value="Yenagoa">Yenagoa</option>
-                                    <option value="Uyo">Uyo</option>
-                                    <option value="Calabar">Calabar</option>
-                                    <option value="Asaba">Asaba</option>
-                                    <option value="Benin">Benin</option>
-                                    <option value="Owerri">Owerri</option>
-                                    <option value="Akure">Akure</option>
-                                </select>
-                            </div>
-                            <div class="form-group mt-2">
-                                <label for="">Gender</label>
-                                <select name="gender" class="custom-select">
-                                    <option class="fake-placeholder" value="Not selected" selected>Select a gender</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                    <option value="Rather not say">Rather not say</option>
-                                </select>
-                            </div>
-                            <div class="input-group mb-3">
-                                <span class="grey font-12px col-12 px-0">Upload new picture</span> <br>
-                                <div class="custom-file">
-                                    <input name="image" type="file" class="custom-file-input" accept=".png, .jpg, .jpeg,"
-                                        id="upload-image-input" aria-describedby="inputGroupFileAddon01">
-                                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                                </div>
-                                <span class="grey font-12px col-12 px-0" id="file-name"></span>
-                            </div>
-                            <button type="submit" class="btn btn-brand font-12px bold">Save Information</button>
-                        </form>
-                    </div>
-                    <div class="col-12 col-md-8 mx-auto change-password my-5 border">
-                        <h5 class="grey bold mt-4 mb-2">Change Password</h5>
-                        <form class="change-pass-form my-3" id="change-password-form">
-                            <div class="form-group mt-2">
-                                <label>Current Password <span class="label-ast">*</span></label>
-                                <input name="old_password" type="password" class="form-control" id="old-pwd-input">
-                            </div>
-                            <div class="form-group mt-2">
-                                <label>New Password <span class="label-ast">*</span></label>
-                                <input name="password" type="password" class="form-control" id="pwd-input">
-                            </div>
-                            <div class="form-group mt-2">
-                                <label>Repeat Password</label>
-                                <input name="password_confirmation" type="password" class="form-control"
-                                    id="confirm-pwd-input">
-                            </div>
-                            <button type="submit" class="btn btn-brand font-12px bold">Save Information</button>
-                        </form>
-                    </div>
-                    <div class="col-12 col-md-8 mx-auto email-notifs border mb-5">
-                        <h5 class="grey bold mt-4 mb-2">Email Notifications</h5>
-                        <form class="email-notifs-form">
-                            <div class="form-check mt-3">
-                                <input class="form-check-input" type="checkbox" value="">
-                                <label class="form-check-label">
-                                    Recieve updates about your feedback
-                                </label>
-                            </div>
-                            <div class="form-check mt-3">
-                                <input class="form-check-input" type="checkbox" value="">
-                                <label class="form-check-label">
-                                    Recieve updates regarding your saved projects
-                                </label>
-                            </div>
-                            <div class="form-check mt-3">
-                                <input class="form-check-input" type="checkbox" value="">
-                                <label class="form-check-label">
-                                    Recieve updates regarding projects in your location
-                                </label>
-                            </div>
-                            <div class="form-check mt-3">
-                                <input class="form-check-input" type="checkbox" value="">
-                                <label class="form-check-label">
-                                    Recieve updates on new projects
-                                </label>
-                            </div>
-                            <div class="form-check mt-3">
-                                <input class="form-check-input" type="checkbox" value="">
-                                <label class="form-check-label">
-                                    Recieve newsletter from NDDC Tracker
-                                </label>
-                            </div>
-                            <button type="submit" class="btn btn-brand font-12px bold my-3">Save email notification
-                                settings</button>
-                        </form>
-                    </div>
-                    <div class="col-12 col-md-8 mx-auto delete-account border mb-5">
-                        <h5 class="grey bold mt-4 mb-2">Delete Profile</h5>
-                        <span class="grey font-12px mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Voluptatum omnis voluptates doloremque cum enim?</span> <br>
-                        <button class="btn btn-brand mt-4 font-12px bold" id="delete-modal-btn" data-toggle="modal"
-                            data-target="#deleteModal">Delete Account</button>
-                    </div>
-=======
                             <span class="grey font-12px col-12 px-0" id="file-name"></span>
                         </div>
                         <button type="submit" class="btn btn-brand font-12px bold" id="submitBtn">Save Information</button>
                     </form>
->>>>>>> 8749e525d90b3a89bb04e4d4e8d2a30351a07841
                 </div>
-                <div class="col-12 col-md-6">
-                    <div class="col-12 col-md-10 mx-auto profile-details mt-3 border">
-                        <h5 class="grey bold mt-4 mb-2">Your Details</h5>
-                        <div class="col-12">
-                            <div class="your-image mt-3 border mx-auto" id="your-image">
-                                
-                            </div>
+                <div class="col-12 col-md-4 change-password my-5 border">
+                    <h5 class="grey bold mt-4 mb-2">Change Password</h5>
+                    <form class="change-pass-form my-3" id="change-password-form">
+                        <div class="form-group mt-2">
+                            <label>Current Password <span class="label-ast">*</span></label>
+                            <input name="old_password" type="password" class="form-control" id="old-pwd-input">
                         </div>
-                        <h4 class="your-name grey text-center mt-2" id="name-listed">Your Name</h4>
-                        <div class="col-12 mb-3">
-                            <p class="grey mb-0">Bio</p>
-                            <span class="grey font-12px" id="bio-listed">Bio here</span>
+                        <div class="form-group mt-2">
+                            <label>New Password <span class="label-ast">*</span></label>
+                            <input name="password" type="password" class="form-control" id="pwd-input">
                         </div>
-<<<<<<< HEAD
-                        <div class="col-12 mb-3">
-                            <p class="grey mb-0">Email</p>
-                            <span class="grey font-12px" id="email-listed">Email here</span>
-=======
+                        <div class="form-group mt-2">
+                            <label>Repeat Password</label>
+                            <input name="password_confirmation" type="password" class="form-control"
+                                id="confirm-pwd-input">
+                        </div>
                         <button type="submit" id="passBtn" class="btn btn-brand font-12px bold">Save Information</button>
                     </form>
                 </div>
@@ -253,25 +183,41 @@
                             <label class="form-check-label">
                                 Recieve updates about your feedback
                             </label>
->>>>>>> 8749e525d90b3a89bb04e4d4e8d2a30351a07841
                         </div>
-                        <div class="col-12 mb-3">
-                            <p class="grey mb-0">State</p>
-                            <span class="grey font-12px" id="state-listed">State here</span>
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Recieve updates regarding your saved projects
+                            </label>
                         </div>
-                        <div class="col-12 mb-3">
-                            <p class="grey mb-0">City</p>
-                            <span class="grey font-12px" id="city-listed">City here</span>
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Recieve updates regarding projects in your location
+                            </label>
                         </div>
-                        <div class="col-12 mb-3">
-                            <p class="grey mb-0">Gender</p>
-                            <span class="grey font-12px" id="gender-listed">Gender here</span>
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Recieve updates on new projects
+                            </label>
                         </div>
-                        <div class="col-12 mb-3">
-                            <p class="grey mb-0">User Type</p>
-                            <span class="grey font-12px" id="user-type-listed">Yset Type here</span>
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Recieve newsletter from NDDC Tracker
+                            </label>
                         </div>
-                    </div>
+                        <button type="submit" class="btn btn-brand font-12px bold my-3">Save email notification
+                            settings</button>
+                    </form>
+                </div>
+                <div class="col-12 col-md-4 delete-account border mb-5">
+                    <h5 class="grey bold mt-4 mb-2">Delete Profile</h5>
+                    <span class="grey font-12px mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Voluptatum omnis voluptates doloremque cum enim?</span> <br>
+                    <button class="btn btn-brand mt-4 font-12px bold" id="delete-modal-btn" data-toggle="modal"
+                        data-target="#deleteModal">Delete Account</button>
                 </div>
             </div>
             <footer class="col-12">
@@ -369,11 +315,7 @@
     </div>
 </body>
 <script src="../../js/general/third_party_cdn.js""></script>
-    <script src=" ../../js/general/placeholder.js""> </script> 
+    <script src=" ../../js/general/placeholder.js""> </script>  <script
+    src="../../js/apis/editProfile.js""> </script>
     <script src="../../js/manipulation/userData.js"></script>
-    <script
-    src=" ../../js/apis/editProfile.js"">
-    </script>
-    
-
-</html>
+    </html>

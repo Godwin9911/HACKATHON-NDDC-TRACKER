@@ -22,7 +22,6 @@ const editProfileApi = (event, editProfileForm) => {
     event.preventDefault();
     const submitBtn = document.querySelector('#submitBtn');
     submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" style="width: 1.3em; height: 1.3em;" role="status" aria-hidden="true"></span>'
-
     const routes = new Routes();
     const editProfileUrl = `${routes.apiOrigin}${routes.editProfile}`;
     const formData = new FormData(editProfileForm);
@@ -99,8 +98,6 @@ const changePasswordApi = (event, changePasswordForm) => {
                 responseText.innerHTML = result;
             } else if (status == 200) {
                 responseText.innerHTML = data.success;
-                JSON.stringify(localStorage.setItem('nddc-tracker-user', data));
-                displayUserData();
             } else {
                 responseText.innerHTML = "An Error Occured!";
             }
