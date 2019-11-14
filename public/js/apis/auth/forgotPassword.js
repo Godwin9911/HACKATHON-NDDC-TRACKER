@@ -19,7 +19,8 @@ forgotForm.addEventListener('submit', (event) => {
      .then(response => response.json())
      .then(data => {
          console.log(data.message);
-        requestStatus.classList.remove('d-none')
+        requestStatus.classList.remove('d-none');
+        
         setTimeout(() => {
             location.replace("reset-password.html")
         }, 3000);
