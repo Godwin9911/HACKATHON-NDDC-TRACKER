@@ -41,6 +41,7 @@
 
 .settings-con .personal-settings {
   min-height: 100vh;
+  margin-left: 10vw;
   background: white;
 }
 
@@ -52,6 +53,7 @@
 
 .settings-con .change-password {
   min-height: 60vh;
+  margin-left: 10vw;
   background: white;
 }
 
@@ -63,6 +65,7 @@
 
 .settings-con .email-notifs {
   min-height: 40vh;
+  margin-left: 10vw;
   background: white;
 }
 
@@ -78,6 +81,7 @@
 
 .settings-con .delete-account {
   min-height: 30vh;
+  margin-left: 10vw;
   background: white;
 }
 
@@ -85,28 +89,5 @@
   .settings-con .delete-account {
     margin-left: 0px;
   }
-}
-
-.settings-con .profile-details {
-  min-height: 100vh;
-  background: white;
-}
-
-@media (max-width: 767px) {
-  .settings-con .profile-details {
-    margin-left: 0px;
-  }
-}
-
-.settings-con .profile-details .your-image {
-  height: 20vh;
-  width: 20vh;
-  border-radius: 50%;
-}
-
-.settings-con .profile-details .your-image img {
-  height: 100%;
-  width: 100%;
-  border-radius: 50%;
 }
 /*# sourceMappingURL=profile-settings.css.map */

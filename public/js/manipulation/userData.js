@@ -58,7 +58,8 @@ displayUserData = () => {
   genderListed.innerHTML = gender;
   userTypeListed.innerHTML = user_type;
 
-  navName.innerHTML = name;
+dataConName.innerHTML = name;
+dataConCity.innerHTML = city;
 
   console.log(user_mode);
   if (user_mode == "nddc-tracker") {

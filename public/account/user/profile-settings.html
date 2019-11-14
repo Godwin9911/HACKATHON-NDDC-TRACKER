@@ -7,11 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title data-title>Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../../styles/global.css">
     <link rel="stylesheet" href="../../styles/profile-settings.css">
     <script src="../../js/general/routes.js""></script>
-    <script src=" ../../js/general/onSession.js"> </script> </head> <body class="roboto scroller">
+    <script src=" ../../js/general/onSession.js"> </script>
+</head>
+
+<body class="roboto scroller">
     <div class="container-fluid">
         <div class="row">
             <nav class="navbar navbar-expand-lg navbar-light our-nav col-12">
@@ -224,33 +228,55 @@
                             <div class="your-image mt-3 mx-auto" id="your-image">
                                 <img src="" alt="" id="image-listed">
                             </div>
+
                         </div>
-                        <h4 class="your-name grey text-center mt-2" id="name-listed">Your Name</h4>
-                        <div class="col-12 mb-3">
-                            <p class="grey mb-0">Bio</p>
-                            <span class="grey font-12px" id="bio-listed">Bio here</span>
+                        <div class="form-group mt-2">
+                            <label>New Password <span class="label-ast">*</span></label>
+                            <input name="password" type="password" class="form-control" id="pwd-input">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label>Repeat Password</label>
+                            <input name="password_confirmation" type="password" class="form-control"
+                                id="confirm-pwd-input">
                         </div>
                         <div class="col-12 mb-3">
                             <p class="grey mb-0">Email</p>
                             <span class="grey font-12px" id="email-listed">Email here</span>
                         </div>
-                        <div class="col-12 mb-3">
-                            <p class="grey mb-0">State</p>
-                            <span class="grey font-12px" id="state-listed">State here</span>
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Recieve updates regarding your saved projects
+                            </label>
                         </div>
-                        <div class="col-12 mb-3">
-                            <p class="grey mb-0">City</p>
-                            <span class="grey font-12px" id="city-listed">City here</span>
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Recieve updates regarding projects in your location
+                            </label>
                         </div>
-                        <div class="col-12 mb-3">
-                            <p class="grey mb-0">Gender</p>
-                            <span class="grey font-12px" id="gender-listed">Gender here</span>
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Recieve updates on new projects
+                            </label>
                         </div>
-                        <div class="col-12 mb-3">
-                            <p class="grey mb-0">User Type</p>
-                            <span class="grey font-12px" id="user-type-listed">Yset Type here</span>
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                Recieve newsletter from NDDC Tracker
+                            </label>
                         </div>
-                    </div>
+                        <button type="submit" class="btn btn-brand font-12px bold my-3">Save email notification
+                            settings</button>
+                    </form>
+                </div>
+                <div class="col-12 col-md-4 delete-account border mb-5">
+                    <h5 class="grey bold mt-4 mb-2">Delete Profile</h5>
+                    <span class="grey font-12px mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Voluptatum omnis voluptates doloremque cum enim?</span> <br>
+                    <button class="btn btn-brand mt-4 font-12px bold" id="delete-modal-btn" data-toggle="modal"
+                        data-target="#deleteModal">Delete Account</button>
                 </div>
             </div>
             <footer class="col-12">
@@ -348,11 +374,7 @@
     </div>
 </body>
 <script src="../../js/general/third_party_cdn.js""></script>
-    <script src=" ../../js/general/placeholder.js""> </script> 
+    <script src=" ../../js/general/placeholder.js""> </script>  <script
+    src="../../js/apis/editProfile.js""> </script>
     <script src="../../js/manipulation/userData.js"></script>
-    <script
-    src=" ../../js/apis/editProfile.js"">
-    </script>
-    
-
-</html>
+    </html>

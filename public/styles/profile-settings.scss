@@ -1,50 +1,66 @@
 @import "media-queries";
+
 @mixin profile-info-sections {
+    margin-left: 10vw;
+
     background: white;
+
     @include small-screens {
         margin-left: 0px;
     }
+
 }
 
 .settings-con {
     background: #F7F7F7;
+
     .setting-label {
         font-size: 12px;
     }
+
     label {
         font-size: 12px;
         color: grey;
     }
+
     input {
         border-radius: 0px;
         font-size: 12px;
     }
+
     textarea {
         border-radius: 0px;
         font-size: 12px;
         height: 13vh;
     }
+
     select {
         border-radius: 0px;
         font-size: 12px;
+
         option {
             color: grey;
+
             &.fake-placeholder {
                 color: grey;
             }
         }
     }
+
     .label-ast {
         color: red;
     }
+
     .personal-settings {
         min-height: 100vh;
         @include profile-info-sections;
     }
+
     .change-password {
         min-height: 60vh;
         @include profile-info-sections;
     }
+
     .email-notifs {
         min-height: 40vh;
         @include profile-info-sections;
@@ -52,22 +68,9 @@
             cursor: pointer;
         }
     }
+
     .delete-account {
         min-height: 30vh;
         @include profile-info-sections;
-    }
-    .profile-details {
-        min-height: 100vh;
-        @include profile-info-sections;
-        .your-image {
-            height: 20vh;
-            width: 20vh;
-            border-radius: 50%;
-            img {
-                height: 100%;
-                width: 100%;
-                border-radius: 50%;
-            }
-        }
     }
 }
