@@ -31,7 +31,9 @@ const fetchProjects = (query="Rivers,Bayelsa,Cross,Delta") => {
         console.log(user)
         const {image, name, email, user_mode} = user;
         console.log(image_link, image)
-        document.querySelector('[data-user-image]').src = `${image_link}${image}`
+        document.querySelector('[data-user-image]').src = `${image_link}${image}`;
+        document.querySelector('[data-user-name]').textContent = name ? name : `Hello Member!`;
+
     }
     const routes = new Routes();
     const url = `${routes.apiOrigin}${routes.searchProject(query)}`;

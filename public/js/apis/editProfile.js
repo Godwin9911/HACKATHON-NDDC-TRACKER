@@ -1,6 +1,7 @@
 const editProfileForm = document.querySelector('#edit-profile-form')
 const changePasswordForm = document.querySelector('#change-password-form')
 const fileName = document.querySelector('#file-name')
+const responseText = document.querySelector('#response-text');
 
 const validateExcel = (event, editProfileForm) => {
     event.preventDefault();
@@ -17,9 +18,9 @@ editProfileForm.addEventListener('change', (event) => validateExcel(event, editP
 
 
 
-
 const editProfileApi = (event, editProfileForm) => {
     event.preventDefault();
+    submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" style="width: 1.3em; height: 1.3em;" role="status" aria-hidden="true"></span>'
     const routes = new Routes();
     const editProfileUrl = `${routes.apiOrigin}${routes.editProfile}`;
     const formData = new FormData(editProfileForm);
@@ -37,6 +38,9 @@ const editProfileApi = (event, editProfileForm) => {
         .then(data => {
             console.log(data);
             // requestStatus.classList.remove('d-none')
+            $('#alertModal').modal('show');
+            responseText.innerHTML = data.message;
+
         })
         .catch(err => console.error(err))
 }
@@ -56,11 +60,15 @@ const changePasswordApi = (event, changePasswordForm) => {
     const formData = new FormData(changePasswordForm);
     console.log(certified[0])
     data = {
-        old_password : oldPwdInput.value,
-        password : pwdInput.value,
-        password_confirmation : confirmPwdInput.value
+        old_password: oldPwdInput.value,
+        password: pwdInput.value,
+        password_confirmation: confirmPwdInput.value
     };
-    
+    const errorHandling = (response) => {
+        status = response.status;
+        console.log(status)
+        return response.json();
+    }
     fetch(changePasswordUrl, {
         method: "PUT",
         mode: "cors",
@@ -71,12 +79,29 @@ const changePasswordApi = (event, changePasswordForm) => {
         },
         body: JSON.stringify(data)
     })
-        .then(response => response.json())
+        .then(response => errorHandling(response))
         .then(data => {
             console.log(data);
+            $('#alertModal').modal('show');
+            if (status == 422) {
+                console.log(data)
+                result = JSON.stringify(data.errors).split('"').join('').split('{').join('').split('}').join('');
+                console.log(result)
+                responseText.innerHTML = result;
+            } else if (status == 200) {
+                responseText.innerHTML = data.success;
+            } else {
+                responseText.innerHTML = "An Error Occured!";
+            }
             // requestStatus.classList.remove('d-none')
         })
-        .catch(err => console.error(err))
+        .catch(err => {
+            console.error(err.errors)
+            $('#alertModal').modal('show');
+            // responseText.innerHTML = data.errors.message;
+            result = JSON.stringify(data.errors).split('"').join('').split('{').join('').split('}').join('');
+            console.log(result)
+        })
 }
 
 
