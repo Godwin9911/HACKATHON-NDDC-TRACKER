@@ -23,6 +23,7 @@ class ProjectsImport implements ToModel
             'COMMITMENT'    => $row[5], 
             'AMOUNT_APPROVED_2016'    => $row[6], 
             'AMOUNT_APPROVED_2017'    => $row[7],
+            'STATUS'    => $row[8],
         ]);
     }
 }
