@@ -35,12 +35,23 @@ const viewOneProject = () => {
     console.log(url)
 
     //Hide some feautures from the unauthorize user
-    console.log(certified[0]);
-    if(certified[0] == undefined) {
-        //Hide the user show box
-        document.querySelector('[data-user-drop-box]').style.display = 'none';
-        document.querySelector('[data-save-project]').style.display = 'none';
+    const userLocalStore = JSON.parse(localStorage.getItem('nddc-tracker-user'));
+    console.log(userLocalStore)
+    if(!userLocalStore){
+       //Hide the user show box
+       document.querySelector('[data-user-drop-box]').style.display = 'none';
+       document.querySelector('[data-save-project]').style.display = 'none';
+    }else {
+        const {user, image_link} = userLocalStore;
+        console.log(user)
+        const {image, name, email, user_mode} = user;
+        console.log(image_link, image)
+            
+        document.querySelector('[data-user-image]').src = `${image_link}${image}`;
+        document.querySelector('[data-user-name]').textContent = name ? name : `Hello Member!`;
+
     }
+    
 
     fetch(url)
     .then(response => response.json())

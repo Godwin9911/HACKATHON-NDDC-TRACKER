@@ -21,10 +21,19 @@ const projectDOM = document.querySelector('[data-project-dom]');
 
 const fetchProjects = (query="Rivers,Bayelsa,Cross,Delta") => {
 
-    console.log(certified[0])
-    if(!JSON.parse(localStorage.getItem('nddc-tracker-user'))){
+    const userLocalStore = JSON.parse(localStorage.getItem('nddc-tracker-user'));
+    console.log(userLocalStore)
+    if(!userLocalStore){
         //Hide the user show box
         document.querySelector('[data-user-drop-box]').style.display = 'none';
+    }else {
+        const {user, image_link} = userLocalStore;
+        console.log(user)
+        const {image, name, email, user_mode} = user;
+        console.log(image_link, image)
+        document.querySelector('[data-user-image]').src = `${image_link}${image}`;
+        document.querySelector('[data-user-name]').textContent = name ? name : `Hello Member!`;
+
     }
     const routes = new Routes();
     const url = `${routes.apiOrigin}${routes.searchProject(query)}`;

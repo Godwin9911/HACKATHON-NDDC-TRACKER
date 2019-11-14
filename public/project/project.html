@@ -46,25 +46,25 @@
                         <li class="nav-item mx-3 mt-2">
                             <a class="nav-link" href="">Notifications</a>
                         </li>
-                        <li class="nav-item dropdown" data-user-drop-box>
+                        <li class="nav-item dropdown"  data-user-drop-box>
                             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
                                 <div class="nav-user row mx-0">
                                     <div class="col-4 px-0">
                                         <div class="nav-image mx-auto border">
-                                            <img class="mt-1" src="../../images/user-grey.svg" alt="">
+                                            <img class="" data-user-image src="../../images/user-grey.svg" alt="">
                                         </div>
                                     </div>
                                     <div class="col-8 px-0 pt-2">
-                                        <span class="">John Doe</span>
+                                        <span class="" data-user-name>John Doe</span>
                                     </div>
                                 </div>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Saved Projects</a>
+                                <a class="dropdown-item" href="../account/user/dashboard.html">Saved Projects</a>
                                 <a class="dropdown-item" href="../account/user/profile-settings.html">Settings</a>
                                 <a class="dropdown-item" href="#">Help</a>
-                                <a class="dropdown-item" href="#">Log Out</a>
+                                <a class="dropdown-item" data-logout style="cursor: pointer;">Log Out</a>
                             </div>
                         </li>
                     </ul>
@@ -213,14 +213,15 @@
                                 <div class="col-12 col-md-11 comment-submit">
                                     <form data-project-comment>
                                         <div class="form-group mb-1">
-                                            <textarea name="comment" class="col-12 mt-4 pl-4 scroller" type="text"
-                                                class="form-control" placeholder="Add a public comment"></textarea>
-                                            <span name="anonymous" style="visibility: hidden;">Anonymous</span>
-                                            <span name="anonymous" style="visibility: hidden;" data-reply>Anonymous</span>
+                                            <textarea data-comment-box name="comment" class="col-12 mt-4 pl-4 scroller" type="text"
+                                                class="form-control" placeholder="Add a public comment" required></textarea>
+                                            <input  data-anonymous-spot name="anonymous" value="no" type="checkbox"><span style="color: grey; font-size: 13px;">Anonymous<span style="font-size:10px; font-style: italic;">(click to disclose you identity)</span></span>
                                         </div>
+                                        <span data-comment-error style="font-size:11px; color:tomato;">gdgdfgdfgfgfgfgf</span>
                                         <div class="col-12 text-right">
-                                            <button type="submit" class="btn btn-brand br-10px py-0">Submit</button>
+                                            <button data-comment-btn type="submit" class="btn btn-brand br-10px py-0" style="width: 30%;">Comment</button>
                                         </div>
+                                     
                                     </form>
                                 </div>
                             </div>
@@ -411,5 +412,7 @@
 <script src="../js/general/routes.js"></script>
 <script src="../js/general/onSession.js"></script>
 <script src="../js/apis/viewOneProject.js"></script>
+<script src="../js/apis/createComment.js"></script>
+<script src="../js/general/global.js"></script>
 
 </html>

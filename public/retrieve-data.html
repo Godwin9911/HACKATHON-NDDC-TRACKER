@@ -52,13 +52,13 @@ const handleData = () => {
           //insert the data into broswer localStorage
           const routes = new Routes();
           const url = `${routes.apiOrigin}${routes.currentUser}`; 
-          const certified[0] = getUrlParam.get('auth');
+          let token = getUrlParam.get('auth');
           fetch(url,{
             method: "GET",
             mode: "cors",
             headers: {
                 "Accept": "aplication/json",
-                "Authorization": `Bearer ${certified[0]}`
+                "Authorization": `Bearer ${token}`
             },
           })
           .then(res => res.json())
