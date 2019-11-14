@@ -31,6 +31,7 @@ class ProjectController extends Controller
                                  ->orWhere('LOCATION', 'LIKE', "%{$query}%")
                                  ->orWhere('LGA', 'LIKE', "%{$query}%")
                                  ->orWhere('PROJECT_DESCRIPTION', 'LIKE', "%{$query}%")
+                                 ->orWhere('created_at', 'LIKE', "%{$query}%")
                                  ->withCount('comments')
                                  ->with('projectlikes')
                                  ->get();
