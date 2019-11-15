@@ -18,7 +18,7 @@ class CreateProjectcompliansTable extends Migration
             $table->string('name')->nullable();
             $table->string('report')->nullable();
             $table->string('lga')->nullable();
-            $table->string('image')->nullable();
+            $table->string('image')->default('noimage.png');
             $table->timestamps();
         });
     }

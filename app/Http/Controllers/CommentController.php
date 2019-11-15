@@ -52,10 +52,11 @@ class CommentController extends Controller
 
                     if($anonymous == 'yes') {
                         $comment->user_name= 'Anonymous';
+                         $comment->user_mode = 'default';
                      }else {
                         $user = User::where('id', $user_id)->first();
                         $comment->user_id  = $user->id;
-                        $comment->user_image = $user->image ?? 'no-image.png';
+                        $comment->user_image = $user->image ?? 'noimage.png';
                         $comment->user_name = $user->name ?? $user->email;
                         $comment->user_mode = $user->mode;
                      }
